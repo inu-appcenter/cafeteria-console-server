@@ -19,11 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add gitignore.">
-      <change afterPath="$PROJECT_DIR$/test/unit/jest.test.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Test environment set.">
+      <change afterPath="$PROJECT_DIR$/lib/db/models/Cafeteria.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/db/models/Corner.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/db/sequelize.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/repositories/CafeteriaRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/sequelize.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +69,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Jest">
+  <component name="RunManager" selected="Jest.Sequelize">
     <configuration name="Jest" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -92,6 +97,23 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Sequelize" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs>
+        <env name="DB_HOST" value="15.165.69.29" />
+        <env name="DB_USERNAME" value="potados" />
+        <env name="DB_PASSWORD" value="rhksflwkzzzz" />
+      </envs>
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/test/unit/sequelize.test.ts" />
+      <test-names>
+        <test-name value="Sequelize" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -102,8 +124,15 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Jest.Jest" />
+      <item itemvalue="Jest.Jest.should work" />
+      <item itemvalue="Jest.Sequelize" />
+      <item itemvalue="npm.start" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Sequelize" />
         <item itemvalue="Jest.Jest" />
         <item itemvalue="Jest.Jest.should work" />
         <item itemvalue="npm.start" />
@@ -118,7 +147,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605381193492</updated>
-      <workItem from="1605381194986" duration="3233000" />
+      <workItem from="1605381194986" duration="6677000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -134,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605383945559</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Test environment set.">
+      <created>1605384511138</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605384511139</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,29 +190,38 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial setup done." />
     <MESSAGE value="Add gitignore." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add gitignore." />
+    <MESSAGE value="Test environment set." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test environment set." />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1419" height="299" key="GridCell.Tab.0.bottom" timestamp="1605384466387">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605386838612">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="299" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605384466387" />
-    <state width="1419" height="299" key="GridCell.Tab.0.center" timestamp="1605384466385">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605386838612" />
+    <state x="574" y="182" key="EnvironmentVariablesDialog" timestamp="1605386837671">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="299" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605384466385" />
-    <state width="1419" height="299" key="GridCell.Tab.0.left" timestamp="1605384466384">
+    <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605386837671" />
+    <state width="1419" height="320" key="GridCell.Tab.0.bottom" timestamp="1605387927408">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="299" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605384466384" />
-    <state width="1419" height="299" key="GridCell.Tab.0.right" timestamp="1605384466386">
+    <state width="1419" height="320" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605387927408" />
+    <state width="1419" height="320" key="GridCell.Tab.0.center" timestamp="1605387927400">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="299" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605384466386" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605383947067">
+    <state width="1419" height="320" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605387927400" />
+    <state width="1419" height="320" key="GridCell.Tab.0.left" timestamp="1605387927398">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605383947067" />
+    <state width="1419" height="320" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605387927398" />
+    <state width="1419" height="320" key="GridCell.Tab.0.right" timestamp="1605387927401">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="320" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605387927401" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605384512432">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605384512432" />
     <state x="418" y="205" width="604" height="490" key="find.popup" timestamp="1605383283143">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
