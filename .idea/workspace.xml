@@ -22,23 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="DB fetch success!">
-      <change afterPath="$PROJECT_DIR$/lib/entities/Cafeteria.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/entities/Corner.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/routes/graphql.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/naming.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/object.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/naming.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/object.test.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Query success.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/db/models/Cafeteria.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/models/CafeteriaModel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/db/models/Corner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/models/CornerModel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/db/sequelize.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/sequelize.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/repositories/CafeteriaRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/CafeteriaRepository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/sequelize.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/sequelize.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +160,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605381193492</updated>
-      <workItem from="1605381194986" duration="13236000" />
+      <workItem from="1605381194986" duration="13733000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -204,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605388004973</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Query success.">
+      <created>1605394595391</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605394595391</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +219,8 @@
     <MESSAGE value="Add gitignore." />
     <MESSAGE value="Test environment set." />
     <MESSAGE value="DB fetch success!" />
-    <option name="LAST_COMMIT_MESSAGE" value="DB fetch success!" />
+    <MESSAGE value="Query success." />
+    <option name="LAST_COMMIT_MESSAGE" value="Query success." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605393627528">
@@ -245,22 +239,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605393504174" />
-    <state width="1419" height="426" key="GridCell.Tab.0.bottom" timestamp="1605394424264">
+    <state width="1419" height="222" key="GridCell.Tab.0.bottom" timestamp="1605394763707">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="426" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605394424264" />
-    <state width="1419" height="426" key="GridCell.Tab.0.center" timestamp="1605394424263">
+    <state width="1419" height="222" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605394763707" />
+    <state width="1419" height="222" key="GridCell.Tab.0.center" timestamp="1605394763698">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="426" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605394424263" />
-    <state width="1419" height="426" key="GridCell.Tab.0.left" timestamp="1605394424261">
+    <state width="1419" height="222" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605394763698" />
+    <state width="1419" height="222" key="GridCell.Tab.0.left" timestamp="1605394763693">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="426" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605394424261" />
-    <state width="1419" height="426" key="GridCell.Tab.0.right" timestamp="1605394424263">
+    <state width="1419" height="222" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605394763693" />
+    <state width="1419" height="222" key="GridCell.Tab.0.right" timestamp="1605394763704">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="426" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605394424263" />
+    <state width="1419" height="222" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605394763704" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605388006545">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -269,9 +263,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="418" y="205" width="604" height="490" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605383283143" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1605394488045">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1605395005161">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605394488045" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605395005161" />
   </component>
 </project>
