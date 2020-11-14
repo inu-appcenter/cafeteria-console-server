@@ -4,6 +4,7 @@ import logger from "./lib/utils/logger";
 
 function startServer() {
     const server = createServer();
+
     const onStartListening = () => {
         logger.info(`우효 wwwwwwwww ${config.server.port}포트♥, 서버 겟또다제~☆`);
     }

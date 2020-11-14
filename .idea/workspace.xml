@@ -19,8 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Initial setup done.">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add gitignore.">
+      <change afterPath="$PROJECT_DIR$/test/unit/jest.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +50,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="13.11.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="13.11.0" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -60,7 +64,34 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Jest.Jest">
+    <configuration name="Jest" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/test/unit/jest.test.ts" />
+      <test-names>
+        <test-name value="Jest" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Jest.should work" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/test/unit/jest.test.ts" />
+      <test-names>
+        <test-name value="Jest" />
+        <test-name value="should work" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -73,6 +104,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Jest" />
+        <item itemvalue="Jest.Jest.should work" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -85,7 +118,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605381193492</updated>
-      <workItem from="1605381194986" duration="2675000" />
+      <workItem from="1605381194986" duration="3233000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -94,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605383889127</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add gitignore.">
+      <created>1605383945559</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605383945559</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,25 +153,30 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial setup done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial setup done." />
+    <MESSAGE value="Add gitignore." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add gitignore." />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1419" height="354" key="GridCell.Tab.0.bottom" timestamp="1605383606498">
+    <state width="1419" height="299" key="GridCell.Tab.0.bottom" timestamp="1605384466387">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="354" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605383606498" />
-    <state width="1419" height="354" key="GridCell.Tab.0.center" timestamp="1605383606496">
+    <state width="1419" height="299" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605384466387" />
+    <state width="1419" height="299" key="GridCell.Tab.0.center" timestamp="1605384466385">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="354" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605383606496" />
-    <state width="1419" height="354" key="GridCell.Tab.0.left" timestamp="1605383606495">
+    <state width="1419" height="299" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605384466385" />
+    <state width="1419" height="299" key="GridCell.Tab.0.left" timestamp="1605384466384">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="354" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605383606495" />
-    <state width="1419" height="354" key="GridCell.Tab.0.right" timestamp="1605383606497">
+    <state width="1419" height="299" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605384466384" />
+    <state width="1419" height="299" key="GridCell.Tab.0.right" timestamp="1605384466386">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="354" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605383606497" />
+    <state width="1419" height="299" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605384466386" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605383947067">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605383947067" />
     <state x="418" y="205" width="604" height="490" key="find.popup" timestamp="1605383283143">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
