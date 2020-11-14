@@ -1,9 +1,9 @@
 import sequelize from "../../lib/db/sequelize";
-import Cafeteria from "../../lib/db/models/Cafeteria";
+import CafeteriaModel from "../../lib/db/models/CafeteriaModel";
 
 describe('Sequelize', () => {
    it('should work', async () => {
-        const cafeteriaRepository = sequelize.getRepository(Cafeteria);
+        const cafeteriaRepository = sequelize.getRepository(CafeteriaModel);
 
         const allCafeteria = await cafeteriaRepository.findAll();
 

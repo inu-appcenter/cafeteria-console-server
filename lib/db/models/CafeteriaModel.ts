@@ -6,7 +6,7 @@ import {Table, Column, Model, PrimaryKey} from 'sequelize-typescript';
     charset: 'utf8',
     collate: 'utf8_unicode_ci',
 })
-class Cafeteria extends Model<Cafeteria> {
+class CafeteriaModel extends Model<CafeteriaModel> {
 
     @Column({primaryKey: true})
     id: number;
@@ -30,4 +30,4 @@ class Cafeteria extends Model<Cafeteria> {
     support_notification: boolean;
 }
 
-export default Cafeteria;
+export default CafeteriaModel;

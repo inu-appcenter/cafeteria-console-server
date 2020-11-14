@@ -1,13 +1,15 @@
 import express from 'express';
+import graphqlRoute from "./routes/graphql";
 
 function createServer() {
     const app: express.Application = express();
 
-    const router = (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    const rootHello = (req: express.Request, res: express.Response, next: express.NextFunction) => {
         res.send('Hello!');
     }
 
-    app.get('/', router);
+    app.get('/', rootHello);
+    app.use('/graphql', graphqlRoute);
 
     return app;
 }

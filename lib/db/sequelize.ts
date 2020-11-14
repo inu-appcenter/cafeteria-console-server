@@ -1,7 +1,7 @@
 import {Sequelize} from "sequelize-typescript";
 import config from "../../config";
-import Cafeteria from "./models/Cafeteria";
-import Corner from "./models/Corner";
+import CafeteriaModel from "./models/CafeteriaModel";
+import CornerModel from "./models/CornerModel";
 
 const sequelize = new Sequelize(
     config.sequelize.database,
@@ -13,10 +13,10 @@ const sequelize = new Sequelize(
 
 sequelize.addModels([
     // @ts-ignore
-    Cafeteria,
+    CafeteriaModel,
 
     // @ts-ignore
-    Corner
+    CornerModel
 ]);
 
 export default sequelize;

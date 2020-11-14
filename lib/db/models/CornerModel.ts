@@ -1,5 +1,5 @@
 import {Table, Column, Model, PrimaryKey, ForeignKey, BelongsTo} from 'sequelize-typescript';
-import Cafeteria from "./Cafeteria";
+import CafeteriaModel from "./CafeteriaModel";
 
 @Table({
     tableName: 'corner',
@@ -7,7 +7,7 @@ import Cafeteria from "./Cafeteria";
     charset: 'utf8',
     collate: 'utf8_unicode_ci',
 })
-class Corner extends Model<Corner> {
+class CornerModel extends Model<CornerModel> {
 
     @Column({primaryKey: true})
     id: number;
@@ -22,8 +22,8 @@ class Corner extends Model<Corner> {
     available_at: number;
 
     // @ts-ignore
-    @ForeignKey(() => Cafeteria)
+    @ForeignKey(() => CafeteriaModel)
     cafeteria_id: number;
 }
 
-export default Corner;
+export default CornerModel;
