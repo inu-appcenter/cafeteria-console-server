@@ -22,24 +22,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add some logs.">
-      <change afterPath="$PROJECT_DIR$/lib/entities/base/IEntity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/entities/base/IIdentifiable.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/entities/base/ISerializable.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/repositories/CornerRepository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/repositories/base/SequelizeCRUDRepository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/routes/cafeteria.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/routes/corners.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/routes/hello.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/CafeteriaRepository.test.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Cafeteria and corner, CRUD works on GraphQL.">
+      <change afterPath="$PROJECT_DIR$/lib/entities/CafeteriaDiscountRule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/entities/CafeteriaValidationParams.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/db/models/CornerModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/models/CornerModel.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/entities/Cafeteria.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Cafeteria.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/entities/Corner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Corner.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/CafeteriaRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/CafeteriaRepository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/graphql.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/object.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/object.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +165,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605381193492</updated>
-      <workItem from="1605381194986" duration="23243000" />
+      <workItem from="1605381194986" duration="24560000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -221,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605395059008</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Cafeteria and corner, CRUD works on GraphQL.">
+      <created>1605446652497</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1605446652497</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +240,8 @@
     <MESSAGE value="DB fetch success!" />
     <MESSAGE value="Query success." />
     <MESSAGE value="Add some logs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add some logs." />
+    <MESSAGE value="Cafeteria and corner, CRUD works on GraphQL." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cafeteria and corner, CRUD works on GraphQL." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605393627528">
@@ -268,26 +264,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605393504174" />
-    <state width="1419" height="429" key="GridCell.Tab.0.bottom" timestamp="1605446397053">
+    <state width="1419" height="226" key="GridCell.Tab.0.bottom" timestamp="1605446581440">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="429" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446397053" />
-    <state width="1419" height="429" key="GridCell.Tab.0.center" timestamp="1605446397050">
+    <state width="1419" height="226" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446581440" />
+    <state width="1419" height="226" key="GridCell.Tab.0.center" timestamp="1605446581438">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="429" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446397050" />
-    <state width="1419" height="429" key="GridCell.Tab.0.left" timestamp="1605446397049">
+    <state width="1419" height="226" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446581438" />
+    <state width="1419" height="226" key="GridCell.Tab.0.left" timestamp="1605446581437">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="429" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446397049" />
-    <state width="1419" height="429" key="GridCell.Tab.0.right" timestamp="1605446397051">
+    <state width="1419" height="226" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446581437" />
+    <state width="1419" height="226" key="GridCell.Tab.0.right" timestamp="1605446581439">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="429" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446397051" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605395060333">
+    <state width="1419" height="226" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446581439" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605446654024">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605395060333" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446654024" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605446144758">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

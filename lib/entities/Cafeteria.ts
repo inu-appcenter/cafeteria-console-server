@@ -18,7 +18,7 @@ class Cafeteria implements IEntity<Cafeteria> {
     }
 
     serialize() {
-        return serializeObject(<Cafeteria>this, camelToSnake, ['imagePath']);
+        return serializeObject(this, camelToSnake, ['imagePath']);
     }
 
     static type() {
@@ -38,11 +38,11 @@ class Cafeteria implements IEntity<Cafeteria> {
         return `
         input CafeteriaInput {
             id: Int!
-            name: String!
-            display_name: String!
-            support_menu: Boolean!
-            support_discount: Boolean!
-            support_notification: Boolean!
+            name: String
+            display_name: String
+            support_menu: Boolean
+            support_discount: Boolean
+            support_notification: Boolean
         }
         `;
     }

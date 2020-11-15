@@ -15,7 +15,7 @@ class Corner implements IEntity<Corner> {
     }
 
     serialize() {
-        return serializeObject(<Corner>this, camelToSnake);
+        return serializeObject(this, camelToSnake);
     }
 
     static type() {
@@ -34,10 +34,10 @@ class Corner implements IEntity<Corner> {
         return `
         input CornerInput {
             id: Int!
-            name: String!
-            display_name: String!
-            available_at: Int!
-            cafeteria_id: Int!
+            name: String
+            display_name: String
+            available_at: Int
+            cafeteria_id: Int
         }
      `;
     }
