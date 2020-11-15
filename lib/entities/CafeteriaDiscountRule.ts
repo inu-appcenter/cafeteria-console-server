@@ -38,3 +38,5 @@ class CafeteriaDiscountRule implements IEntity<CafeteriaDiscountRule> {
         `;
     }
 }
+
+export default CafeteriaDiscountRule;

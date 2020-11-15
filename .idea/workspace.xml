@@ -22,12 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Cafeteria and corner, CRUD works on GraphQL.">
-      <change afterPath="$PROJECT_DIR$/lib/entities/CafeteriaDiscountRule.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/entities/CafeteriaValidationParams.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add all entities.">
+      <change afterPath="$PROJECT_DIR$/lib/db/models/CafeteriaDiscountRuleModel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/db/models/CafeteriaValidationParamsModel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/repositories/CafeteriaDiscountRuleRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/repositories/CafeteriaValidationParamsRepository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/entities/Cafeteria.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Cafeteria.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/entities/Corner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Corner.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/entities/CafeteriaDiscountRule.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/CafeteriaDiscountRule.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +166,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605381193492</updated>
-      <workItem from="1605381194986" duration="24560000" />
+      <workItem from="1605381194986" duration="25421000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -216,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605446652497</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add all entities.">
+      <created>1605447908839</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605447908839</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +249,8 @@
     <MESSAGE value="Query success." />
     <MESSAGE value="Add some logs." />
     <MESSAGE value="Cafeteria and corner, CRUD works on GraphQL." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cafeteria and corner, CRUD works on GraphQL." />
+    <MESSAGE value="Add all entities." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add all entities." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605393627528">
