@@ -1,5 +1,5 @@
-interface ISerializable<T> {
-    serialize(): T;
+interface ISerializable {
+    serialize(): object;
 }
 
 export default ISerializable;

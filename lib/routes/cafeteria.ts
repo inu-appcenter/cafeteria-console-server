@@ -9,7 +9,7 @@ export async function allCafeteria() {
 
 // @ts-ignore
 export async function createCafeteria({cafeteria}) {
-    return await cafeteriaRepository.addCafeteria(cafeteria);
+    return await cafeteriaRepository.addCafeteria(Cafeteria.parse(cafeteria));
 }
 
 // @ts-ignore

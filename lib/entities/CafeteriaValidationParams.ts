@@ -3,23 +3,23 @@ import {parseObject, serializeObject} from "../utils/object";
 import {camelToSnake, snakeToCamel} from "../utils/naming";
 
 class CafeteriaValidationParams implements IEntity<CafeteriaValidationParams> {
-    cafeteriaId: number; // Foreign key
+    cafeteriaId: number = 0; // Foreign key
     get id(): number { // Primary key
         return this.cafeteriaId;
     }
 
-    token: string;
-    availableMealTypes: number;
+    token: string = '';
+    availableMealTypes: number = 0;
 
-    timeRangeBreakfast: string;
-    timeRangeLunch: string;
-    timeRangeDinner: string;
+    timeRangeBreakfast: string = '';
+    timeRangeLunch: string = '';
+    timeRangeDinner: string = '';
 
     static parse(raw: any) {
         return parseObject(raw, snakeToCamel, CafeteriaValidationParams);
     }
 
-    serialize(): CafeteriaValidationParams {
+    serialize() {
         return serializeObject(this, camelToSnake);
     }
 

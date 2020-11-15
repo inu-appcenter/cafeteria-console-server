@@ -2,6 +2,8 @@ import {Sequelize} from "sequelize-typescript";
 import config from "../../config";
 import CafeteriaModel from "./models/CafeteriaModel";
 import CornerModel from "./models/CornerModel";
+import CafeteriaDiscountRuleModel from "./models/CafeteriaDiscountRuleModel";
+import CafeteriaValidationParamsModel from "./models/CafeteriaValidationParamsModel";
 
 const sequelize = new Sequelize(
     config.sequelize.database,
@@ -12,11 +14,10 @@ const sequelize = new Sequelize(
 );
 
 sequelize.addModels([
-    // @ts-ignore
     CafeteriaModel,
-
-    // @ts-ignore
-    CornerModel
+    CornerModel,
+    CafeteriaDiscountRuleModel,
+    CafeteriaValidationParamsModel
 ]);
 
 export default sequelize;

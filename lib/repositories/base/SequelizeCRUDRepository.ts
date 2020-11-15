@@ -11,13 +11,16 @@ abstract class SequelizeCRUDRepository<E extends IEntity<E>, M extends Model> {
     private readonly entityName: string
     private readonly entityClass: { new(): E };
     private modelClass: { new(): M };
+    private primaryKeyName: string
 
-    protected constructor(entityClass: {new(): E}, modelClass: {new(): M}) {
+    protected constructor(entityClass: {new(): E}, modelClass: {new(): M}, primaryKeyName: string = 'id') {
         this.repo = sequelize.getRepository(modelClass);
         this.entityName = entityClass.name;
 
         this.entityClass = entityClass;
         this.modelClass = modelClass;
+
+        this.primaryKeyName = primaryKeyName;
 
         logger.verbose(`5252 이봐 ${this.entityName}! 네놈 repo는 내가 처리하지!`);
     }
@@ -71,7 +74,7 @@ abstract class SequelizeCRUDRepository<E extends IEntity<E>, M extends Model> {
         logger.verbose(`좋아..${this.entityName}..변신!`);
 
         const values = serializeObject(entity, camelToSnake, ignoredFields);
-        const options = {where: {id: entity.id}};
+        const options = this.getWhereClauseOptionSpecifyingPk(entity.id);
 
         // Update will be performed only when row exists,
         // otherwise, nothing will happen (not throw).
@@ -85,7 +88,7 @@ abstract class SequelizeCRUDRepository<E extends IEntity<E>, M extends Model> {
     protected async delete(id: number): Promise<number> {
         logger.verbose(`오마에...${id}번 ${this.entityName}을(를) 지우라고 한거냐!?! 크흑...어쩔 수 없군..`);
 
-        const options = {where: {id: id}};
+        const options = this.getWhereClauseOptionSpecifyingPk(id);
 
         // Delete will be performed only when row exists,
         // otherwise, nothing will happen (not throw).
@@ -94,6 +97,14 @@ abstract class SequelizeCRUDRepository<E extends IEntity<E>, M extends Model> {
         logger.verbose(`${numberOfAffectedRows}개의 ${this.entityName}이(가) 비트가 되어 흩어졌다...`);
 
         return numberOfAffectedRows;
+    }
+
+    private getWhereClauseOptionSpecifyingPk(id: number) {
+        const clause = {};
+        // @ts-ignore
+        clause[this.primaryKeyName] = id;
+
+        return {where: clause};
     }
 }
 

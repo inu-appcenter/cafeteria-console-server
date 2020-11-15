@@ -22,13 +22,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add all entities.">
-      <change afterPath="$PROJECT_DIR$/lib/db/models/CafeteriaDiscountRuleModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/db/models/CafeteriaValidationParamsModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/repositories/CafeteriaDiscountRuleRepository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/repositories/CafeteriaValidationParamsRepository.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Repositories ready.">
+      <change afterPath="$PROJECT_DIR$/lib/routes/rules.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/routes/validationParams.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/db/sequelize.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/sequelize.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/entities/Cafeteria.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Cafeteria.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/entities/CafeteriaDiscountRule.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/CafeteriaDiscountRule.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/entities/CafeteriaValidationParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/CafeteriaValidationParams.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/entities/base/ISerializable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/base/ISerializable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/CafeteriaValidationParamsRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/CafeteriaValidationParamsRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/base/SequelizeCRUDRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/base/SequelizeCRUDRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/cafeteria.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/cafeteria.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/corners.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/corners.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/graphql.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/object.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/object.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/object.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/object.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,20 +98,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="CafeteriaRepository.should add cafeteria" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/test/unit/CafeteriaRepository.test.ts" />
-      <test-names>
-        <test-name value="CafeteriaRepository" />
-        <test-name value="should add cafeteria" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="CafeteriaRepository.should delete cafeteria" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -117,17 +112,30 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="CafeteriaRepository.should update cafeteria" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Fields" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/test/unit/object.test.ts" />
+      <test-names>
+        <test-name value="Fields" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Fields.exists?" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/test/unit/CafeteriaRepository.test.ts" />
+      <test-file value="$PROJECT_DIR$/test/unit/object.test.ts" />
       <test-names>
-        <test-name value="CafeteriaRepository" />
-        <test-name value="should update cafeteria" />
+        <test-name value="Fields" />
+        <test-name value="exists?" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -143,18 +151,18 @@
     </configuration>
     <list>
       <item itemvalue="Jest.CafeteriaRepository" />
-      <item itemvalue="Jest.CafeteriaRepository.should update cafeteria" />
-      <item itemvalue="Jest.CafeteriaRepository.should add cafeteria" />
       <item itemvalue="Jest.CafeteriaRepository.should delete cafeteria" />
       <item itemvalue="npm.start" />
+      <item itemvalue="Jest.Fields" />
+      <item itemvalue="Jest.Fields.exists?" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="Jest.Fields.exists?" />
+        <item itemvalue="Jest.Fields" />
         <item itemvalue="Jest.CafeteriaRepository" />
         <item itemvalue="Jest.CafeteriaRepository.should delete cafeteria" />
-        <item itemvalue="Jest.CafeteriaRepository.should add cafeteria" />
-        <item itemvalue="Jest.CafeteriaRepository.should update cafeteria" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +174,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605381193492</updated>
-      <workItem from="1605381194986" duration="25421000" />
+      <workItem from="1605381194986" duration="29294000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -224,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605447908839</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Repositories ready.">
+      <created>1605448773226</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605448773226</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +265,8 @@
     <MESSAGE value="Add some logs." />
     <MESSAGE value="Cafeteria and corner, CRUD works on GraphQL." />
     <MESSAGE value="Add all entities." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add all entities." />
+    <MESSAGE value="Repositories ready." />
+    <option name="LAST_COMMIT_MESSAGE" value="Repositories ready." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605393627528">
@@ -273,33 +289,33 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605393504174" />
-    <state width="1419" height="226" key="GridCell.Tab.0.bottom" timestamp="1605446581440">
+    <state width="1419" height="371" key="GridCell.Tab.0.bottom" timestamp="1605452592756">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446581440" />
-    <state width="1419" height="226" key="GridCell.Tab.0.center" timestamp="1605446581438">
+    <state width="1419" height="371" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605452592756" />
+    <state width="1419" height="371" key="GridCell.Tab.0.center" timestamp="1605452592754">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446581438" />
-    <state width="1419" height="226" key="GridCell.Tab.0.left" timestamp="1605446581437">
+    <state width="1419" height="371" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605452592754" />
+    <state width="1419" height="371" key="GridCell.Tab.0.left" timestamp="1605452592753">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446581437" />
-    <state width="1419" height="226" key="GridCell.Tab.0.right" timestamp="1605446581439">
+    <state width="1419" height="371" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605452592753" />
+    <state width="1419" height="371" key="GridCell.Tab.0.right" timestamp="1605452592755">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="226" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446581439" />
+    <state width="1419" height="371" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605452592755" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605446654024">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446654024" />
-    <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605446144758">
+    <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605452422776">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605446144758" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1605444319604">
+    <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605452422776" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1605452425631">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605444319604" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605452425631" />
   </component>
 </project>

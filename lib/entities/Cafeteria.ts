@@ -3,7 +3,7 @@ import {camelToSnake, snakeToCamel} from "../utils/naming";
 import IEntity from "./base/IEntity";
 
 class Cafeteria implements IEntity<Cafeteria> {
-    id: number = 0
+    id: number = 0;
 
     name: string = '';
     displayName: string = '';

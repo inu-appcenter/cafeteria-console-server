@@ -6,12 +6,23 @@ import Corner from "../entities/Corner";
 import hello from "./hello";
 import {allCafeteria, createCafeteria, deleteCafeteria, updateCafeteria} from "./cafeteria";
 import {allCorners, createCorner, deleteCorner, updateCorner} from "./corners";
+import {allRules, updateRule} from "./rules";
+import {
+    allValidationParams,
+    createValidationParams,
+    deleteValidationParams,
+    updateValidationParams
+} from "./validationParams";
+import CafeteriaDiscountRule from "../entities/CafeteriaDiscountRule";
+import CafeteriaValidationParams from "../entities/CafeteriaValidationParams";
 
 const query = `
     type Query {
         hello: String
         allCafeteria: [Cafeteria]
         allCorners: [Corner]
+        allRules: [CafeteriaDiscountRule]
+        allValidationParams: [CafeteriaValidationParams]
     }
 `;
 
@@ -25,6 +36,12 @@ const mutation = `
         createCorner(corner: CornerInput): Int
         updateCorner(corner: CornerInput): Int
         deleteCorner(cornerId: Int): Int
+        
+        updateRule(rule: CafeteriaDiscountRuleInput): Int
+        
+        createValidationParams(params: CafeteriaValidationParamsInput): Int
+        updateValidationParams(params: CafeteriaValidationParamsInput): Int
+        deleteValidationParams(cafeteriaId: Int): Int
     }
 `;
 
@@ -35,6 +52,10 @@ const graphqlRoute = graphqlHTTP({
         Cafeteria.input(),
         Corner.type(),
         Corner.input(),
+        CafeteriaDiscountRule.type(),
+        CafeteriaDiscountRule.input(),
+        CafeteriaValidationParams.type(),
+        CafeteriaValidationParams.input(),
         query,
         mutation
     ].join('\n')),
@@ -51,6 +72,14 @@ const graphqlRoute = graphqlHTTP({
         createCorner,
         updateCorner,
         deleteCorner,
+
+        allRules,
+        updateRule,
+
+        allValidationParams,
+        createValidationParams,
+        updateValidationParams,
+        deleteValidationParams
     },
 
     graphiql: true

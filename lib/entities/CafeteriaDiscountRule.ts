@@ -3,18 +3,18 @@ import {parseObject, serializeObject} from "../utils/object";
 import {camelToSnake, snakeToCamel} from "../utils/naming";
 
 class CafeteriaDiscountRule implements IEntity<CafeteriaDiscountRule> {
-    id: number; // Independent from cafeteria.
+    id: number = 0; // Independent from cafeteria.
 
-    name: string;
-    description: string;
+    name: string = '';
+    description: string = '';
 
-    enabled: boolean;
+    enabled: boolean = false;
 
     static parse(raw: any) {
         return parseObject(raw, snakeToCamel, CafeteriaDiscountRule);
     }
 
-    serialize(): CafeteriaDiscountRule {
+    serialize() {
         return serializeObject(this, camelToSnake);
     }
 

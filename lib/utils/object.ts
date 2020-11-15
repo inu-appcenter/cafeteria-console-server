@@ -28,9 +28,11 @@ function stringIn(str: string, collection: any[]) {
 export function parseObject<T extends object>(
     rawObject: any,
     fieldTransform: (fieldName: string) => string,
-    outputObjectType: {new(): T}): T {
+    outputObjectType: {new(): T},
+    leaveOnlyParsedParts: boolean = true/* set all non-parsed fields in the instance of T to undefined. */): T {
 
     const parsed = new outputObjectType();
+    const assignedFields = [];
 
     for (const rawField in rawObject) {
         if (!Object.hasOwnProperty.call(rawObject, rawField)) {
@@ -46,7 +48,29 @@ export function parseObject<T extends object>(
 
         // @ts-ignore
         parsed[objectField] = rawObject[rawField];
+        assignedFields.push(objectField);
+    }
+
+    if (leaveOnlyParsedParts) {
+        removeFields(parsed, assignedFields);
     }
 
     return parsed;
+}
+
+function removeFields<T>(object: T, exclude: Array<string>) {
+    for (const field in object) {
+        if (!Object.hasOwnProperty.call(object, field)) {
+            continue;
+        }
+
+        if (stringIn(field, exclude)) {
+            continue;
+        }
+
+        // @ts-ignore
+        object[field] = undefined;
+    }
+
+    return object;
 }

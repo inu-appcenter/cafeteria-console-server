@@ -9,7 +9,7 @@ export async function allCorners() {
 
 // @ts-ignore
 export async function createCorner({corner}) {
-    return await cornerRepository.addCorner(corner);
+    return await cornerRepository.addCorner(Corner.parse(corner));
 }
 
 // @ts-ignore

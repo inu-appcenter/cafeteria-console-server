@@ -44,3 +44,16 @@ describe('Object', () => {
         expect(result).toStrictEqual(expected);
     });
 });
+
+describe('Fields', () => {
+
+    it('exists?', async () => {
+        class A {
+            prop: string|undefined = undefined
+        }
+
+        const a = new A();
+
+        console.log(Object.getOwnPropertyNames(a));
+    });
+});

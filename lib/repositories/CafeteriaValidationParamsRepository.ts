@@ -5,7 +5,7 @@ import CafeteriaValidationParamsModel from "../db/models/CafeteriaValidationPara
 class CafeteriaValidationParamsRepository extends SequelizeCRUDRepository<CafeteriaValidationParams, CafeteriaValidationParamsModel> {
 
     constructor() {
-        super(CafeteriaValidationParams, CafeteriaValidationParamsModel);
+        super(CafeteriaValidationParams, CafeteriaValidationParamsModel, 'cafeteria_id');
     }
 
     async addParams(params: CafeteriaValidationParams) {
@@ -21,7 +21,7 @@ class CafeteriaValidationParamsRepository extends SequelizeCRUDRepository<Cafete
     }
 
     async updateParams(params: CafeteriaValidationParams) {
-        return this.update(params);
+        return this.update(params, ['cafeteriaId']);
     }
 
     async deleteParams(cafeteriaId: number) {
