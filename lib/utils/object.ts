@@ -1,12 +1,12 @@
 export function serializeObject<T extends object>(
     originalObject: T,
     fieldTransform: (fieldName: string) => string,
-    exclude: [keyof T] | null = null): any {
+    exclude: Array<keyof T> | null = null): any {
 
     const serialized: any = {};
 
     for (const originalField in originalObject) {
-        if (!originalObject.hasOwnProperty(originalField)) {
+        if (!Object.hasOwnProperty.call(originalObject, originalField)) {
             continue;
         }
 
@@ -33,13 +33,13 @@ export function parseObject<T extends object>(
     const parsed = new outputObjectType();
 
     for (const rawField in rawObject) {
-        if (!rawObject.hasOwnProperty(rawField)) {
+        if (!Object.hasOwnProperty.call(rawObject, rawField)) {
             continue;
         }
 
         const objectField = fieldTransform(rawField);
 
-        if (!parsed.hasOwnProperty(objectField)) {
+        if (!Object.hasOwnProperty.call(parsed, objectField)) {
             // Wrong field
             continue;
         }

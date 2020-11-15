@@ -18,7 +18,7 @@ export default {
     sequelize: {
         database: 'cafeteria',
         username: getEnv('DB_USERNAME') || 'potados',
-        password: getEnv('DB_PASSWORD') || '12340',
+        password: getEnv('DB_PASSWORD') || '1234',
         host: getEnv('DB_HOST') || 'localhost',
         dialect: 'mysql',
         timezone: '+09:00',

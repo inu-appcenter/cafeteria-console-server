@@ -2,7 +2,7 @@ import {Table, Column, Model, PrimaryKey, ForeignKey, BelongsTo} from 'sequelize
 import CafeteriaModel from "./CafeteriaModel";
 
 @Table({
-    tableName: 'corner',
+    tableName: 'corners',
     timestamps: false,
     charset: 'utf8',
     collate: 'utf8_unicode_ci',
