@@ -3,7 +3,6 @@ import {graphqlHTTP} from 'express-graphql';
 import Cafeteria from "../entities/Cafeteria";
 import Corner from "../entities/Corner";
 
-import hello from "./hello";
 import {allCafeteria, createCafeteria, deleteCafeteria, updateCafeteria} from "./cafeteria";
 import {allCorners, createCorner, deleteCorner, updateCorner} from "./corners";
 import {allRules, updateRule} from "./rules";
@@ -15,6 +14,7 @@ import {
 } from "./validationParams";
 import CafeteriaDiscountRule from "../entities/CafeteriaDiscountRule";
 import CafeteriaValidationParams from "../entities/CafeteriaValidationParams";
+import {hello} from "./hello";
 
 const query = `
     type Query {
