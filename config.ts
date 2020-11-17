@@ -1,5 +1,7 @@
 import getEnv from "./lib/utils/env";
 
+const allowHost = getEnv('ALLOW_HOST') || 'https://manage.inu-cafeteria.app';
+
 export default {
 
     server: {
@@ -7,7 +9,7 @@ export default {
     },
 
     cors: {
-        allow: (getEnv('NODE_ENV') === 'production') ? 'https://manage.inu-cafeteria.app' : 'http://10.0.1.10:8081'
+        allow: (getEnv('NODE_ENV') === 'production') ? allowHost : 'http://10.0.1.10:8081'
     },
 
     aws: {
