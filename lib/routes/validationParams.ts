@@ -1,5 +1,6 @@
 import cafeteriaValidationParamsRepository from "../repositories/CafeteriaValidationParamsRepository";
 import CafeteriaValidationParams from "../entities/CafeteriaValidationParams";
+import Entity from "../utils/Entity";
 
 export async function allValidationParams() {
     const all = await cafeteriaValidationParamsRepository.getAllParams();
@@ -9,12 +10,12 @@ export async function allValidationParams() {
 
 // @ts-ignore
 export async function createValidationParams({params}) {
-    return await cafeteriaValidationParamsRepository.addParams(CafeteriaValidationParams.parse(params));
+    return await cafeteriaValidationParamsRepository.addParams(Entity.parse(params, CafeteriaValidationParams));
 }
 
 // @ts-ignore
 export async function updateValidationParams({params}) {
-    return await cafeteriaValidationParamsRepository.updateParams(CafeteriaValidationParams.parse(params));
+    return await cafeteriaValidationParamsRepository.updateParams(Entity.parseFiltered(params, CafeteriaValidationParams));
 }
 
 // @ts-ignore

@@ -1,5 +1,6 @@
 import cafeteriaRepository from "../repositories/CafeteriaRepository";
 import Cafeteria from "../entities/Cafeteria";
+import Entity from "../utils/Entity";
 
 export async function allCafeteria() {
     const all = await cafeteriaRepository.getAllCafeteria();
@@ -9,12 +10,12 @@ export async function allCafeteria() {
 
 // @ts-ignore
 export async function createCafeteria({cafeteria}) {
-    return await cafeteriaRepository.addCafeteria(Cafeteria.parse(cafeteria));
+    return await cafeteriaRepository.addCafeteria(Entity.parse(cafeteria, Cafeteria));
 }
 
 // @ts-ignore
 export async function updateCafeteria({cafeteria}) {
-    return await cafeteriaRepository.updateCafeteria(Cafeteria.parse(cafeteria));
+    return await cafeteriaRepository.updateCafeteria(Entity.parseFiltered(cafeteria, Cafeteria));
 }
 
 // @ts-ignore

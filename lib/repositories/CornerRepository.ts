@@ -12,8 +12,8 @@ class CornerRepository extends SequelizeCRUDRepository<Corner, CornerModel> {
         return this.create(corner);
     }
 
-    async getCorner(id: number) {
-        return this.read(id);
+    async getCorner(cornerId: number) {
+        return this.read(cornerId);
     }
 
     async getAllCorners() {

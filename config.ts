@@ -6,6 +6,10 @@ export default {
         port: Number(getEnv('PORT')) || 8080,
     },
 
+    cors: {
+        allow: (getEnv('NODE_ENV') === 'production') ? 'https://manage.inu-cafeteria.app' : '*'
+    },
+
     aws: {
         cloudwatch: {
             logGroupName: 'cafeteria-management-server',

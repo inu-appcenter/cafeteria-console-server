@@ -6,7 +6,7 @@ import {parseObject, serializeObject} from "../../utils/object";
 import {camelToSnake, snakeToCamel} from "../../utils/naming";
 import IEntity from "../../entities/base/IEntity";
 
-abstract class SequelizeCRUDRepository<E extends IEntity<E>, M extends Model> {
+abstract class SequelizeCRUDRepository<E extends IEntity, M extends Model> {
     private repo: Repository<M>
     private readonly entityName: string
     private readonly entityClass: { new(): E };
@@ -63,7 +63,7 @@ abstract class SequelizeCRUDRepository<E extends IEntity<E>, M extends Model> {
 
         const result = await this.repo.findAll()
             .map((seq: any) => seq.dataValues)
-            .map((values: any) => parseObject(values, snakeToCamel, this.entityClass));
+            .map((values: any) => parseObject(values, snakeToCamel, this.entityClass, false));
 
         logger.verbose(`무려 ${result.length}개나 겟또다제☆ 이제서야 만족스러운거냐구!`);
 

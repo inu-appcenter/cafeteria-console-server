@@ -1,8 +1,8 @@
 import IEntity from "./base/IEntity";
-import {parseObject, serializeObject} from "../utils/object";
-import {camelToSnake, snakeToCamel} from "../utils/naming";
+import {serializeObject} from "../utils/object";
+import {camelToSnake} from "../utils/naming";
 
-class CafeteriaValidationParams implements IEntity<CafeteriaValidationParams> {
+class CafeteriaValidationParams implements IEntity {
     cafeteriaId: number = 0; // Foreign key
     get id(): number { // Primary key
         return this.cafeteriaId;
@@ -14,10 +14,6 @@ class CafeteriaValidationParams implements IEntity<CafeteriaValidationParams> {
     timeRangeBreakfast: string = '';
     timeRangeLunch: string = '';
     timeRangeDinner: string = '';
-
-    static parse(raw: any) {
-        return parseObject(raw, snakeToCamel, CafeteriaValidationParams);
-    }
 
     serialize() {
         return serializeObject(this, camelToSnake);

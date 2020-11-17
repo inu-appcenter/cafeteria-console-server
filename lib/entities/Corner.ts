@@ -1,18 +1,14 @@
-import {parseObject, serializeObject} from "../utils/object";
-import {camelToSnake, snakeToCamel} from "../utils/naming";
+import {serializeObject} from "../utils/object";
+import {camelToSnake} from "../utils/naming";
 import IEntity from "./base/IEntity";
 
-class Corner implements IEntity<Corner> {
+class Corner implements IEntity {
     id: number = 0;
     name: string = '';
     displayName: string = '';
     availableAt: number = 0;
 
     cafeteriaId: number = 0;
-
-    static parse(raw: any) {
-        return parseObject(raw, snakeToCamel, Corner);
-    }
 
     serialize() {
         return serializeObject(this, camelToSnake);

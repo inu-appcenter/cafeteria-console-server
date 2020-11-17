@@ -29,7 +29,7 @@ export function parseObject<T extends object>(
     rawObject: any,
     fieldTransform: (fieldName: string) => string,
     outputObjectType: {new(): T},
-    leaveOnlyParsedParts: boolean = true/* set all non-parsed fields in the instance of T to undefined. */): T {
+    leaveOnlyParsedParts: boolean = false/* set all non-parsed fields in the instance of T to undefined. */): T {
 
     const parsed = new outputObjectType();
     const assignedFields = [];

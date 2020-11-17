@@ -1,5 +1,6 @@
 import cornerRepository from "../repositories/CornerRepository";
 import Corner from "../entities/Corner";
+import Entity from "../utils/Entity";
 
 export async function allCorners() {
     const all = await cornerRepository.getAllCorners();
@@ -9,12 +10,12 @@ export async function allCorners() {
 
 // @ts-ignore
 export async function createCorner({corner}) {
-    return await cornerRepository.addCorner(Corner.parse(corner));
+    return await cornerRepository.addCorner(Entity.parse(corner, Corner));
 }
 
 // @ts-ignore
 export async function updateCorner({corner}) {
-    return await cornerRepository.updateCorner(Corner.parse(corner));
+    return await cornerRepository.updateCorner(Entity.parseFiltered(corner, Corner));
 }
 
 // @ts-ignore

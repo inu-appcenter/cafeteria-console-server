@@ -8,8 +8,8 @@ class CafeteriaDiscountRuleRepository extends SequelizeCRUDRepository<CafeteriaD
         super(CafeteriaDiscountRule, CafeteriaDiscountRuleModel);
     }
 
-    async getRule(id: number) {
-        return this.read(id);
+    async getRule(ruleId: number) {
+        return this.read(ruleId);
     }
 
     async getAllRules() {

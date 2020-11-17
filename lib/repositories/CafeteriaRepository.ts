@@ -12,8 +12,8 @@ class CafeteriaRepository extends SequelizeCRUDRepository<Cafeteria, CafeteriaMo
         return this.create(cafeteria);
     }
 
-    async getCafeteria(id: number) {
-        return this.read(id);
+    async getCafeteria(cafeteriaId: number) {
+        return this.read(cafeteriaId);
     }
 
     async getAllCafeteria() {

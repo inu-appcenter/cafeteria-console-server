@@ -1,8 +1,8 @@
-import {parseObject, serializeObject} from "../utils/object";
-import {camelToSnake, snakeToCamel} from "../utils/naming";
+import {serializeObject} from "../utils/object";
+import {camelToSnake} from "../utils/naming";
 import IEntity from "./base/IEntity";
 
-class Cafeteria implements IEntity<Cafeteria> {
+class Cafeteria implements IEntity {
     id: number = 0;
 
     name: string = '';
@@ -12,10 +12,6 @@ class Cafeteria implements IEntity<Cafeteria> {
     supportMenu: boolean = false;
     supportDiscount: boolean = false;
     supportNotification: boolean = false;
-
-    static parse(raw: any) {
-        return parseObject(raw, snakeToCamel, Cafeteria);
-    }
 
     serialize() {
         return serializeObject(this, camelToSnake, ['imagePath']);

@@ -3,6 +3,7 @@ import {graphqlHTTP} from 'express-graphql';
 import Cafeteria from "../entities/Cafeteria";
 import Corner from "../entities/Corner";
 
+import {hello} from "./hello";
 import {allCafeteria, createCafeteria, deleteCafeteria, updateCafeteria} from "./cafeteria";
 import {allCorners, createCorner, deleteCorner, updateCorner} from "./corners";
 import {allRules, updateRule} from "./rules";
@@ -14,7 +15,9 @@ import {
 } from "./validationParams";
 import CafeteriaDiscountRule from "../entities/CafeteriaDiscountRule";
 import CafeteriaValidationParams from "../entities/CafeteriaValidationParams";
-import {hello} from "./hello";
+import logger from "../utils/logger";
+import ParseRegex from "../entities/ParseRegex";
+import {allParseRegexes, createParseRegex, deleteParseRegex, updateParseRegex} from "./parseRegex";
 
 const query = `
     type Query {
@@ -23,6 +26,7 @@ const query = `
         allCorners: [Corner]
         allRules: [CafeteriaDiscountRule]
         allValidationParams: [CafeteriaValidationParams]
+        allParseRegexes: [ParseRegex]
     }
 `;
 
@@ -42,6 +46,10 @@ const mutation = `
         createValidationParams(params: CafeteriaValidationParamsInput): Int
         updateValidationParams(params: CafeteriaValidationParamsInput): Int
         deleteValidationParams(cafeteriaId: Int): Int
+        
+        createParseRegex(regex: ParseRegex): Int
+        updateParseRegex(regex: ParseRegex): Int
+        deleteParseRegex(regexId: Int): Int
     }
 `;
 
@@ -50,12 +58,19 @@ const graphqlRoute = graphqlHTTP({
     schema: buildSchema([
         Cafeteria.type(),
         Cafeteria.input(),
+
         Corner.type(),
         Corner.input(),
+
         CafeteriaDiscountRule.type(),
         CafeteriaDiscountRule.input(),
+
         CafeteriaValidationParams.type(),
         CafeteriaValidationParams.input(),
+
+        ParseRegex.type(),
+        ParseRegex.input(),
+
         query,
         mutation
     ].join('\n')),
@@ -79,10 +94,20 @@ const graphqlRoute = graphqlHTTP({
         allValidationParams,
         createValidationParams,
         updateValidationParams,
-        deleteValidationParams
+        deleteValidationParams,
+
+        allParseRegexes,
+        createParseRegex,
+        updateParseRegex,
+        deleteParseRegex
     },
 
-    graphiql: true
+    graphiql: true,
+
+    customFormatErrorFn: (error) => {
+        logger.error(error);
+        return error;
+    }
 });
 
 export default graphqlRoute;
