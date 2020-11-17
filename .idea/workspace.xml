@@ -22,8 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Auth works.">
-      <change beforePath="$PROJECT_DIR$/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add allowed host option.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +164,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605381193492</updated>
       <workItem from="1605381194986" duration="32344000" />
-      <workItem from="1605559757249" duration="17348000" />
+      <workItem from="1605559757249" duration="19139000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -270,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605639185869</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add allowed host option.">
+      <created>1605639584277</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1605639584277</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +312,8 @@
     <MESSAGE value="Add support for ParseRegex." />
     <MESSAGE value="Add some auth." />
     <MESSAGE value="Auth works." />
-    <option name="LAST_COMMIT_MESSAGE" value="Auth works." />
+    <MESSAGE value="Add allowed host option." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add allowed host option." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605393627528">
@@ -327,26 +336,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605393504174" />
-    <state width="1419" height="236" key="GridCell.Tab.0.bottom" timestamp="1605636979115">
+    <state width="1419" height="85" key="GridCell.Tab.0.bottom" timestamp="1605640070536">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="236" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605636979115" />
-    <state width="1419" height="236" key="GridCell.Tab.0.center" timestamp="1605636979111">
+    <state width="1419" height="85" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605640070536" />
+    <state width="1419" height="85" key="GridCell.Tab.0.center" timestamp="1605640070533">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="236" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605636979111" />
-    <state width="1419" height="236" key="GridCell.Tab.0.left" timestamp="1605636979110">
+    <state width="1419" height="85" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605640070533" />
+    <state width="1419" height="85" key="GridCell.Tab.0.left" timestamp="1605640070532">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="236" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605636979110" />
-    <state width="1419" height="236" key="GridCell.Tab.0.right" timestamp="1605636979113">
+    <state width="1419" height="85" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605640070532" />
+    <state width="1419" height="85" key="GridCell.Tab.0.right" timestamp="1605640070534">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="236" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605636979113" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605632590854">
+    <state width="1419" height="85" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605640070534" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605639601426">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605632590854" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605639601426" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605629013736">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
