@@ -22,7 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add allowed host option.">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Fix start script.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -164,7 +164,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605381193492</updated>
       <workItem from="1605381194986" duration="32344000" />
-      <workItem from="1605559757249" duration="19139000" />
+      <workItem from="1605559757249" duration="19629000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -278,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605639584277</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fix start script.">
+      <created>1605641826530</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1605641826530</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +320,8 @@
     <MESSAGE value="Add some auth." />
     <MESSAGE value="Auth works." />
     <MESSAGE value="Add allowed host option." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add allowed host option." />
+    <MESSAGE value="Fix start script." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix start script." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605393627528">
@@ -336,26 +344,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605393504174" />
-    <state width="1419" height="85" key="GridCell.Tab.0.bottom" timestamp="1605640070536">
+    <state width="1419" height="448" key="GridCell.Tab.0.bottom" timestamp="1605641913760">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="85" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605640070536" />
-    <state width="1419" height="85" key="GridCell.Tab.0.center" timestamp="1605640070533">
+    <state width="1419" height="448" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605641913760" />
+    <state width="1419" height="448" key="GridCell.Tab.0.center" timestamp="1605641913758">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="85" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605640070533" />
-    <state width="1419" height="85" key="GridCell.Tab.0.left" timestamp="1605640070532">
+    <state width="1419" height="448" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605641913758" />
+    <state width="1419" height="448" key="GridCell.Tab.0.left" timestamp="1605641913756">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="85" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605640070532" />
-    <state width="1419" height="85" key="GridCell.Tab.0.right" timestamp="1605640070534">
+    <state width="1419" height="448" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605641913756" />
+    <state width="1419" height="448" key="GridCell.Tab.0.right" timestamp="1605641913759">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="85" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605640070534" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605639601426">
+    <state width="1419" height="448" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605641913759" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605641835840">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605639601426" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605641835840" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605629013736">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
