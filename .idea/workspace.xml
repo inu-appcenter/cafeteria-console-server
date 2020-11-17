@@ -22,9 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Fix start script!!">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="?" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,7 +161,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605381193492</updated>
       <workItem from="1605381194986" duration="32344000" />
-      <workItem from="1605559757249" duration="19793000" />
+      <workItem from="1605559757249" duration="20487000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -291,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605642312501</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="?">
+      <created>1605642453901</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1605642453901</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +333,8 @@
     <MESSAGE value="Add allowed host option." />
     <MESSAGE value="Fix start script." />
     <MESSAGE value="Fix start script!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix start script!!" />
+    <MESSAGE value="?" />
+    <option name="LAST_COMMIT_MESSAGE" value="?" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605393627528">
@@ -367,10 +373,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="497" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605642359106" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605642318665">
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605642459758">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605642318665" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605642459758" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605629013736">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
