@@ -7,7 +7,7 @@ export default {
     },
 
     cors: {
-        allow: (getEnv('NODE_ENV') === 'production') ? 'https://manage.inu-cafeteria.app' : '*'
+        allow: (getEnv('NODE_ENV') === 'production') ? 'https://manage.inu-cafeteria.app' : 'http://10.0.1.10:8081'
     },
 
     aws: {
