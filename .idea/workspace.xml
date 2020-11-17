@@ -22,7 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="?" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="?">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/authenticate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/authenticate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/signIn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/signIn.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,14 +64,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/repositories" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/entities" />
       <recent name="$PROJECT_DIR$/lib/entities/base" />
       <recent name="$PROJECT_DIR$/lib/repositories/base" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/repositories" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -357,22 +361,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605393504174" />
-    <state width="1419" height="497" key="GridCell.Tab.0.bottom" timestamp="1605642359107">
+    <state width="1419" height="256" key="GridCell.Tab.0.bottom" timestamp="1605647717012">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="497" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605642359107" />
-    <state width="1419" height="497" key="GridCell.Tab.0.center" timestamp="1605642359104">
+    <state width="1419" height="256" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605647717012" />
+    <state width="1419" height="256" key="GridCell.Tab.0.center" timestamp="1605647717010">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="497" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605642359104" />
-    <state width="1419" height="497" key="GridCell.Tab.0.left" timestamp="1605642359103">
+    <state width="1419" height="256" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605647717010" />
+    <state width="1419" height="256" key="GridCell.Tab.0.left" timestamp="1605647717008">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="497" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605642359103" />
-    <state width="1419" height="497" key="GridCell.Tab.0.right" timestamp="1605642359106">
+    <state width="1419" height="256" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605647717008" />
+    <state width="1419" height="256" key="GridCell.Tab.0.right" timestamp="1605647717011">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="497" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605642359106" />
+    <state width="1419" height="256" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605647717011" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605642459758">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

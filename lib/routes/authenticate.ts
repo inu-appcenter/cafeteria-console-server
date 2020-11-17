@@ -28,7 +28,7 @@ function validateToken(token: string) {
 }
 
 export default (req: express.Request, res: express.Response, next: express.NextFunction) => {
-    const { token } = req.cookies;
+    const token = req.cookies['cafeteria-management-server-token'];
 
     if (token && validateToken(token)) {
         next();
