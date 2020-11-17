@@ -11,6 +11,16 @@ class ParseRegex implements IEntity {
         return serializeObject(this, camelToSnake);
     }
 
+    escape() {
+        this.regex = this.regex.replace('\n', '\\n');
+        return this;
+    }
+
+    unescape() {
+        this.regex = this.regex.replace('\\n', '\n');
+        return this;
+    }
+
     static type() {
         return `
         type ParseRegex {
@@ -25,6 +35,7 @@ class ParseRegex implements IEntity {
         input ParseRegexInput {
             id: Int!
             regex: String
+        }
         `;
     }
 }

@@ -47,8 +47,8 @@ const mutation = `
         updateValidationParams(params: CafeteriaValidationParamsInput): Int
         deleteValidationParams(cafeteriaId: Int): Int
         
-        createParseRegex(regex: ParseRegex): Int
-        updateParseRegex(regex: ParseRegex): Int
+        createParseRegex(regex: ParseRegexInput): Int
+        updateParseRegex(regex: ParseRegexInput): Int
         deleteParseRegex(regexId: Int): Int
     }
 `;

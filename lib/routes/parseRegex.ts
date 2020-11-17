@@ -5,20 +5,20 @@ import ParseRegex from "../entities/ParseRegex";
 export async function allParseRegexes() {
     const all = await parseRegexRepository.getAllParseRegexes();
 
-    return all.map((regex) => regex.serialize());
+    return all.map((regex) => regex.escape().serialize());
 }
 
 // @ts-ignore
-export async function createParseRegex({params}) {
-    return await parseRegexRepository.addParseRegex(Entity.parse(params, ParseRegex));
+export async function createParseRegex({regex}) {
+    return await parseRegexRepository.addParseRegex(Entity.parse(regex, ParseRegex).unescape());
 }
 
 // @ts-ignore
-export async function updateParseRegex({params}) {
-    return await parseRegexRepository.updateParseRegex(Entity.parseFiltered(params, ParseRegex));
+export async function updateParseRegex({regex}) {
+    return await parseRegexRepository.updateParseRegex(Entity.parseFiltered(regex, ParseRegex).unescape());
 }
 
 // @ts-ignore
-export async function deleteParseRegex({cafeteriaId}) {
-    return await parseRegexRepository.deleteParseRegex(cafeteriaId);
+export async function deleteParseRegex({regexId}) {
+    return await parseRegexRepository.deleteParseRegex(regexId);
 }

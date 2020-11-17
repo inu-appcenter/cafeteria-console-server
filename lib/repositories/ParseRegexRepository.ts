@@ -17,7 +17,7 @@ class ParseRegexRepository extends SequelizeCRUDRepository<ParseRegex, ParseRege
     }
 
     async getAllParseRegexes() {
-        return this.readAll();
+        return await this.readAll();
     }
 
     async updateParseRegex(parseRegex: ParseRegex) {
