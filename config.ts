@@ -28,6 +28,14 @@ export default {
         timezone: '+09:00',
         logging: false,
         repositoryMode: true
+    },
+
+    auth: {
+        key: getEnv('JWT_SECRET_KEY') || 'whatever',
+        expiresIn: '24h',
+
+        adminId: getEnv('ADMIN_ID') || 'potados',
+        adminPassword: getEnv('ADMIN_PW') || '1234'
     }
 
 }

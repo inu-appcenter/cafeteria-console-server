@@ -55,13 +55,14 @@ abstract class SequelizeCRUDRepository<E extends IEntity, M extends Model> {
             return null;
         }
 
+        // @ts-ignore
         return parseObject(seqResult.dataValues, snakeToCamel, this.entityClass);
     }
 
     protected async readAll(): Promise<Array<E>> {
         logger.verbose(`${this.entityName}를 다 가져오라구? 킄.. 좋아 원하는대로 해주지`);
 
-        const result = await this.repo.findAll()
+        const result = (await this.repo.findAll())
             .map((seq: any) => seq.dataValues)
             .map((values: any) => parseObject(values, snakeToCamel, this.entityClass, false));
 
