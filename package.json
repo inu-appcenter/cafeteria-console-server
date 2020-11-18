@@ -11,7 +11,7 @@
 
     "dev": "nodemon --exec ts-node index.ts",
     "test": "jest",
-    "deploy": "git add . && git commit -m Heroku && git push heroku main"
+    "deploy": "git push heroku main"
 
   },
   "repository": {
