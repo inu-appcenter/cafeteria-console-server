@@ -6,13 +6,15 @@ import authenticate from "./routes/authenticate";
 import hello from "./routes/hello";
 import version from "./routes/version";
 import cookieParser from 'cookie-parser';
-import config from "../config";
+import {isProduction} from "./utils/nodeEnv";
 
 function createServer() {
     const app: express.Application = express();
 
     app.use(cookieParser());
-    app.use(cors({origin: config.cors.allow, credentials: true}));
+    app.use(cors({
+        origin: isProduction() ? 'manage.inu-cafeteria.app' : true, credentials: true
+    }));
 
     app.use('/graphql', authenticate, graphqlRoute);
 

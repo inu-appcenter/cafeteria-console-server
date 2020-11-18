@@ -22,18 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment=".">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/routes/version.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Need @Column after @ForeignKey!">
+      <change afterPath="$PROJECT_DIR$/lib/utils/nodeEnv.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/db/models/CornerModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/models/CornerModel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/authenticate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/authenticate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/graphql.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/hello.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/hello.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/routes/signIn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/signIn.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/logger.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605714993627</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Need @Column after @ForeignKey!">
+      <created>1605728521806</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1605728521806</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,13 +406,14 @@
     <MESSAGE value="?" />
     <MESSAGE value="Update cookie domain." />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Need @Column after @ForeignKey!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Need @Column after @ForeignKey!" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605721916202">
+    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605730978632">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605721916202" />
+    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605730978632" />
     <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1605391939328">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -427,30 +430,30 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605714117330" />
-    <state width="1419" height="147" key="GridCell.Tab.0.bottom" timestamp="1605723638813">
+    <state width="1419" height="239" key="GridCell.Tab.0.bottom" timestamp="1605735415271">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="147" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605723638813" />
-    <state width="1419" height="147" key="GridCell.Tab.0.center" timestamp="1605723638807">
+    <state width="1419" height="239" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735415271" />
+    <state width="1419" height="239" key="GridCell.Tab.0.center" timestamp="1605735415268">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="147" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605723638807" />
-    <state width="1419" height="147" key="GridCell.Tab.0.left" timestamp="1605723638804">
+    <state width="1419" height="239" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735415268" />
+    <state width="1419" height="239" key="GridCell.Tab.0.left" timestamp="1605735415265">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="147" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605723638804" />
-    <state width="1419" height="147" key="GridCell.Tab.0.right" timestamp="1605723638809">
+    <state width="1419" height="239" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735415265" />
+    <state width="1419" height="239" key="GridCell.Tab.0.right" timestamp="1605735415269">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="147" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605723638809" />
+    <state width="1419" height="239" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735415269" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605648366859">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605648366859" />
-    <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605629013736">
+    <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605730072338">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605629013736" />
+    <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605730072338" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1605629526343">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

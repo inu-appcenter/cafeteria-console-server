@@ -2,6 +2,7 @@
 import logSetupHelper from './logSetupHelper';
 import getEnv from "./env";
 import winston from "winston";
+import {isProduction} from "./nodeEnv";
 
 const consoleTransport = logSetupHelper.getConsoleTransport();
 const cloudwatchTransport = (prefix: string) => logSetupHelper.getCloudwatchTransport(prefix);
@@ -17,7 +18,7 @@ function getLogger(prefix: string) {
         combinedCloudwatchTransport,
     ];
 
-    if (getEnv('NODE_ENV') === 'production') {
+    if (isProduction()) {
         productionTransports.forEach((tp) => {
             transports.push(tp);
         })
@@ -26,7 +27,7 @@ function getLogger(prefix: string) {
     const logger = logSetupHelper.createLogger(transports);
 
     logger.transports.forEach((transport) => {
-        transport.silent = (getEnv('NODE_ENV') === 'tst');
+        transport.silent = (getEnv('NODE_ENV') === 'test');
     });
 
     return logger;
