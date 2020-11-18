@@ -13,7 +13,7 @@ function createServer() {
 
     app.use(cookieParser());
     app.use(cors({
-        origin: isProduction() ? 'manage.inu-cafeteria.app' : true, credentials: true
+        origin: isProduction() ? 'https://manage.inu-cafeteria.app' : true, credentials: true
     }));
 
     app.use('/graphql', authenticate, graphqlRoute);
