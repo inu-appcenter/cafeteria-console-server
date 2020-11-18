@@ -22,13 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Need @Column after @ForeignKey!">
-      <change afterPath="$PROJECT_DIR$/lib/utils/nodeEnv.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Cookie settings done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/signIn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/signIn.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/logger.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605728521806</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Cookie settings done.">
+      <created>1605735518834</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1605735518836</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +409,8 @@
     <MESSAGE value="Update cookie domain." />
     <MESSAGE value="." />
     <MESSAGE value="Need @Column after @ForeignKey!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Need @Column after @ForeignKey!" />
+    <MESSAGE value="Cookie settings done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cookie settings done." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605730978632">
@@ -430,22 +433,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605714117330" />
-    <state width="1419" height="239" key="GridCell.Tab.0.bottom" timestamp="1605735415271">
+    <state width="1419" height="239" key="GridCell.Tab.0.bottom" timestamp="1605735432521">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="239" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735415271" />
-    <state width="1419" height="239" key="GridCell.Tab.0.center" timestamp="1605735415268">
+    <state width="1419" height="239" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735432521" />
+    <state width="1419" height="239" key="GridCell.Tab.0.center" timestamp="1605735432506">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="239" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735415268" />
-    <state width="1419" height="239" key="GridCell.Tab.0.left" timestamp="1605735415265">
+    <state width="1419" height="239" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735432506" />
+    <state width="1419" height="239" key="GridCell.Tab.0.left" timestamp="1605735432491">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="239" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735415265" />
-    <state width="1419" height="239" key="GridCell.Tab.0.right" timestamp="1605735415269">
+    <state width="1419" height="239" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735432491" />
+    <state width="1419" height="239" key="GridCell.Tab.0.right" timestamp="1605735432517">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="239" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735415269" />
+    <state width="1419" height="239" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735432517" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605648366859">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
