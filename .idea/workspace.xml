@@ -22,8 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Cookie settings done.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment=".">
+      <change beforePath="$PROJECT_DIR$/lib/routes/signIn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/signIn.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605735518836</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary=".">
+      <created>1605742570486</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1605742570486</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,10 +414,10 @@
     <MESSAGE value="Fix start script!!" />
     <MESSAGE value="?" />
     <MESSAGE value="Update cookie domain." />
-    <MESSAGE value="." />
     <MESSAGE value="Need @Column after @ForeignKey!" />
     <MESSAGE value="Cookie settings done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cookie settings done." />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605730978632">
@@ -449,10 +456,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="239" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605735432517" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605648366859">
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605742574513">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605648366859" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605742574513" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605730072338">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -2,7 +2,6 @@ import express from "express";
 import config from "../../config";
 import tokenManager from "../manager/TokenManager";
 import logger from "../utils/logger";
-import getEnv from "../utils/env";
 import {isProduction} from "../utils/nodeEnv";
 
 // TODO
