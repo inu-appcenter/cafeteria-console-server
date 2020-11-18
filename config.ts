@@ -1,15 +1,29 @@
 import getEnv from "./lib/utils/env";
 
-const allowHost = getEnv('ALLOW_HOST') || 'https://manage.inu-cafeteria.app';
+const allowedHosts = {
+    DEBUG: 'http://localhost:9090',
+    production: 'https://manage.inu-cafeteria.app',
+};
+
+const cookieDomain = {
+    DEBUG: 'localhost:9090',
+    production: 'inu-cafeteria.app',
+};
 
 export default {
 
     server: {
-        port: Number(getEnv('PORT')) || 8080,
+        port: Number(getEnv('PORT')) || 8081,
     },
 
     cors: {
-        allow: (getEnv('NODE_ENV') === 'production') ? allowHost : 'http://10.0.1.10:8081'
+        // @ts-ignore
+        allow: allowedHosts[getEnv('NODE_ENV')] || allowedHosts.DEBUG
+    },
+
+    cookie: {
+        // @ts-ignore
+        domain: cookieDomain[getEnv('NODE_ENV')] || cookieDomain.DEBUG
     },
 
     aws: {

@@ -15,7 +15,7 @@ export default (req: express.Request, res: express.Response) => {
 
     if (authenticate(id, password)) {
         res.cookie('cafeteria-management-server-token', tokenManager.createJwt({userName: config.auth.adminId}), {
-            domain: 'inu-cafeteria.app'
+            domain: config.cookie.domain
         }).status(201).send();
     } else {
         res.status(401).send();
