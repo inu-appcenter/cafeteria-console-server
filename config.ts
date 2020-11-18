@@ -6,7 +6,7 @@ const allowedHosts = {
 };
 
 const cookieDomain = {
-    DEBUG: 'localhost:9090',
+    DEBUG: 'localhost',
     production: 'inu-cafeteria.app',
 };
 
@@ -23,7 +23,8 @@ export default {
 
     cookie: {
         // @ts-ignore
-        domain: cookieDomain[getEnv('NODE_ENV')] || cookieDomain.DEBUG
+        domain: cookieDomain[getEnv('NODE_ENV')] || cookieDomain.DEBUG,
+        tokenName: 'cafeteria-management-server-token',
     },
 
     aws: {

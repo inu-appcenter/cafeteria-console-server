@@ -23,6 +23,7 @@ class CornerModel extends Model<CornerModel> {
 
     // @ts-ignore
     @ForeignKey(() => CafeteriaModel)
+    @Column
     cafeteria_id: number;
 }
 

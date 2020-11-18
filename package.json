@@ -7,10 +7,11 @@
 
     "postinstall": "tsc",
     "start": "node dist/index.js",
+    "preview": "tsc && node dist/index.js",
 
     "dev": "nodemon --exec ts-node index.ts",
     "test": "jest",
-    "deploy": "git add ."
+    "deploy": "git add . && git commit -m Heroku && git push heroku main"
 
   },
   "repository": {
@@ -56,6 +57,9 @@
     "winston": "^3.3.3",
     "winston-cloudwatch": "^2.3.2",
     "winston-daily-rotate-file": "^4.5.0"
+  },
+  "engines": {
+    "node": "13.11.0"
   },
   "jest": {
     "transform": {

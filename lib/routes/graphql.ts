@@ -3,7 +3,6 @@ import {graphqlHTTP} from 'express-graphql';
 import Cafeteria from "../entities/Cafeteria";
 import Corner from "../entities/Corner";
 
-import {hello} from "./hello";
 import {allCafeteria, createCafeteria, deleteCafeteria, updateCafeteria} from "./cafeteria";
 import {allCorners, createCorner, deleteCorner, updateCorner} from "./corners";
 import {allRules, updateRule} from "./rules";
@@ -21,7 +20,6 @@ import {allParseRegexes, createParseRegex, deleteParseRegex, updateParseRegex} f
 
 const query = `
     type Query {
-        hello: String
         allCafeteria: [Cafeteria]
         allCorners: [Corner]
         allRules: [CafeteriaDiscountRule]
@@ -76,8 +74,6 @@ const graphqlRoute = graphqlHTTP({
     ].join('\n')),
 
     rootValue: {
-        hello,
-
         allCafeteria,
         createCafeteria,
         updateCafeteria,
