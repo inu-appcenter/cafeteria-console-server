@@ -9,8 +9,7 @@ export default {
 
     cors: {
         allowedHostsInProduction: [
-            'https://manage.inu-cafeteria.app',
-            'http://cafeteria-management-web.s3-website.ap-northeast-2.amazonaws.com',
+            'https://manage.inu-cafeteria.app'
         ]
     },
 
