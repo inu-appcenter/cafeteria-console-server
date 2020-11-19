@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
 
-    "postinstall": "tsc",
-    "start": "node dist/index.js",
-    "preview": "tsc && node dist/index.js",
-
     "dev": "nodemon --exec ts-node index.ts",
     "test": "jest",
-    "deploy": "git push heroku main"
+    "preview": "tsc && node dist/index.js",
+
+    "deploy": "git push heroku main",
+
+    "postinstall": "tsc",
+    "start": "node dist/index.js"
 
   },
   "repository": {
