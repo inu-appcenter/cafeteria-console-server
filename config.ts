@@ -7,6 +7,13 @@ export default {
         port: Number(getEnv('PORT')) || 8081,
     },
 
+    cors: {
+        allowedHostsInProduction: [
+            'https://manage.inu-cafeteria.app',
+            'http://cafeteria-management-web.s3-website.ap-northeast-2.amazonaws.com',
+        ]
+    },
+
     cookie: {
         domain: isProduction() ? 'inu-cafeteria.app' : undefined,
         tokenName: 'cafeteria-management-server-token',
