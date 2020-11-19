@@ -22,10 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment=".">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Use npm start, not node dist/index.js.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/version.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/version.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +72,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="npm.preview">
     <configuration name="Fields.exists?" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -140,8 +138,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.preview" />
+        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.postinstall" />
         <item itemvalue="npm.start" />
         <item itemvalue="Jest.Fields.exists?" />
@@ -341,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605742677310</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Use npm start, not node dist/index.js.">
+      <created>1605744914826</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1605744914826</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,13 +435,14 @@
     <MESSAGE value="Need @Column after @ForeignKey!" />
     <MESSAGE value="Cookie settings done." />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Use npm start, not node dist/index.js." />
+    <option name="LAST_COMMIT_MESSAGE" value="Use npm start, not node dist/index.js." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605743439264">
+    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605744922850">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605743439264" />
+    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605744922850" />
     <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1605391939328">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -453,26 +459,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605714117330" />
-    <state width="1419" height="417" key="GridCell.Tab.0.bottom" timestamp="1605742691104">
+    <state width="1419" height="489" key="GridCell.Tab.0.bottom" timestamp="1605783506526">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="417" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605742691104" />
-    <state width="1419" height="417" key="GridCell.Tab.0.center" timestamp="1605742691101">
+    <state width="1419" height="489" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605783506526" />
+    <state width="1419" height="489" key="GridCell.Tab.0.center" timestamp="1605783506524">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="417" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605742691101" />
-    <state width="1419" height="417" key="GridCell.Tab.0.left" timestamp="1605742691098">
+    <state width="1419" height="489" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605783506524" />
+    <state width="1419" height="489" key="GridCell.Tab.0.left" timestamp="1605783506521">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="417" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605742691098" />
-    <state width="1419" height="417" key="GridCell.Tab.0.right" timestamp="1605742691103">
+    <state width="1419" height="489" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605783506521" />
+    <state width="1419" height="489" key="GridCell.Tab.0.right" timestamp="1605783506525">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="417" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605742691103" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605742683666">
+    <state width="1419" height="489" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605783506525" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1605744916234">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605742683666" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605744916234" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605730072338">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
