@@ -19,9 +19,12 @@
     "type": "git",
     "url": "git+https://github.com/inu-appcenter/cafeteria-management-server.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "inu",
+    "cafeteria"
+  ],
+  "author": "potados99",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/inu-appcenter/cafeteria-management-server/issues"
   },
