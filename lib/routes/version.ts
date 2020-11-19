@@ -1,5 +1,10 @@
 import express from "express";
+import logger from "../utils/logger";
 
 export default (req: express.Request, res: express.Response) => {
-    res.send(process.env.npm_package_version);
+    const version = process.env.npm_package_version;
+
+    logger.info(`버전을 묻는 것이냐...? 그래 알려주마.. ${version}이다...`);
+
+    res.send(version);
 }
