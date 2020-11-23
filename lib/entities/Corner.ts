@@ -23,7 +23,7 @@ class Corner implements IEntity {
             available_at: Int!
             cafeteria_id: Int!
         }
-     `;
+        `;
     }
 
     static input() {
@@ -35,7 +35,7 @@ class Corner implements IEntity {
             available_at: Int
             cafeteria_id: Int
         }
-     `;
+        `;
     }
 }
 

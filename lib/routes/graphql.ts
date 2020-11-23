@@ -17,6 +17,8 @@ import CafeteriaValidationParams from "../entities/CafeteriaValidationParams";
 import logger from "../utils/logger";
 import ParseRegex from "../entities/ParseRegex";
 import {allParseRegexes, createParseRegex, deleteParseRegex, updateParseRegex} from "./parseRegex";
+import TransactionHistory from "../entities/TransactionHistory";
+import {allTransactionHistories} from "./transactionHistory";
 
 const query = `
     type Query {
@@ -25,6 +27,7 @@ const query = `
         allRules: [CafeteriaDiscountRule]
         allValidationParams: [CafeteriaValidationParams]
         allParseRegexes: [ParseRegex]
+        allTransactionHistories: [TransactionHistory]
     }
 `;
 
@@ -69,6 +72,8 @@ const graphqlRoute = graphqlHTTP({
         ParseRegex.type(),
         ParseRegex.input(),
 
+        TransactionHistory.type(),
+
         query,
         mutation
     ].join('\n')),
@@ -95,7 +100,9 @@ const graphqlRoute = graphqlHTTP({
         allParseRegexes,
         createParseRegex,
         updateParseRegex,
-        deleteParseRegex
+        deleteParseRegex,
+
+        allTransactionHistories
     },
 
     graphiql: true,

@@ -15,6 +15,20 @@ class TransactionHistory implements IEntity {
     serialize() {
         return serializeObject(this, camelToSnake);
     }
+
+    static type() {
+        return `
+        type TransactionHistory {
+            id: Int!
+            type: String!
+            user_id: Int!
+            cafeteria_id: Int!
+            meal_type: Int!
+            failed_at: Int!
+            message: String!
+        }
+        `;
+    }
 }
 
 export default TransactionHistory
