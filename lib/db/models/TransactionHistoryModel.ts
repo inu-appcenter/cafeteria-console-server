@@ -27,6 +27,9 @@ class TransactionHistoryModel extends Model<TransactionHistoryModel> {
 
     @Column
     message: string;
+
+    @Column
+    timestamp: Date;
 }
 
 export default TransactionHistoryModel;

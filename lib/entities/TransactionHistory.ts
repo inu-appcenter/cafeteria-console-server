@@ -11,6 +11,7 @@ class TransactionHistory implements IEntity {
     mealType: number = -1;
     failedAt: number = 0;
     message: string = '';
+    timestamp: Date = new Date();
 
     serialize() {
         return serializeObject(this, camelToSnake);
@@ -26,6 +27,7 @@ class TransactionHistory implements IEntity {
             meal_type: Int!
             failed_at: Int!
             message: String!
+            timestamp: String!
         }
         `;
     }
