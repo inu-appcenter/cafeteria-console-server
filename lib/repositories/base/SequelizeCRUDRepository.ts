@@ -5,6 +5,7 @@ import logger from "../../utils/logger";
 import {parseObject, serializeObject} from "../../utils/object";
 import {camelToSnake, snakeToCamel} from "../../utils/naming";
 import IEntity from "../../entities/base/IEntity";
+import {FindOptions} from "sequelize";
 
 abstract class SequelizeCRUDRepository<E extends IEntity, M extends Model> {
     private repo: Repository<M>
@@ -59,16 +60,25 @@ abstract class SequelizeCRUDRepository<E extends IEntity, M extends Model> {
         return parseObject(seqResult.dataValues, snakeToCamel, this.entityClass);
     }
 
-    protected async readAll(): Promise<Array<E>> {
+    protected async readAll(options?: FindOptions): Promise<Array<E>> {
         logger.verbose(`${this.entityName}를 다 가져오라구? 킄.. 좋아 원하는대로 해주지`);
 
-        const result = (await this.repo.findAll())
+        const result = (await this.repo.findAll(options))
             .map((seq: any) => seq.dataValues)
             .map((values: any) => parseObject(values, snakeToCamel, this.entityClass, false));
 
         logger.verbose(`무려 ${result.length}개나 겟또다제☆ 이제서야 만족스러운거냐구!`);
 
         return result;
+    }
+
+    protected async readRecent(limit?: number) {
+        return await this.readAll({
+            order: [
+                [this.primaryKeyName, 'DESC']
+            ],
+            limit: limit
+        });
     }
 
     protected async update(entity: E, ignoredFields: Array<keyof E>|null = null): Promise<number> {

@@ -22,10 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Works!">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Update doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/TransactionHistoryRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/TransactionHistoryRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/base/SequelizeCRUDRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/base/SequelizeCRUDRepository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +159,7 @@
       <workItem from="1605381194986" duration="32344000" />
       <workItem from="1605559757249" duration="20487000" />
       <workItem from="1605986836616" duration="104000" />
-      <workItem from="1606156296637" duration="6758000" />
+      <workItem from="1606156296637" duration="8913000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -413,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606165618456</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Update doc">
+      <created>1606166822798</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1606166822798</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +487,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add some logs." />
     <MESSAGE value="Cafeteria and corner, CRUD works on GraphQL." />
     <MESSAGE value="Add all entities." />
     <MESSAGE value="Repositories ready." />
@@ -505,7 +511,8 @@
     <MESSAGE value="Add entity and model for TransactionHsitory." />
     <MESSAGE value="Works." />
     <MESSAGE value="Works!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Works!" />
+    <MESSAGE value="Update doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update doc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606156343278">
@@ -528,26 +535,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605714117330" />
-    <state width="1419" height="322" key="GridCell.Tab.0.bottom" timestamp="1606161296393">
+    <state width="1419" height="108" key="GridCell.Tab.0.bottom" timestamp="1606301909971">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="322" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606161296393" />
-    <state width="1419" height="322" key="GridCell.Tab.0.center" timestamp="1606161296386">
+    <state width="1419" height="108" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606301909971" />
+    <state width="1419" height="108" key="GridCell.Tab.0.center" timestamp="1606301909969">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="322" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606161296386" />
-    <state width="1419" height="322" key="GridCell.Tab.0.left" timestamp="1606161296385">
+    <state width="1419" height="108" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606301909969" />
+    <state width="1419" height="108" key="GridCell.Tab.0.left" timestamp="1606301909968">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="322" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606161296385" />
-    <state width="1419" height="322" key="GridCell.Tab.0.right" timestamp="1606161296388">
+    <state width="1419" height="108" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606301909968" />
+    <state width="1419" height="108" key="GridCell.Tab.0.right" timestamp="1606301909970">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="322" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606161296388" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606165649830">
+    <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606301909970" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606166824546">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606165649830" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606166824546" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605730072338">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
