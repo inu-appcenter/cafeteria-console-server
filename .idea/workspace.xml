@@ -22,10 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Update doc">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Limit logs to recent 50.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/TransactionHistoryRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/TransactionHistoryRepository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/base/SequelizeCRUDRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/base/SequelizeCRUDRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +159,7 @@
       <workItem from="1605381194986" duration="32344000" />
       <workItem from="1605559757249" duration="20487000" />
       <workItem from="1605986836616" duration="104000" />
-      <workItem from="1606156296637" duration="8913000" />
+      <workItem from="1606156296637" duration="8996000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -420,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606166822798</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Limit logs to recent 50.">
+      <created>1606302393732</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1606302393732</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +494,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cafeteria and corner, CRUD works on GraphQL." />
     <MESSAGE value="Add all entities." />
     <MESSAGE value="Repositories ready." />
     <MESSAGE value="From DB to router." />
@@ -512,7 +518,8 @@
     <MESSAGE value="Works." />
     <MESSAGE value="Works!" />
     <MESSAGE value="Update doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update doc" />
+    <MESSAGE value="Limit logs to recent 50." />
+    <option name="LAST_COMMIT_MESSAGE" value="Limit logs to recent 50." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606156343278">
