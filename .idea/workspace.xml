@@ -22,11 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="50 not enough!">
-      <change afterPath="$PROJECT_DIR$/lib/errors/InvalidParamError.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add guard for malformed params.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/graphql.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/validationParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/validationParams.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +159,7 @@
       <workItem from="1605381194986" duration="32344000" />
       <workItem from="1605559757249" duration="20487000" />
       <workItem from="1605986836616" duration="104000" />
-      <workItem from="1606156296637" duration="14055000" />
+      <workItem from="1606156296637" duration="14139000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -442,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606350851990</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Add guard for malformed params.">
+      <created>1606408292577</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1606408292577</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +467,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="From DB to router." />
     <MESSAGE value="Add support for ParseRegex." />
     <MESSAGE value="Add some auth." />
     <MESSAGE value="Auth works." />
@@ -486,7 +491,8 @@
     <MESSAGE value="Limit logs to recent 50." />
     <MESSAGE value="v1.1.1" />
     <MESSAGE value="50 not enough!" />
-    <option name="LAST_COMMIT_MESSAGE" value="50 not enough!" />
+    <MESSAGE value="Add guard for malformed params." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add guard for malformed params." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606350870758">
@@ -529,11 +535,11 @@
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
     <state width="1419" height="241" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408228611" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606350853585">
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606408294700">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302530314" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606350853585" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408294700" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605730072338">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
