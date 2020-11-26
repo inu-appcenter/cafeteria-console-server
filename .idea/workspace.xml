@@ -22,10 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Limit logs to recent 50.">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="v1.1.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/TransactionHistoryRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/TransactionHistoryRepository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +158,7 @@
       <workItem from="1605381194986" duration="32344000" />
       <workItem from="1605559757249" duration="20487000" />
       <workItem from="1605986836616" duration="104000" />
-      <workItem from="1606156296637" duration="8996000" />
+      <workItem from="1606156296637" duration="12014000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -427,59 +426,18 @@
       <option name="project" value="LOCAL" />
       <updated>1606302393732</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="v1.1.1">
+      <created>1606302528936</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1606302528936</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/config.js" />
-        <option value="$PROJECT_DIR$/lib/server.js" />
-        <option value="$PROJECT_DIR$/lib/db/sequelize.js" />
-        <option value="$PROJECT_DIR$/lib/utils/env.js" />
-        <option value="$PROJECT_DIR$/lib/utils/logger.js" />
-        <option value="$PROJECT_DIR$/lib/utils/logSetupHelper.js" />
-        <option value="$PROJECT_DIR$/lib/utils/Entity.js" />
-        <option value="$PROJECT_DIR$/lib/utils/object.js" />
-        <option value="$PROJECT_DIR$/lib/utils/naming.js" />
-        <option value="$PROJECT_DIR$/lib/routes/validationParams.js" />
-        <option value="$PROJECT_DIR$/lib/routes/graphql.js" />
-        <option value="$PROJECT_DIR$/lib/routes/cafeteria.js" />
-        <option value="$PROJECT_DIR$/lib/routes/rules.js" />
-        <option value="$PROJECT_DIR$/lib/routes/parseRegex.js" />
-        <option value="$PROJECT_DIR$/lib/routes/corners.js" />
-        <option value="$PROJECT_DIR$/lib/routes/authenticate.js" />
-        <option value="$PROJECT_DIR$/lib/routes/signIn.js" />
-        <option value="$PROJECT_DIR$/lib/routes/hello.js" />
-        <option value="$PROJECT_DIR$/lib/manager/TokenManager.js" />
-        <option value="$PROJECT_DIR$/lib/entities/ParseRegex.js" />
-        <option value="$PROJECT_DIR$/lib/entities/CafeteriaDiscountRule.js" />
-        <option value="$PROJECT_DIR$/lib/entities/Cafeteria.js" />
-        <option value="$PROJECT_DIR$/lib/entities/CafeteriaValidationParams.js" />
-        <option value="$PROJECT_DIR$/lib/entities/Corner.js" />
-        <option value="$PROJECT_DIR$/lib/repositories/CornerRepository.js" />
-        <option value="$PROJECT_DIR$/lib/repositories/CafeteriaValidationParamsRepository.js" />
-        <option value="$PROJECT_DIR$/lib/repositories/CafeteriaRepository.js" />
-        <option value="$PROJECT_DIR$/lib/repositories/CafeteriaDiscountRuleRepository.js" />
-        <option value="$PROJECT_DIR$/lib/repositories/ParseRegexRepository.js" />
-        <option value="$PROJECT_DIR$/test/unit/jest.test.js" />
-        <option value="$PROJECT_DIR$/test/unit/sequelize.test.js" />
-        <option value="$PROJECT_DIR$/test/unit/object.test.js" />
-        <option value="$PROJECT_DIR$/test/unit/naming.test.js" />
-        <option value="$PROJECT_DIR$/test/unit/CafeteriaRepository.test.js" />
-        <option value="$PROJECT_DIR$/lib/db/models/CornerModel.js" />
-        <option value="$PROJECT_DIR$/lib/db/models/CafeteriaModel.js" />
-        <option value="$PROJECT_DIR$/lib/db/models/ParseRegexModel.js" />
-        <option value="$PROJECT_DIR$/lib/db/models/CafeteriaDiscountRuleModel.js" />
-        <option value="$PROJECT_DIR$/lib/db/models/CafeteriaValidationParamsModel.js" />
-        <option value="$PROJECT_DIR$/lib/entities/base/ISerializable.js" />
-        <option value="$PROJECT_DIR$/lib/entities/base/IEntity.js" />
-        <option value="$PROJECT_DIR$/lib/entities/base/IIdentifiable.js" />
-        <option value="$PROJECT_DIR$/lib/repositories/base/SequelizeCRUDRepository.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -494,7 +452,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add all entities." />
     <MESSAGE value="Repositories ready." />
     <MESSAGE value="From DB to router." />
     <MESSAGE value="Add support for ParseRegex." />
@@ -519,7 +476,8 @@
     <MESSAGE value="Works!" />
     <MESSAGE value="Update doc" />
     <MESSAGE value="Limit logs to recent 50." />
-    <option name="LAST_COMMIT_MESSAGE" value="Limit logs to recent 50." />
+    <MESSAGE value="v1.1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1.1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606156343278">
@@ -542,33 +500,38 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605714117330" />
-    <state width="1419" height="108" key="GridCell.Tab.0.bottom" timestamp="1606301909971">
+    <state width="1419" height="102" key="GridCell.Tab.0.bottom" timestamp="1606326438483">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="108" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606301909971" />
-    <state width="1419" height="108" key="GridCell.Tab.0.center" timestamp="1606301909969">
+    <state width="1419" height="108" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560330" />
+    <state width="1419" height="102" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606326438483" />
+    <state width="1419" height="102" key="GridCell.Tab.0.center" timestamp="1606326438479">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="108" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606301909969" />
-    <state width="1419" height="108" key="GridCell.Tab.0.left" timestamp="1606301909968">
+    <state width="1419" height="108" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560328" />
+    <state width="1419" height="102" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606326438479" />
+    <state width="1419" height="102" key="GridCell.Tab.0.left" timestamp="1606326438479">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="108" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606301909968" />
-    <state width="1419" height="108" key="GridCell.Tab.0.right" timestamp="1606301909970">
+    <state width="1419" height="108" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560327" />
+    <state width="1419" height="102" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606326438479" />
+    <state width="1419" height="102" key="GridCell.Tab.0.right" timestamp="1606326438480">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606301909970" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606166824546">
+    <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
+    <state width="1419" height="102" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606326438480" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606302530314">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302530314" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606166824546" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605730072338">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605730072338" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1605629526343">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606325409167">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605629526343" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606325409167" />
   </component>
 </project>

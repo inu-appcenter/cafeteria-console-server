@@ -9,7 +9,7 @@ class TransactionHistoryRepository extends SequelizeCRUDRepository<TransactionHi
     }
 
     async getAllHistories() {
-        return await this.readRecent(50);
+        return await this.readRecent(200);
     }
 }
 
