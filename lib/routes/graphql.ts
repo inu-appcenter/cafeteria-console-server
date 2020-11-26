@@ -19,6 +19,7 @@ import ParseRegex from "../entities/ParseRegex";
 import {allParseRegexes, createParseRegex, deleteParseRegex, updateParseRegex} from "./parseRegex";
 import TransactionHistory from "../entities/TransactionHistory";
 import {allTransactionHistories} from "./transactionHistory";
+import InvalidParamError from "../errors/InvalidParamError";
 
 const query = `
     type Query {
@@ -108,7 +109,12 @@ const graphqlRoute = graphqlHTTP({
     graphiql: true,
 
     customFormatErrorFn: (error) => {
-        logger.error(error);
+        if (error.message === InvalidParamError.message) {
+            logger.warn('오이!! 그런 잘못된 요청은 나를 화나게 한다구...?');
+        } else {
+            logger.error(error);
+        }
+
         return error;
     }
 });

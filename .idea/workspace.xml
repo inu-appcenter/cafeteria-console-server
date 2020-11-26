@@ -22,9 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="v1.1.1">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="50 not enough!">
+      <change afterPath="$PROJECT_DIR$/lib/errors/InvalidParamError.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/TransactionHistoryRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/TransactionHistoryRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/graphql.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/validationParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/validationParams.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +160,7 @@
       <workItem from="1605381194986" duration="32344000" />
       <workItem from="1605559757249" duration="20487000" />
       <workItem from="1605986836616" duration="104000" />
-      <workItem from="1606156296637" duration="12014000" />
+      <workItem from="1606156296637" duration="14055000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -433,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606302528936</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="50 not enough!">
+      <created>1606350851990</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1606350851990</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +461,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Repositories ready." />
     <MESSAGE value="From DB to router." />
     <MESSAGE value="Add support for ParseRegex." />
     <MESSAGE value="Add some auth." />
@@ -477,13 +485,14 @@
     <MESSAGE value="Update doc" />
     <MESSAGE value="Limit logs to recent 50." />
     <MESSAGE value="v1.1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1.1" />
+    <MESSAGE value="50 not enough!" />
+    <option name="LAST_COMMIT_MESSAGE" value="50 not enough!" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606156343278">
+    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606350870758">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606156343278" />
+    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606350870758" />
     <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1605391939328">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -500,31 +509,31 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605714117330" />
-    <state width="1419" height="102" key="GridCell.Tab.0.bottom" timestamp="1606326438483">
+    <state width="1419" height="241" key="GridCell.Tab.0.bottom" timestamp="1606408228613">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560330" />
-    <state width="1419" height="102" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606326438483" />
-    <state width="1419" height="102" key="GridCell.Tab.0.center" timestamp="1606326438479">
+    <state width="1419" height="241" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408228613" />
+    <state width="1419" height="241" key="GridCell.Tab.0.center" timestamp="1606408228603">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560328" />
-    <state width="1419" height="102" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606326438479" />
-    <state width="1419" height="102" key="GridCell.Tab.0.left" timestamp="1606326438479">
+    <state width="1419" height="241" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408228603" />
+    <state width="1419" height="241" key="GridCell.Tab.0.left" timestamp="1606408228602">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560327" />
-    <state width="1419" height="102" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606326438479" />
-    <state width="1419" height="102" key="GridCell.Tab.0.right" timestamp="1606326438480">
+    <state width="1419" height="241" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408228602" />
+    <state width="1419" height="241" key="GridCell.Tab.0.right" timestamp="1606408228611">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
-    <state width="1419" height="102" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606326438480" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606302530314">
+    <state width="1419" height="241" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408228611" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606350853585">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302530314" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606166824546" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606350853585" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605730072338">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
