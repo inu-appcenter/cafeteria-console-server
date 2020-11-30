@@ -17,7 +17,7 @@ class NoticeRepository extends SequelizeCRUDRepository<Notice, NoticeModel> {
     }
 
     async getAllNotices() {
-        return this.readAll();
+        return await this.readRecent();
     }
 
     async updateNotice(notice: Notice) {

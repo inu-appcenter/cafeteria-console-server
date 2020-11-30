@@ -110,7 +110,7 @@ class QuestionRepository extends SequelizeRawCRUDRepository<QuestionModel> {
 
     async c(q: object) { return this.create(q); }
     async r(id: number) { return this.read(id) }
-    async ra() { return this.readAll() }
+    async ra() { return this.readRecent() }
     async u(q: object) { return this.update(q) }
     async d(id: number) { return this.delete(id) }
 }
@@ -120,7 +120,7 @@ class AnswerRepository extends SequelizeRawCRUDRepository<AnswerModel> {
 
     async c(a: object) { return this.create(a); }
     async r(id: number) { return this.read(id) }
-    async ra() { return this.readAll() }
+    async ra() { return this.readRecent() }
     async u(a: object) { return this.update(a) }
     async d(id: number) { return this.delete(id) }
 }

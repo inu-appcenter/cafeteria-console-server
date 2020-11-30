@@ -22,14 +22,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment=".">
-      <change afterPath="$PROJECT_DIR$/lib/db/models/AppVersionRuleModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/entities/AppVersionRule.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/repositories/AppVersionRuleRepository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/routes/versionRules.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Everything works including version rule.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/db/sequelize.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/sequelize.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes/graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/graphql.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/entities/Answer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Answer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/entities/Notice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Notice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/NoticeRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/NoticeRepository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +175,7 @@
       <workItem from="1606460180406" duration="200000" />
       <workItem from="1606529858423" duration="1202000" />
       <workItem from="1606701367348" duration="12386000" />
-      <workItem from="1606714025868" duration="1081000" />
+      <workItem from="1606714025868" duration="5246000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -515,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606711779093</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Everything works including version rule.">
+      <created>1606715229486</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1606715229486</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +539,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="?" />
     <MESSAGE value="Update cookie domain." />
     <MESSAGE value="Need @Column after @ForeignKey!" />
     <MESSAGE value="Cookie settings done." />
@@ -559,7 +563,8 @@
     <MESSAGE value="Add Models" />
     <MESSAGE value="All questions fetched. Block double answering &amp; ghost updating." />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Everything works including version rule." />
+    <option name="LAST_COMMIT_MESSAGE" value="Everything works including version rule." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606350870758">
@@ -606,18 +611,19 @@
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
     <state width="1419" height="274" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651504" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606711782531">
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606715231498">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302530314" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711782531" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606715231498" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1606705853926">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705853926" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606713875686">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="-1407" y="99" width="894" height="812" key="search.everywhere.popup" timestamp="1606719871680">
+      <screen x="-1920" y="-136" width="1920" height="1080" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606713875686" />
+    <state x="-1407" y="99" width="894" height="812" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606719871680" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606715189316" />
   </component>
 </project>

@@ -28,7 +28,6 @@ class Answer implements IEntity {
     static input() {
         return `
         input AnswerInput {
-            id: Int
             title: String!
             body: String!
         }
