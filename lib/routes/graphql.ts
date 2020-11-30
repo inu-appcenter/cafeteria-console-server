@@ -25,6 +25,8 @@ import {allNotices, createNotice, deleteNotice, updateNotice} from "./notices";
 import Question from "../entities/Question";
 import Answer from "../entities/Answer";
 import {allQuestions, answerQuestion, updateAnswer} from "./interaction";
+import AppVersionRule from "../entities/AppVersionRule";
+import {allVersionRules, createVersionRule, deleteVersionRule, updateVersionRule} from "./versionRules";
 
 const query = `
     type Query {
@@ -36,6 +38,7 @@ const query = `
         allTransactionHistories: [TransactionHistory]
         allNotices: [Notice]
         allQuestions: [Question]
+        allVersionRules: [AppVersionRule]
     }
 `;
 
@@ -66,6 +69,10 @@ const mutation = `
         
         answerQuestion(questionId: Int, answer: AnswerInput): Int
         updateAnswer(questionId: Int, answer: AnswerInput): Int
+        
+        createVersionRule(rule: AppVersionRuleInput): Int
+        updateVersionRule(rule: AppVersionRuleInput): Int
+        deleteVersionRule(ruleId: Int): Int
     }
 `;
 
@@ -96,6 +103,9 @@ const graphqlRoute = graphqlHTTP({
 
         Answer.type(),
         Answer.input(),
+
+        AppVersionRule.type(),
+        AppVersionRule.input(),
 
         query,
         mutation
@@ -134,7 +144,12 @@ const graphqlRoute = graphqlHTTP({
 
         allQuestions,
         answerQuestion,
-        updateAnswer
+        updateAnswer,
+
+        allVersionRules,
+        createVersionRule,
+        updateVersionRule,
+        deleteVersionRule
     },
 
     customFormatErrorFn: (error) => {

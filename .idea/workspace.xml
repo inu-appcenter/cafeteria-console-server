@@ -22,15 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add Models">
-      <change afterPath="$PROJECT_DIR$/lib/repositories/base/SequelizeRawCRUDRepository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/routes/interaction.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment=".">
+      <change afterPath="$PROJECT_DIR$/lib/db/models/AppVersionRuleModel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/entities/AppVersionRule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/repositories/AppVersionRuleRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/routes/versionRules.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/db/models/AnswerModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/models/AnswerModel.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/db/sequelize.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/sequelize.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/entities/Answer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Answer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/entities/Question.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Question.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/routes/graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/graphql.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,11 +146,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.deploy" />
-      <item itemvalue="npm.dev" />
       <item itemvalue="Jest.should support le" />
       <item itemvalue="Jest.evaluator.test.ts" />
       <item itemvalue="Jest.should support le (1)" />
+      <item itemvalue="npm.deploy" />
+      <item itemvalue="npm.dev" />
     </list>
     <recent_temporary>
       <list>
@@ -178,7 +176,8 @@
       <workItem from="1606156296637" duration="15740000" />
       <workItem from="1606460180406" duration="200000" />
       <workItem from="1606529858423" duration="1202000" />
-      <workItem from="1606701367348" duration="10217000" />
+      <workItem from="1606701367348" duration="12386000" />
+      <workItem from="1606714025868" duration="1081000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -502,7 +501,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606706427236</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="All questions fetched. Block double answering &amp; ghost updating.">
+      <created>1606711768041</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1606711768041</updated>
+    </task>
+    <task id="LOCAL-00048" summary=".">
+      <created>1606711779093</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1606711779093</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,13 +534,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix start script!!" />
     <MESSAGE value="?" />
     <MESSAGE value="Update cookie domain." />
     <MESSAGE value="Need @Column after @ForeignKey!" />
     <MESSAGE value="Cookie settings done." />
     <MESSAGE value="Use npm start, not node dist/index.js." />
-    <MESSAGE value="." />
     <MESSAGE value="Allow S3 url to send requests." />
     <MESSAGE value="Can't allow completely different domain... :(" />
     <MESSAGE value="Enhance npm scripts" />
@@ -546,7 +557,9 @@
     <MESSAGE value="Add repository for notice." />
     <MESSAGE value="Notice works." />
     <MESSAGE value="Add Models" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Models" />
+    <MESSAGE value="All questions fetched. Block double answering &amp; ghost updating." />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606350870758">
@@ -573,38 +586,38 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605714117330" />
-    <state width="1419" height="216" key="GridCell.Tab.0.bottom" timestamp="1606711304294">
+    <state width="1419" height="274" key="GridCell.Tab.0.bottom" timestamp="1606714651506">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560330" />
-    <state width="1419" height="216" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711304294" />
-    <state width="1419" height="216" key="GridCell.Tab.0.center" timestamp="1606711304290">
+    <state width="1419" height="274" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651506" />
+    <state width="1419" height="274" key="GridCell.Tab.0.center" timestamp="1606714651503">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560328" />
-    <state width="1419" height="216" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711304290" />
-    <state width="1419" height="216" key="GridCell.Tab.0.left" timestamp="1606711304288">
+    <state width="1419" height="274" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651503" />
+    <state width="1419" height="274" key="GridCell.Tab.0.left" timestamp="1606714651501">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560327" />
-    <state width="1419" height="216" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711304288" />
-    <state width="1419" height="216" key="GridCell.Tab.0.right" timestamp="1606711304292">
+    <state width="1419" height="274" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651501" />
+    <state width="1419" height="274" key="GridCell.Tab.0.right" timestamp="1606714651504">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
-    <state width="1419" height="216" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711304292" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606408334530">
+    <state width="1419" height="274" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651504" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606711782531">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302530314" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408334530" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711782531" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1606705853926">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705853926" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606711316704">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606713875686">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711316704" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606713875686" />
   </component>
 </project>
