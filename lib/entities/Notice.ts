@@ -31,8 +31,8 @@ class Notice implements IEntity {
             id: Int!
             title: String!
             body: String!
-            target_os: String
-            target_version: String
+            target_os: String!
+            target_version: String!
         }
         `;
     }

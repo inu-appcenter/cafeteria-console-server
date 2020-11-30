@@ -20,6 +20,8 @@ import {allParseRegexes, createParseRegex, deleteParseRegex, updateParseRegex} f
 import TransactionHistory from "../entities/TransactionHistory";
 import {allTransactionHistories} from "./transactionHistory";
 import InvalidParamError from "../errors/InvalidParamError";
+import Notice from "../entities/Notice";
+import {allNotices, createNotice, deleteNotice, updateNotice} from "./notices";
 
 const query = `
     type Query {
@@ -29,6 +31,7 @@ const query = `
         allValidationParams: [CafeteriaValidationParams]
         allParseRegexes: [ParseRegex]
         allTransactionHistories: [TransactionHistory]
+        allNotices: [Notice]
     }
 `;
 
@@ -52,6 +55,10 @@ const mutation = `
         createParseRegex(regex: ParseRegexInput): Int
         updateParseRegex(regex: ParseRegexInput): Int
         deleteParseRegex(regexId: Int): Int
+        
+        createNotice(notice: NoticeInput): Int
+        updateNotice(notice: NoticeInput): Int
+        deleteNotice(noticeId: Int): Int
     }
 `;
 
@@ -74,6 +81,9 @@ const graphqlRoute = graphqlHTTP({
         ParseRegex.input(),
 
         TransactionHistory.type(),
+
+        Notice.type(),
+        Notice.input(),
 
         query,
         mutation
@@ -103,10 +113,14 @@ const graphqlRoute = graphqlHTTP({
         updateParseRegex,
         deleteParseRegex,
 
-        allTransactionHistories
-    },
+        allTransactionHistories,
 
-    graphiql: true,
+        allNotices,
+        createNotice,
+        updateNotice,
+        deleteNotice
+
+    },
 
     customFormatErrorFn: (error) => {
         if (error.message === InvalidParamError.message) {

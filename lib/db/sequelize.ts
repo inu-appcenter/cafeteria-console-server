@@ -6,6 +6,7 @@ import CafeteriaDiscountRuleModel from "./models/CafeteriaDiscountRuleModel";
 import CafeteriaValidationParamsModel from "./models/CafeteriaValidationParamsModel";
 import ParseRegexModel from "./models/ParseRegexModel";
 import TransactionHistoryModel from "./models/TransactionHistoryModel";
+import NoticeModel from "./models/NoticeModel";
 
 const sequelize = new Sequelize(
     config.sequelize.database,
@@ -21,7 +22,8 @@ sequelize.addModels([
     CafeteriaDiscountRuleModel,
     CafeteriaValidationParamsModel,
     ParseRegexModel,
-    TransactionHistoryModel
+    TransactionHistoryModel,
+    NoticeModel
 ]);
 
 export default sequelize;
