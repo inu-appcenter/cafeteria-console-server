@@ -21,7 +21,7 @@ class ParseRegexRepository extends SequelizeCRUDRepository<ParseRegex, ParseRege
     }
 
     async updateParseRegex(parseRegex: ParseRegex) {
-        return this.update(parseRegex);
+        return this.update(parseRegex, ['id']);
     }
 
     async deleteParseRegex(parseRegexId: number) {
