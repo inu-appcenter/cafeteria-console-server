@@ -22,14 +22,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Notice works.">
-      <change afterPath="$PROJECT_DIR$/lib/db/models/AnswerModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/db/models/QuestionModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/db/models/UserModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/entities/Answer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/entities/Question.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add Models">
+      <change afterPath="$PROJECT_DIR$/lib/repositories/base/SequelizeRawCRUDRepository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/routes/interaction.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/db/models/AnswerModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/models/AnswerModel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/db/sequelize.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/db/sequelize.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/entities/Answer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Answer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/entities/Question.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Question.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/graphql.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +65,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="13.11.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="13.11.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/entities" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/repositories/base" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -82,6 +84,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/repositories/base" />
       <recent name="$PROJECT_DIR$/lib/entities" />
       <recent name="$PROJECT_DIR$/lib/utils" />
       <recent name="$PROJECT_DIR$/lib/repositories" />
@@ -175,7 +178,7 @@
       <workItem from="1606156296637" duration="15740000" />
       <workItem from="1606460180406" duration="200000" />
       <workItem from="1606529858423" duration="1202000" />
-      <workItem from="1606701367348" duration="5030000" />
+      <workItem from="1606701367348" duration="10217000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup done.">
       <created>1605383889127</created>
@@ -492,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606705017138</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Add Models">
+      <created>1606706427236</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1606706427236</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +521,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix start script." />
     <MESSAGE value="Fix start script!!" />
     <MESSAGE value="?" />
     <MESSAGE value="Update cookie domain." />
@@ -536,7 +545,8 @@
     <MESSAGE value="Add notice entity." />
     <MESSAGE value="Add repository for notice." />
     <MESSAGE value="Notice works." />
-    <option name="LAST_COMMIT_MESSAGE" value="Notice works." />
+    <MESSAGE value="Add Models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Models" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606350870758">
@@ -563,26 +573,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605714117330" />
-    <state width="1419" height="316" key="GridCell.Tab.0.bottom" timestamp="1606705009492">
+    <state width="1419" height="216" key="GridCell.Tab.0.bottom" timestamp="1606711304294">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560330" />
-    <state width="1419" height="316" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705009492" />
-    <state width="1419" height="316" key="GridCell.Tab.0.center" timestamp="1606705009490">
+    <state width="1419" height="216" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711304294" />
+    <state width="1419" height="216" key="GridCell.Tab.0.center" timestamp="1606711304290">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560328" />
-    <state width="1419" height="316" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705009490" />
-    <state width="1419" height="316" key="GridCell.Tab.0.left" timestamp="1606705009486">
+    <state width="1419" height="216" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711304290" />
+    <state width="1419" height="216" key="GridCell.Tab.0.left" timestamp="1606711304288">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560327" />
-    <state width="1419" height="316" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705009486" />
-    <state width="1419" height="316" key="GridCell.Tab.0.right" timestamp="1606705009491">
+    <state width="1419" height="216" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711304288" />
+    <state width="1419" height="216" key="GridCell.Tab.0.right" timestamp="1606711304292">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
-    <state width="1419" height="316" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705009491" />
+    <state width="1419" height="216" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711304292" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606408334530">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -592,9 +602,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705853926" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606705850537">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606711316704">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705850537" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606711316704" />
   </component>
 </project>

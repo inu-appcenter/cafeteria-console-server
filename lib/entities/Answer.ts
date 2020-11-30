@@ -7,7 +7,6 @@ class Answer implements IEntity {
     title: string = '';
     body: string = '';
     read: boolean = false;
-    userId: number = 0;
     date: Date = new Date();
 
     serialize() {
@@ -21,21 +20,17 @@ class Answer implements IEntity {
             title: String!
             body: String!
             read: Boolean!
-            userId: Int!
-            date: Date!
+            date: String!
         }
         `;
     }
 
     static input() {
         return `
-        input Answer {
-            id: Int!
+        input AnswerInput {
+            id: Int
             title: String!
             body: String!
-            read: Boolean!
-            userId: Int!
-            date: Date!
         }
         `;
     }

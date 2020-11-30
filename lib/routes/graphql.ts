@@ -22,6 +22,9 @@ import {allTransactionHistories} from "./transactionHistory";
 import InvalidParamError from "../errors/InvalidParamError";
 import Notice from "../entities/Notice";
 import {allNotices, createNotice, deleteNotice, updateNotice} from "./notices";
+import Question from "../entities/Question";
+import Answer from "../entities/Answer";
+import {allQuestions, answerQuestion, updateAnswer} from "./interaction";
 
 const query = `
     type Query {
@@ -32,6 +35,7 @@ const query = `
         allParseRegexes: [ParseRegex]
         allTransactionHistories: [TransactionHistory]
         allNotices: [Notice]
+        allQuestions: [Question]
     }
 `;
 
@@ -59,6 +63,9 @@ const mutation = `
         createNotice(notice: NoticeInput): Int
         updateNotice(notice: NoticeInput): Int
         deleteNotice(noticeId: Int): Int
+        
+        answerQuestion(questionId: Int, answer: AnswerInput): Int
+        updateAnswer(questionId: Int, answer: AnswerInput): Int
     }
 `;
 
@@ -84,6 +91,11 @@ const graphqlRoute = graphqlHTTP({
 
         Notice.type(),
         Notice.input(),
+
+        Question.type(),
+
+        Answer.type(),
+        Answer.input(),
 
         query,
         mutation
@@ -118,8 +130,11 @@ const graphqlRoute = graphqlHTTP({
         allNotices,
         createNotice,
         updateNotice,
-        deleteNotice
+        deleteNotice,
 
+        allQuestions,
+        answerQuestion,
+        updateAnswer
     },
 
     customFormatErrorFn: (error) => {

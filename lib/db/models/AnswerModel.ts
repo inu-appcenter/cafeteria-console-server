@@ -29,3 +29,5 @@ class AnswerModel extends Model<AnswerModel> {
     @Column
     question_id: number;
 }
+
+export default AnswerModel;
