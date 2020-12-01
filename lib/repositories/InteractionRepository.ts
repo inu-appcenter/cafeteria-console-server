@@ -54,10 +54,8 @@ class InteractionRepository {
         return this.answerRepo.u({
             id: seqAnswer.id,
             title: answer.title,
-            body: answer.body,
-            read: false,
-            user_id: seqQuestion.user_id,
-            question_id: questionId
+            body: answer.body
+            // Add more if you want to update more.
         });
     }
 
