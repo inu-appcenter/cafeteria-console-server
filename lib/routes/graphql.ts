@@ -24,7 +24,7 @@ import Notice from "../entities/Notice";
 import {allNotices, createNotice, deleteNotice, updateNotice} from "./notices";
 import Question from "../entities/Question";
 import Answer from "../entities/Answer";
-import {allQuestions, answerQuestion, updateAnswer} from "./interaction";
+import {allQuestions, answerQuestion, deleteAnswer, updateAnswer} from "./interaction";
 import AppVersionRule from "../entities/AppVersionRule";
 import {allVersionRules, createVersionRule, deleteVersionRule, updateVersionRule} from "./versionRules";
 
@@ -69,6 +69,7 @@ const mutation = `
         
         answerQuestion(questionId: Int, answer: AnswerInput): Int
         updateAnswer(questionId: Int, answer: AnswerInput): Int
+        deleteAnswer(questionId: Int): Int
         
         createVersionRule(rule: AppVersionRuleInput): Int
         updateVersionRule(rule: AppVersionRuleInput): Int
@@ -145,6 +146,7 @@ const graphqlRoute = graphqlHTTP({
         allQuestions,
         answerQuestion,
         updateAnswer,
+        deleteAnswer,
 
         allVersionRules,
         createVersionRule,

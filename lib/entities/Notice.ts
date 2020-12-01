@@ -28,7 +28,7 @@ class Notice implements IEntity {
     static input() {
         return `
         input NoticeInput {
-            id: Int!
+            id: Int
             title: String!
             body: String!
             target_os: String!

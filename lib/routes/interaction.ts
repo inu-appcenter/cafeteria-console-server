@@ -21,3 +21,8 @@ export async function updateAnswer({questionId, answer}) {
 
     return await interactionRepository.updateAnswer(questionId, parsed);
 }
+
+// @ts-ignore
+export async function deleteAnswer({questionId}) {
+    return await interactionRepository.deleteAnswer(questionId);
+}

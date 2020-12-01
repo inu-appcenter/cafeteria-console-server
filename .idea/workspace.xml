@@ -22,9 +22,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="all works fine.">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Not force id for notice.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/entities/Notice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Notice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/graphql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/graphql.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/interaction.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/interaction.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,14 +175,7 @@
       <workItem from="1606460180406" duration="200000" />
       <workItem from="1606529858423" duration="1202000" />
       <workItem from="1606701367348" duration="12386000" />
-      <workItem from="1606714025868" duration="5968000" />
-    </task>
-    <task id="LOCAL-00002" summary="Add gitignore.">
-      <created>1605383945559</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1605383945559</updated>
+      <workItem from="1606714025868" duration="7413000" />
     </task>
     <task id="LOCAL-00003" summary="Test environment set.">
       <created>1605384511138</created>
@@ -517,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606720842867</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Not force id for notice.">
+      <created>1606785445137</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1606785445137</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +539,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Need @Column after @ForeignKey!" />
     <MESSAGE value="Cookie settings done." />
     <MESSAGE value="Use npm start, not node dist/index.js." />
     <MESSAGE value="Allow S3 url to send requests." />
@@ -561,7 +563,8 @@
     <MESSAGE value="." />
     <MESSAGE value="Everything works including version rule." />
     <MESSAGE value="all works fine." />
-    <option name="LAST_COMMIT_MESSAGE" value="all works fine." />
+    <MESSAGE value="Not force id for notice." />
+    <option name="LAST_COMMIT_MESSAGE" value="Not force id for notice." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606350870758">
@@ -618,10 +621,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705853926" />
-    <state x="-1407" y="99" width="894" height="812" key="search.everywhere.popup" timestamp="1606719871680">
+    <state x="-1407" y="99" width="894" height="812" key="search.everywhere.popup" timestamp="1606785430872">
       <screen x="-1920" y="-136" width="1920" height="1080" />
     </state>
-    <state x="-1407" y="99" width="894" height="812" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606719871680" />
+    <state x="-1407" y="99" width="894" height="812" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606785430872" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606715189316" />
   </component>
 </project>

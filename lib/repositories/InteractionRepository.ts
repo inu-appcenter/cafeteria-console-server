@@ -60,6 +60,10 @@ class InteractionRepository {
             question_id: questionId
         });
     }
+
+    async deleteAnswer(questionId: number) {
+        return this.answerRepo.d(questionId);
+    }
 }
 
 class QuestionAnswerGatherer {
