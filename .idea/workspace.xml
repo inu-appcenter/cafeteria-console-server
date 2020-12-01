@@ -22,12 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Everything works including version rule.">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="all works fine.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/entities/Answer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Answer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/entities/Notice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/entities/Notice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/NoticeRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/NoticeRepository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,14 +172,7 @@
       <workItem from="1606460180406" duration="200000" />
       <workItem from="1606529858423" duration="1202000" />
       <workItem from="1606701367348" duration="12386000" />
-      <workItem from="1606714025868" duration="5246000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial setup done.">
-      <created>1605383889127</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1605383889127</updated>
+      <workItem from="1606714025868" duration="5968000" />
     </task>
     <task id="LOCAL-00002" summary="Add gitignore.">
       <created>1605383945559</created>
@@ -520,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606715229486</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="all works fine.">
+      <created>1606720842866</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1606720842867</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +536,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update cookie domain." />
     <MESSAGE value="Need @Column after @ForeignKey!" />
     <MESSAGE value="Cookie settings done." />
     <MESSAGE value="Use npm start, not node dist/index.js." />
@@ -564,7 +560,8 @@
     <MESSAGE value="All questions fetched. Block double answering &amp; ghost updating." />
     <MESSAGE value="." />
     <MESSAGE value="Everything works including version rule." />
-    <option name="LAST_COMMIT_MESSAGE" value="Everything works including version rule." />
+    <MESSAGE value="all works fine." />
+    <option name="LAST_COMMIT_MESSAGE" value="all works fine." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606350870758">
@@ -611,10 +608,11 @@
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
     <state width="1419" height="274" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651504" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606715231498">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2" timestamp="1606720851403">
+      <screen x="-1920" y="-136" width="1920" height="1080" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302530314" />
+    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606720851403" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606715231498" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1606705853926">
       <screen x="0" y="0" width="1440" height="900" />
