@@ -1,4 +1,4 @@
-import {Table, Column, Model, PrimaryKey, ForeignKey, BelongsTo} from 'sequelize-typescript';
+import {Table, Column, Model, ForeignKey} from 'sequelize-typescript';
 import CafeteriaModel from "./CafeteriaModel";
 
 @Table({

@@ -1,6 +1,5 @@
 import cafeteriaDiscountRuleRepository from "../repositories/CafeteriaDiscountRuleRepository";
 import Entity from "../utils/Entity";
-import Corner from "../entities/Corner";
 import CafeteriaDiscountRule from "../entities/CafeteriaDiscountRule";
 
 export async function allRules() {

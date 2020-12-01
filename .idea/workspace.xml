@@ -22,7 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add guard for malformed params.">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Not update 'read' on update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -36,11 +36,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="tsconfig.json" />
         <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kIHTPPvsw9nk99CBOnXED56obx" />
@@ -53,7 +59,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="13.11.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="13.11.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/repositories" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/repositories/base" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -64,28 +70,54 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/repositories" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/utils/external" />
       <recent name="$PROJECT_DIR$/lib/entities" />
       <recent name="$PROJECT_DIR$/lib/entities/base" />
       <recent name="$PROJECT_DIR$/lib/repositories/base" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/repositories/base" />
+      <recent name="$PROJECT_DIR$/lib/entities" />
+      <recent name="$PROJECT_DIR$/lib/utils" />
+      <recent name="$PROJECT_DIR$/lib/repositories" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.preview">
-    <configuration name="Fields.exists?" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="evaluator.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/test/unit/evaluator.test.ts" />
+      <method v="2" />
+    </configuration>
+    <configuration name="should support le (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/test/unit/object.test.ts" />
+      <test-file value="$PROJECT_DIR$/test/unit/AssertionEvaluator.test.ts" />
       <test-names>
-        <test-name value="Fields" />
-        <test-name value="exists?" />
+        <test-name value="should support le" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="should support le" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/test/unit/evaluator.ts" />
+      <test-names>
+        <test-name value="should support le" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -99,52 +131,30 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="postinstall" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="postinstall" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="preview" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="preview" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs>
-        <env name="NODE_ENV" value="DEBUG" />
-      </envs>
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
+        <script value="dev" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Jest.Fields.exists?" />
+      <item itemvalue="Jest.should support le" />
+      <item itemvalue="Jest.evaluator.test.ts" />
+      <item itemvalue="Jest.should support le (1)" />
       <item itemvalue="npm.deploy" />
-      <item itemvalue="npm.postinstall" />
-      <item itemvalue="npm.preview" />
-      <item itemvalue="npm.start" />
+      <item itemvalue="npm.dev" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.preview" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="Jest.should support le (1)" />
+        <item itemvalue="Jest.evaluator.test.ts" />
+        <item itemvalue="Jest.should support le" />
         <item itemvalue="npm.deploy" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="npm.postinstall" />
-        <item itemvalue="Jest.Fields.exists?" />
       </list>
     </recent_temporary>
   </component>
@@ -159,35 +169,11 @@
       <workItem from="1605381194986" duration="32344000" />
       <workItem from="1605559757249" duration="20487000" />
       <workItem from="1605986836616" duration="104000" />
-      <workItem from="1606156296637" duration="14139000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial setup done.">
-      <created>1605383889127</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1605383889127</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add gitignore.">
-      <created>1605383945559</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1605383945559</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Test environment set.">
-      <created>1605384511138</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1605384511139</updated>
-    </task>
-    <task id="LOCAL-00004" summary="DB fetch success!">
-      <created>1605388004973</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1605388004973</updated>
+      <workItem from="1606156296637" duration="15740000" />
+      <workItem from="1606460180406" duration="200000" />
+      <workItem from="1606529858423" duration="1202000" />
+      <workItem from="1606701367348" duration="12386000" />
+      <workItem from="1606714025868" duration="9564000" />
     </task>
     <task id="LOCAL-00005" summary="Query success.">
       <created>1605394595391</created>
@@ -448,7 +434,91 @@
       <option name="project" value="LOCAL" />
       <updated>1606408292577</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="v1.1.2">
+      <created>1606408332853</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1606408332853</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Add notice entity.">
+      <created>1606701798596</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1606701798596</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Add repository for notice.">
+      <created>1606702348896</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1606702348896</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Notice works.">
+      <created>1606705017138</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1606705017138</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Add Models">
+      <created>1606706427236</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1606706427236</updated>
+    </task>
+    <task id="LOCAL-00047" summary="All questions fetched. Block double answering &amp; ghost updating.">
+      <created>1606711768041</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1606711768041</updated>
+    </task>
+    <task id="LOCAL-00048" summary=".">
+      <created>1606711779093</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1606711779093</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Everything works including version rule.">
+      <created>1606715229486</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1606715229486</updated>
+    </task>
+    <task id="LOCAL-00050" summary="all works fine.">
+      <created>1606720842866</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1606720842867</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Not force id for notice.">
+      <created>1606785445137</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1606785445137</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Add support for delete answer.">
+      <created>1606788909081</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1606788909081</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Not update 'read' on update">
+      <created>1606799883913</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1606799883915</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,18 +537,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add support for ParseRegex." />
-    <MESSAGE value="Add some auth." />
-    <MESSAGE value="Auth works." />
-    <MESSAGE value="Add allowed host option." />
-    <MESSAGE value="Fix start script." />
-    <MESSAGE value="Fix start script!!" />
-    <MESSAGE value="?" />
-    <MESSAGE value="Update cookie domain." />
-    <MESSAGE value="Need @Column after @ForeignKey!" />
-    <MESSAGE value="Cookie settings done." />
-    <MESSAGE value="Use npm start, not node dist/index.js." />
-    <MESSAGE value="." />
     <MESSAGE value="Allow S3 url to send requests." />
     <MESSAGE value="Can't allow completely different domain... :(" />
     <MESSAGE value="Enhance npm scripts" />
@@ -492,7 +550,19 @@
     <MESSAGE value="v1.1.1" />
     <MESSAGE value="50 not enough!" />
     <MESSAGE value="Add guard for malformed params." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add guard for malformed params." />
+    <MESSAGE value="v1.1.2" />
+    <MESSAGE value="Add notice entity." />
+    <MESSAGE value="Add repository for notice." />
+    <MESSAGE value="Notice works." />
+    <MESSAGE value="Add Models" />
+    <MESSAGE value="All questions fetched. Block double answering &amp; ghost updating." />
+    <MESSAGE value="." />
+    <MESSAGE value="Everything works including version rule." />
+    <MESSAGE value="all works fine." />
+    <MESSAGE value="Not force id for notice." />
+    <MESSAGE value="Add support for delete answer." />
+    <MESSAGE value="Not update 'read' on update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Not update 'read' on update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606350870758">
@@ -511,42 +581,48 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605457513861" />
+    <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606703904831">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606703904831" />
     <state x="574" y="182" key="EnvironmentVariablesDialog" timestamp="1605714117330">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605714117330" />
-    <state width="1419" height="241" key="GridCell.Tab.0.bottom" timestamp="1606408228613">
+    <state width="1419" height="274" key="GridCell.Tab.0.bottom" timestamp="1606714651506">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560330" />
-    <state width="1419" height="241" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408228613" />
-    <state width="1419" height="241" key="GridCell.Tab.0.center" timestamp="1606408228603">
+    <state width="1419" height="274" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651506" />
+    <state width="1419" height="274" key="GridCell.Tab.0.center" timestamp="1606714651503">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560328" />
-    <state width="1419" height="241" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408228603" />
-    <state width="1419" height="241" key="GridCell.Tab.0.left" timestamp="1606408228602">
+    <state width="1419" height="274" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651503" />
+    <state width="1419" height="274" key="GridCell.Tab.0.left" timestamp="1606714651501">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560327" />
-    <state width="1419" height="241" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408228602" />
-    <state width="1419" height="241" key="GridCell.Tab.0.right" timestamp="1606408228611">
+    <state width="1419" height="274" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651501" />
+    <state width="1419" height="274" key="GridCell.Tab.0.right" timestamp="1606714651504">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
-    <state width="1419" height="241" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408228611" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606408294700">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1419" height="274" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651504" />
+    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2" timestamp="1606799893313">
+      <screen x="-1920" y="-136" width="1920" height="1080" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302530314" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606408294700" />
-    <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1605730072338">
+    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606799893313" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606715231498" />
+    <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1606705853926">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605730072338" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606325409167">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705853926" />
+    <state x="-1407" y="99" width="894" height="812" key="search.everywhere.popup" timestamp="1606799743147">
+      <screen x="-1920" y="-136" width="1920" height="1080" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606325409167" />
+    <state x="-1407" y="99" width="894" height="812" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606799743147" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606715189316" />
   </component>
 </project>

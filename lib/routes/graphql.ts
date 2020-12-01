@@ -20,6 +20,13 @@ import {allParseRegexes, createParseRegex, deleteParseRegex, updateParseRegex} f
 import TransactionHistory from "../entities/TransactionHistory";
 import {allTransactionHistories} from "./transactionHistory";
 import InvalidParamError from "../errors/InvalidParamError";
+import Notice from "../entities/Notice";
+import {allNotices, createNotice, deleteNotice, updateNotice} from "./notices";
+import Question from "../entities/Question";
+import Answer from "../entities/Answer";
+import {allQuestions, answerQuestion, deleteAnswer, updateAnswer} from "./interaction";
+import AppVersionRule from "../entities/AppVersionRule";
+import {allVersionRules, createVersionRule, deleteVersionRule, updateVersionRule} from "./versionRules";
 
 const query = `
     type Query {
@@ -29,6 +36,9 @@ const query = `
         allValidationParams: [CafeteriaValidationParams]
         allParseRegexes: [ParseRegex]
         allTransactionHistories: [TransactionHistory]
+        allNotices: [Notice]
+        allQuestions: [Question]
+        allVersionRules: [AppVersionRule]
     }
 `;
 
@@ -52,6 +62,18 @@ const mutation = `
         createParseRegex(regex: ParseRegexInput): Int
         updateParseRegex(regex: ParseRegexInput): Int
         deleteParseRegex(regexId: Int): Int
+        
+        createNotice(notice: NoticeInput): Int
+        updateNotice(notice: NoticeInput): Int
+        deleteNotice(noticeId: Int): Int
+        
+        answerQuestion(questionId: Int, answer: AnswerInput): Int
+        updateAnswer(questionId: Int, answer: AnswerInput): Int
+        deleteAnswer(questionId: Int): Int
+        
+        createVersionRule(rule: AppVersionRuleInput): Int
+        updateVersionRule(rule: AppVersionRuleInput): Int
+        deleteVersionRule(ruleId: Int): Int
     }
 `;
 
@@ -74,6 +96,17 @@ const graphqlRoute = graphqlHTTP({
         ParseRegex.input(),
 
         TransactionHistory.type(),
+
+        Notice.type(),
+        Notice.input(),
+
+        Question.type(),
+
+        Answer.type(),
+        Answer.input(),
+
+        AppVersionRule.type(),
+        AppVersionRule.input(),
 
         query,
         mutation
@@ -103,10 +136,23 @@ const graphqlRoute = graphqlHTTP({
         updateParseRegex,
         deleteParseRegex,
 
-        allTransactionHistories
-    },
+        allTransactionHistories,
 
-    graphiql: true,
+        allNotices,
+        createNotice,
+        updateNotice,
+        deleteNotice,
+
+        allQuestions,
+        answerQuestion,
+        updateAnswer,
+        deleteAnswer,
+
+        allVersionRules,
+        createVersionRule,
+        updateVersionRule,
+        deleteVersionRule
+    },
 
     customFormatErrorFn: (error) => {
         if (error.message === InvalidParamError.message) {

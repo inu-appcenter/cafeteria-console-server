@@ -22,7 +22,7 @@ export async function createValidationParams({params}) {
 
 // @ts-ignore
 export async function updateValidationParams({params}) {
-    const parsed = Entity.parse(params, CafeteriaValidationParams);
+    const parsed = Entity.parseFiltered(params, CafeteriaValidationParams);
     if (!validateValidationParams(parsed)) {
         throw new InvalidParamError();
     }

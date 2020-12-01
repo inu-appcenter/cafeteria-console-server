@@ -17,7 +17,7 @@ class CafeteriaDiscountRuleRepository extends SequelizeCRUDRepository<CafeteriaD
     }
 
     async updateRule(rule: CafeteriaDiscountRule) {
-        return this.update(rule, ['name', 'description']);
+        return this.update(rule, ['id', 'name', 'description']);
     }
 }
 
