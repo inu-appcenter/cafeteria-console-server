@@ -22,9 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Add support for delete answer.">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Not update 'read' on update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/InteractionRepository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,14 +173,7 @@
       <workItem from="1606460180406" duration="200000" />
       <workItem from="1606529858423" duration="1202000" />
       <workItem from="1606701367348" duration="12386000" />
-      <workItem from="1606714025868" duration="9303000" />
-    </task>
-    <task id="LOCAL-00004" summary="DB fetch success!">
-      <created>1605388004973</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1605388004973</updated>
+      <workItem from="1606714025868" duration="9564000" />
     </task>
     <task id="LOCAL-00005" summary="Query success.">
       <created>1605394595391</created>
@@ -517,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606788909081</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Not update 'read' on update">
+      <created>1606799883913</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1606799883915</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +537,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Use npm start, not node dist/index.js." />
     <MESSAGE value="Allow S3 url to send requests." />
     <MESSAGE value="Can't allow completely different domain... :(" />
     <MESSAGE value="Enhance npm scripts" />
@@ -561,7 +561,8 @@
     <MESSAGE value="all works fine." />
     <MESSAGE value="Not force id for notice." />
     <MESSAGE value="Add support for delete answer." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add support for delete answer." />
+    <MESSAGE value="Not update 'read' on update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Not update 'read' on update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606350870758">
@@ -608,11 +609,11 @@
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
     <state width="1419" height="274" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651504" />
-    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2" timestamp="1606720851403">
+    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2" timestamp="1606799893313">
       <screen x="-1920" y="-136" width="1920" height="1080" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302530314" />
-    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606720851403" />
+    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606799893313" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606715231498" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1606705853926">
       <screen x="0" y="0" width="1440" height="900" />
