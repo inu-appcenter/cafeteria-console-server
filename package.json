@@ -2,7 +2,6 @@
   "name": "cafeteria-management-server",
   "version": "1.2.0",
   "description": "카페테리아 관리자 웹 API 서버입니다",
-  "main": "index.js",
   "scripts": {
 
     "dev": "nodemon --exec ts-node index.ts",

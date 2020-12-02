@@ -22,9 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="Not update 'read' on update">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="v1.2.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="feature-cs" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,7 +83,7 @@
       <recent name="$PROJECT_DIR$/lib/repositories" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.deploy">
     <configuration name="evaluator.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -142,19 +141,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Jest.should support le" />
       <item itemvalue="Jest.evaluator.test.ts" />
       <item itemvalue="Jest.should support le (1)" />
+      <item itemvalue="Jest.should support le" />
       <item itemvalue="npm.deploy" />
       <item itemvalue="npm.dev" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.dev" />
         <item itemvalue="Jest.should support le (1)" />
         <item itemvalue="Jest.evaluator.test.ts" />
         <item itemvalue="Jest.should support le" />
-        <item itemvalue="npm.deploy" />
       </list>
     </recent_temporary>
   </component>
@@ -173,14 +172,8 @@
       <workItem from="1606460180406" duration="200000" />
       <workItem from="1606529858423" duration="1202000" />
       <workItem from="1606701367348" duration="12386000" />
-      <workItem from="1606714025868" duration="9564000" />
-    </task>
-    <task id="LOCAL-00005" summary="Query success.">
-      <created>1605394595391</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1605394595391</updated>
+      <workItem from="1606714025868" duration="10900000" />
+      <workItem from="1606879273864" duration="662000" />
     </task>
     <task id="LOCAL-00006" summary="Add some logs.">
       <created>1605395059008</created>
@@ -518,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606799883915</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="v1.2.0">
+      <created>1606800079626</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1606800079626</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +537,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Allow S3 url to send requests." />
+    <option name="RELOAD_CONTEXT" value="false" />
     <MESSAGE value="Can't allow completely different domain... :(" />
     <MESSAGE value="Enhance npm scripts" />
     <MESSAGE value="Doc!" />
@@ -562,12 +562,14 @@
     <MESSAGE value="Not force id for notice." />
     <MESSAGE value="Add support for delete answer." />
     <MESSAGE value="Not update 'read' on update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Not update 'read' on update" />
+    <MESSAGE value="v1.2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.2.0" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606350870758">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="-1675" y="-2" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606800339609">
+      <screen x="-1920" y="-136" width="1920" height="1080" />
     </state>
+    <state x="-1675" y="-2" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606800339609" />
     <state x="184" y="112" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606350870758" />
     <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1605391939328">
       <screen x="0" y="0" width="1440" height="900" />
@@ -589,31 +591,35 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="574" y="182" key="EnvironmentVariablesDialog/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1605714117330" />
-    <state width="1419" height="274" key="GridCell.Tab.0.bottom" timestamp="1606714651506">
+    <state width="1419" height="379" key="GridCell.Tab.0.bottom" timestamp="1606807296159">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560330" />
-    <state width="1419" height="274" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651506" />
-    <state width="1419" height="274" key="GridCell.Tab.0.center" timestamp="1606714651503">
+    <state width="1899" height="384" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606800519424" />
+    <state width="1419" height="379" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606807296159" />
+    <state width="1419" height="379" key="GridCell.Tab.0.center" timestamp="1606807296156">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560328" />
-    <state width="1419" height="274" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651503" />
-    <state width="1419" height="274" key="GridCell.Tab.0.left" timestamp="1606714651501">
+    <state width="1899" height="384" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606800519417" />
+    <state width="1419" height="379" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606807296156" />
+    <state width="1419" height="379" key="GridCell.Tab.0.left" timestamp="1606807296155">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560327" />
-    <state width="1419" height="274" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651501" />
-    <state width="1419" height="274" key="GridCell.Tab.0.right" timestamp="1606714651504">
+    <state width="1899" height="384" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606800519409" />
+    <state width="1419" height="379" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606807296155" />
+    <state width="1419" height="379" key="GridCell.Tab.0.right" timestamp="1606807296157">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
-    <state width="1419" height="274" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606714651504" />
-    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2" timestamp="1606799893313">
+    <state width="1899" height="384" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606800519422" />
+    <state width="1419" height="379" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606807296157" />
+    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2" timestamp="1606800385201">
       <screen x="-1920" y="-136" width="1920" height="1080" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302530314" />
-    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606799893313" />
+    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606800385201" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606715231498" />
     <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1606705853926">
       <screen x="0" y="0" width="1440" height="900" />
