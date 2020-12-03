@@ -3,8 +3,8 @@ import {Table, Column, Model, PrimaryKey} from 'sequelize-typescript';
 @Table({
     tableName: 'cafeteria',
     timestamps: false,
-    charset: 'utf8',
-    collate: 'utf8_unicode_ci',
+    charset: 'utf8mb4',
+    collate: 'utf8mb4_unicode_ci',
 })
 class CafeteriaModel extends Model<CafeteriaModel> {
 

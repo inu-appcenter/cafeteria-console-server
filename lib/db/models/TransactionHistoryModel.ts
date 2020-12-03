@@ -3,8 +3,8 @@ import {Column, Model, Table} from "sequelize-typescript";
 @Table({
     tableName: 'transaction_histories',
     timestamps: false,
-    charset: 'utf8',
-    collate: 'utf8_unicode_ci',
+    charset: 'utf8mb4',
+    collate: 'utf8mb4_unicode_ci',
 })
 class TransactionHistoryModel extends Model<TransactionHistoryModel> {
     @Column({primaryKey: true})

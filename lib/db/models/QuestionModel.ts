@@ -5,8 +5,8 @@ import UserModel from "./UserModel";
 @Table({
     tableName: 'questions',
     timestamps: true,
-    charset: 'utf8',
-    collate: 'utf8_unicode_ci',
+    charset: 'utf8mb4',
+    collate: 'utf8mb4_unicode_ci',
 })
 class QuestionModel extends Model<QuestionModel> {
     @Column({primaryKey: true})
