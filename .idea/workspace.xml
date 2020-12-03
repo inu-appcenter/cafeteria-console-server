@@ -22,8 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="v1.2.0">
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="fix: DB 텍스트 인코딩 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,13 +174,7 @@
       <workItem from="1606879273864" duration="662000" />
       <workItem from="1606886981773" duration="464000" />
       <workItem from="1606889617949" duration="2000" />
-    </task>
-    <task id="LOCAL-00006" summary="Add some logs.">
-      <created>1605395059008</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1605395059008</updated>
+      <workItem from="1606992299340" duration="440000" />
     </task>
     <task id="LOCAL-00007" summary="Cafeteria and corner, CRUD works on GraphQL.">
       <created>1605446652497</created>
@@ -516,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606800079626</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="fix: DB 텍스트 인코딩 변경">
+      <created>1606992409710</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1606992409710</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +539,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="RELOAD_CONTEXT" value="false" />
-    <MESSAGE value="Can't allow completely different domain... :(" />
     <MESSAGE value="Enhance npm scripts" />
     <MESSAGE value="Doc!" />
     <MESSAGE value="Update author." />
@@ -561,7 +563,8 @@
     <MESSAGE value="Add support for delete answer." />
     <MESSAGE value="Not update 'read' on update" />
     <MESSAGE value="v1.2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.2.0" />
+    <MESSAGE value="fix: DB 텍스트 인코딩 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: DB 텍스트 인코딩 변경" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1675" y="-2" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606800339609">
@@ -613,16 +616,16 @@
     <state width="1419" height="108" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302560329" />
     <state width="1899" height="384" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606800519422" />
     <state width="1419" height="379" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606887461189" />
-    <state x="-1493" y="76" key="Vcs.Push.Dialog.v2" timestamp="1606800385201">
-      <screen x="-1920" y="-136" width="1920" height="1080" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1606992715978">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-111.1920.1055@0.0.1440.900" timestamp="1606302530314" />
     <state x="-1493" y="76" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@-1920.-136.1920.1080" timestamp="1606800385201" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606715231498" />
-    <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1606705853926">
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606992715978" />
+    <state x="418" y="205" width="604" height="548" key="find.popup" timestamp="1606992390859">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606705853926" />
+    <state x="418" y="205" width="604" height="548" key="find.popup/0.0.1440.900/-1920.-136.1920.1080@0.0.1440.900" timestamp="1606992390859" />
     <state x="-1407" y="99" width="894" height="812" key="search.everywhere.popup" timestamp="1606799743147">
       <screen x="-1920" y="-136" width="1920" height="1080" />
     </state>
