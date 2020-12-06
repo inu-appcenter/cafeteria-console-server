@@ -1,4 +1,4 @@
-import {Column, ForeignKey, Model, Table} from "sequelize-typescript";
+import {Column, DataType, ForeignKey, Model, Table} from "sequelize-typescript";
 import UserModel from "./UserModel";
 import QuestionModel from "./QuestionModel";
 
@@ -15,7 +15,7 @@ class AnswerModel extends Model<AnswerModel> {
     @Column
     title: string;
 
-    @Column
+    @Column(DataType.TEXT)
     body: string;
 
     @Column

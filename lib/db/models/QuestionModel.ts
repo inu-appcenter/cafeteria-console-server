@@ -1,5 +1,4 @@
-import {Column, ForeignKey, Model, Table} from "sequelize-typescript";
-import CafeteriaModel from "./CafeteriaModel";
+import {Column, DataType, ForeignKey, Model, Table} from "sequelize-typescript";
 import UserModel from "./UserModel";
 
 @Table({
@@ -18,7 +17,7 @@ class QuestionModel extends Model<QuestionModel> {
     @Column
     version: string;
 
-    @Column
+    @Column(DataType.TEXT)
     content: string;
 
     @ForeignKey(() => UserModel)

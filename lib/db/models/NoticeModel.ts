@@ -1,4 +1,4 @@
-import {Column, Model, Table} from "sequelize-typescript";
+import {Column, DataType, Model, Table} from "sequelize-typescript";
 
 @Table({
     tableName: 'notices',
@@ -13,7 +13,7 @@ class NoticeModel extends Model<NoticeModel> {
     @Column
     title: string;
 
-    @Column
+    @Column(DataType.TEXT)
     body: string;
 
     @Column
