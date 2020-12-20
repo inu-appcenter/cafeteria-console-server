@@ -47,7 +47,7 @@ API 서버와 같은 DB를 공유하며, 웹 콘솔의 요청에 따라 운영 �
 
 `Heroku`에서 `potados99@gmail.com` 계정으로 배포중입니다. 애플리케이션 이름은 `cafeteria-console-server`입니다.
 
-배포 도메인은 https://manage-api.inu-cafeteria.app 입니다. HTTPS 인증서는 `Heroku`에서 관리합니다. 유료입니다.
+배포 도메인은 https://console-api.inu-cafeteria.app 입니다. HTTPS 인증서는 `Heroku`에서 관리합니다. 유료입니다.
 
 ### 배포하기
 
