@@ -22,8 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="chore: 이름 모두 변경.">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="chore(release): v1.2.3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +84,7 @@
       <recent name="$PROJECT_DIR$/lib/repositories" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.deploy">
     <configuration name="evaluator.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -146,8 +147,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.preview" />
         <item itemvalue="Jest.should support le (1)" />
         <item itemvalue="Jest.evaluator.test.ts" />
@@ -182,14 +183,9 @@
       <workItem from="1608388023284" duration="18000" />
       <workItem from="1608388458982" duration="2713000" />
       <workItem from="1608461883030" duration="247000" />
-      <workItem from="1608462191511" duration="403000" />
-    </task>
-    <task id="LOCAL-00012" summary="From DB to router.">
-      <created>1605629258321</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1605629258321</updated>
+      <workItem from="1608462191511" duration="650000" />
+      <workItem from="1608464137904" duration="24000" />
+      <workItem from="1608465321201" duration="10000" />
     </task>
     <task id="LOCAL-00013" summary="Add support for ParseRegex.">
       <created>1605632581266</created>
@@ -527,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608462532741</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="chore(release): v1.2.3">
+      <created>1608462610064</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1608462610064</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="RELOAD_CONTEXT" value="false" />
-    <MESSAGE value="Works!" />
     <MESSAGE value="Update doc" />
     <MESSAGE value="Limit logs to recent 50." />
     <MESSAGE value="v1.1.1" />
@@ -572,6 +574,7 @@
     <MESSAGE value="chore: 프로젝트 이름 변경" />
     <MESSAGE value="chore: rename other settings." />
     <MESSAGE value="chore: 이름 모두 변경." />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: 이름 모두 변경." />
+    <MESSAGE value="chore(release): v1.2.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(release): v1.2.3" />
   </component>
 </project>
