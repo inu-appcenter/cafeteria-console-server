@@ -9,8 +9,8 @@
 > - Android 앱: [cafeteria-android](https://github.com/inu-appcenter/cafeteria-android)
 >
 > ##### 운영 관리
-> - **콘솔 API 서버**: [cafeteria-management-server](https://github.com/inu-appcenter/cafeteria-management-server)
-> - 콘솔 웹 인터페이스: [cafeteria-management-web](https://github.com/inu-appcenter/cafeteria-management-web)
+> - **콘솔 API 서버**: [cafeteria-console-server](https://github.com/inu-appcenter/cafeteria-console-server)
+> - 콘솔 웹 인터페이스: [cafeteria-console-web](https://github.com/inu-appcenter/cafeteria-console-web)
 >
 > ##### 배포 관리
 > - API 서버 배포 스크립트: [cafeteria-server-deploy](https://github.com/inu-appcenter/cafeteria-server-deploy)
@@ -45,7 +45,7 @@ API 서버와 같은 DB를 공유하며, 웹 콘솔의 요청에 따라 운영 �
 
 ### 구성
 
-`Heroku`에서 `potados99@gmail.com` 계정으로 배포중입니다. 애플리케이션 이름은 `cafeteria-management-server`입니다.
+`Heroku`에서 `potados99@gmail.com` 계정으로 배포중입니다. 애플리케이션 이름은 `cafeteria-console-server`입니다.
 
 배포 도메인은 https://manage-api.inu-cafeteria.app 입니다. HTTPS 인증서는 `Heroku`에서 관리합니다. 유료입니다.
 

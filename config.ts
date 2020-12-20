@@ -9,18 +9,18 @@ export default {
 
     cors: {
         allowedHostsInProduction: [
-            'https://manage.inu-cafeteria.app'
+            'https://console.inu-cafeteria.app'
         ]
     },
 
     cookie: {
         domain: isProduction() ? 'inu-cafeteria.app' : undefined,
-        tokenName: 'cafeteria-management-server-token',
+        tokenName: 'cafeteria-console-server-token',
     },
 
     aws: {
         cloudwatch: {
-            logGroupName: 'cafeteria-management-server',
+            logGroupName: 'cafeteria-console-server',
         },
         region: 'ap-northeast-2',
         accessKeyId: getEnv('AWS_ACCESS_KEY_ID') || 'an_aws_id',
