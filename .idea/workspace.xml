@@ -22,12 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="chore: 프로젝트 이름 변경">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2dada8c0-0980-4188-96e8-590ccccd0e89" name="Default Changelist" comment="chore: 이름 모두 변경.">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,21 +182,7 @@
       <workItem from="1608388023284" duration="18000" />
       <workItem from="1608388458982" duration="2713000" />
       <workItem from="1608461883030" duration="247000" />
-      <workItem from="1608462191511" duration="171000" />
-    </task>
-    <task id="LOCAL-00010" summary="Works.">
-      <created>1605452733132</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1605452733132</updated>
-    </task>
-    <task id="LOCAL-00011" summary=".">
-      <created>1605454445847</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1605454445847</updated>
+      <workItem from="1608462191511" duration="403000" />
     </task>
     <task id="LOCAL-00012" summary="From DB to router.">
       <created>1605629258321</created>
@@ -531,7 +513,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608461908681</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="chore: rename other settings.">
+      <created>1608462377638</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1608462377639</updated>
+    </task>
+    <task id="LOCAL-00060" summary="chore: 이름 모두 변경.">
+      <created>1608462532741</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1608462532741</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,8 +547,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="RELOAD_CONTEXT" value="false" />
-    <MESSAGE value="Add entity and model for TransactionHsitory." />
-    <MESSAGE value="Works." />
     <MESSAGE value="Works!" />
     <MESSAGE value="Update doc" />
     <MESSAGE value="Limit logs to recent 50." />
@@ -576,6 +570,8 @@
     <MESSAGE value="chore: DB 컬럼 타입 변경&#10;&#10;@Column(DataType.TEXT)" />
     <MESSAGE value="chore(release): v1.2.2" />
     <MESSAGE value="chore: 프로젝트 이름 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: 프로젝트 이름 변경" />
+    <MESSAGE value="chore: rename other settings." />
+    <MESSAGE value="chore: 이름 모두 변경." />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: 이름 모두 변경." />
   </component>
 </project>
