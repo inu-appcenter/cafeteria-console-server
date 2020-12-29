@@ -5,7 +5,7 @@ import CafeteriaKioskNumbersModel from "../db/models/CafeteriaKioskNumbersModel"
 class CafeteriaKioskNumbersRepository extends SequelizeCRUDRepository<CafeteriaKioskNumbers, CafeteriaKioskNumbersModel> {
 
     constructor() {
-        super(CafeteriaKioskNumbers, CafeteriaKioskNumbersModel);
+        super(CafeteriaKioskNumbers, CafeteriaKioskNumbersModel, 'cafeteria_id');
     }
 
     async getKioskNumber(cafeteriaId: number) {
