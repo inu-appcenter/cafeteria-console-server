@@ -27,6 +27,13 @@ import Answer from "../entities/Answer";
 import {allQuestions, answerQuestion, deleteAnswer, updateAnswer} from "./interaction";
 import AppVersionRule from "../entities/AppVersionRule";
 import {allVersionRules, createVersionRule, deleteVersionRule, updateVersionRule} from "./versionRules";
+import {
+    allCafeteriaKioskNumbers,
+    createCafeteriaKioskNumbers,
+    deleteCafeteriaKioskNumbers,
+    updateCafeteriaKioskNumbers
+} from "./kioskNumbers";
+import CafeteriaKioskNumbers from "../entities/CafeteriaKioskNumbers";
 
 const query = `
     type Query {
@@ -39,6 +46,7 @@ const query = `
         allNotices: [Notice]
         allQuestions: [Question]
         allVersionRules: [AppVersionRule]
+        allCafeteriaKioskNumbers: [CafeteriaKioskNumbers]
     }
 `;
 
@@ -74,6 +82,10 @@ const mutation = `
         createVersionRule(rule: AppVersionRuleInput): Int
         updateVersionRule(rule: AppVersionRuleInput): Int
         deleteVersionRule(ruleId: Int): Int
+        
+        createCafeteriaKioskNumbers(kioskNumbers: CafeteriaKioskNumbersInput): Int
+        updateCafeteriaKioskNumbers(kioskNumbers: CafeteriaKioskNumbersInput): Int
+        deleteCafeteriaKioskNumbers(cafeteriaId: Int): Int
     }
 `;
 
@@ -107,6 +119,9 @@ const graphqlRoute = graphqlHTTP({
 
         AppVersionRule.type(),
         AppVersionRule.input(),
+
+        CafeteriaKioskNumbers.type(),
+        CafeteriaKioskNumbers.input(),
 
         query,
         mutation
@@ -151,7 +166,12 @@ const graphqlRoute = graphqlHTTP({
         allVersionRules,
         createVersionRule,
         updateVersionRule,
-        deleteVersionRule
+        deleteVersionRule,
+
+        allCafeteriaKioskNumbers,
+        createCafeteriaKioskNumbers,
+        updateCafeteriaKioskNumbers,
+        deleteCafeteriaKioskNumbers
     },
 
     customFormatErrorFn: (error) => {

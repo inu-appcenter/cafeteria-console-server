@@ -17,8 +17,8 @@ class CafeteriaKioskNumbers implements IEntity {
     static type() {
         return `
         type CafeteriaKioskNumbers {
-            cafeteriaId: Int!
-            kioskNumbers: String!
+            cafeteria_id: Int!
+            kiosk_numbers: String!
         }
         `;
     }
@@ -26,8 +26,8 @@ class CafeteriaKioskNumbers implements IEntity {
     static input() {
         return `
         input CafeteriaKioskNumbersInput {
-            cafeteriaId: Int!
-            kioskNumbers: String
+            cafeteria_id: Int!
+            kiosk_numbers: String
         }
         `;
     }

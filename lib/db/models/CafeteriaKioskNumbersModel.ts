@@ -11,10 +11,10 @@ class CafeteriaKioskNumbersModel extends Model<CafeteriaKioskNumbersModel> {
 
     @ForeignKey(() => CafeteriaModel)
     @Column({primaryKey: true})
-    cafeteriaId: number;
+    cafeteria_id: number;
 
     @Column
-    kioskNumbers: string;
+    kiosk_numbers: string;
 }
 
 export default CafeteriaKioskNumbersModel;

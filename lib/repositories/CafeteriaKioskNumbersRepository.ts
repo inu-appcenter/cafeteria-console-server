@@ -16,6 +16,10 @@ class CafeteriaKioskNumbersRepository extends SequelizeCRUDRepository<CafeteriaK
         return await this.readAll();
     }
 
+    async createKioskNumbers(kioskNumbers: CafeteriaKioskNumbers) {
+        return await this.create(kioskNumbers);
+    }
+
     async updateKioskNumbers(kioskNumbers: CafeteriaKioskNumbers) {
         return await this.update(kioskNumbers, ['cafeteriaId']);
     }
