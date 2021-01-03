@@ -21,6 +21,10 @@ export default {
     aws: {
         cloudwatch: {
             logGroupName: 'cafeteria-console-server',
+            serviceLogFetchParams: {
+                logGroupName: 'cafeteria-server',
+                logStreamName: 'combined',
+            }
         },
         region: 'ap-northeast-2',
         accessKeyId: getEnv('AWS_ACCESS_KEY_ID') || 'an_aws_id',

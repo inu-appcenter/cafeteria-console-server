@@ -1,14 +1,10 @@
+import config from "../../config";
+
+import WinstonCloudwatch from 'winston-cloudwatch';
 import stackTrace from 'stack-trace';
+import {setupAWS} from "../cloud/aws";
 import winston from 'winston';
 import path from 'path';
-
-// This will add DailyRotateFile to winston.transports.
-// It is needed. Do not remote this line.
-import _ from 'winston-daily-rotate-file';
-import WinstonCloudwatch from 'winston-cloudwatch';
-import AWS from 'aws-sdk';
-import config from "../../config";
-import {type} from "os";
 
 const format = winston.format;
 
@@ -29,10 +25,7 @@ function getConsoleTransport() {
 }
 
 function getCloudwatchTransport(prefix: string) {
-    AWS.config.update({
-        region: config.aws.region,
-        credentials: new AWS.Credentials(config.aws.accessKeyId, config.aws.secretAccessKey),
-    });
+    setupAWS();
 
     return new WinstonCloudwatch({
         logGroupName: config.aws.cloudwatch.logGroupName,
