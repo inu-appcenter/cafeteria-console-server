@@ -2,7 +2,6 @@ import cafeteriaRepository from "../../lib/repositories/CafeteriaRepository";
 import Cafeteria from "../../lib/entities/Cafeteria";
 
 describe('CafeteriaRepository', () => {
-
    async function deleteIfExists(cafeteriaId: number) {
       await cafeteriaRepository.deleteCafeteria(cafeteriaId);
    }

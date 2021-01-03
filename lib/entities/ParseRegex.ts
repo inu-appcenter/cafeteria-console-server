@@ -4,7 +4,6 @@ import IEntity from "./base/IEntity";
 
 class ParseRegex implements IEntity {
     id: number = 0;
-
     regex: string = '';
 
     serialize() {

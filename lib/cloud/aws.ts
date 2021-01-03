@@ -19,9 +19,7 @@
 
 import AWS from 'aws-sdk';
 import config from "../../config";
-import {GetLogEventsResponse} from "aws-sdk/clients/cloudwatchlogs";
-
-const cwl = new AWS.CloudWatchLogs({apiVersion: '2010-08-01'});
+import {GetLogEventsRequest, GetLogEventsResponse} from "aws-sdk/clients/cloudwatchlogs";
 
 export function setupAWS() {
     setupAWSGlobalConfig();
@@ -34,11 +32,15 @@ function setupAWSGlobalConfig() {
     });
 }
 
-export function getCloudWatchLogs(params: { logGroupName: string, logStreamName: string, startTime: number }): Promise<GetLogEventsResponse> {
+export function getCloudWatchLogs(params: GetLogEventsRequest): Promise<GetLogEventsResponse> {
+    // CloudWatchLogs MUST be instantiated after setupAWSGlobalConfig.
+    // For safety and simplicity, we ignore the burden of recreating the instance everytime.
+    const cwl = new AWS.CloudWatchLogs({apiVersion: '2014-03-28'});
+
     return new Promise((resolve, reject) => {
         cwl.getLogEvents(params, (err, data) => {
             if (err) {
-              reject();
+              reject(err);
             } else {
               resolve(data);
             }

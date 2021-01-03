@@ -3,10 +3,11 @@ import {serializeObject} from "../utils/object";
 import {camelToSnake} from "../utils/naming";
 
 class CafeteriaValidationParams implements IEntity {
-    cafeteriaId: number = 0; // Foreign key
     get id(): number { // Primary key
         return this.cafeteriaId;
     }
+
+    cafeteriaId: number = 0; // Foreign key
 
     token: string = '';
     availableMealTypes: number = 0;

@@ -36,7 +36,6 @@ class Notice implements IEntity {
         }
         `;
     }
-
 }
 
 export default Notice
