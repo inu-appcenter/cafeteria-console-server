@@ -34,6 +34,7 @@ import {
     updateCafeteriaKioskNumbers
 } from "./kioskNumbers";
 import CafeteriaKioskNumbers from "../entities/CafeteriaKioskNumbers";
+import {getLogs} from "./logs";
 
 const query = `
     type Query {
@@ -47,6 +48,7 @@ const query = `
         allQuestions: [Question]
         allVersionRules: [AppVersionRule]
         allCafeteriaKioskNumbers: [CafeteriaKioskNumbers]
+        recentLogs: [String]
     }
 `;
 
@@ -171,7 +173,9 @@ const graphqlRoute = graphqlHTTP({
         allCafeteriaKioskNumbers,
         createCafeteriaKioskNumbers,
         updateCafeteriaKioskNumbers,
-        deleteCafeteriaKioskNumbers
+        deleteCafeteriaKioskNumbers,
+
+        getLogs
     },
 
     customFormatErrorFn: (error) => {
