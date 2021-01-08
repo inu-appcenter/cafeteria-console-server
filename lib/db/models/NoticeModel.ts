@@ -1,4 +1,4 @@
-import {Column, DataType, Model, Table} from "sequelize-typescript";
+import {AutoIncrement, Column, DataType, Model, Table} from "sequelize-typescript";
 
 @Table({
     tableName: 'notices',
@@ -7,6 +7,7 @@ import {Column, DataType, Model, Table} from "sequelize-typescript";
     collate: 'utf8mb4_unicode_ci',
 })
 class NoticeModel extends Model<NoticeModel> {
+    @AutoIncrement
     @Column({primaryKey: true})
     id: number;
 
