@@ -36,6 +36,13 @@ import {
 import CafeteriaKioskNumbers from "../entities/CafeteriaKioskNumbers";
 import {recentLogs} from "./logs";
 import Log from "../entities/Log";
+import CafeteriaComment from "../entities/CafeteriaComment";
+import {
+    allCafeteriaComments,
+    createCafeteriaComment,
+    deleteCafeteriaComment,
+    updateCafeteriaComment
+} from "./cafeteriaComments";
 
 const query = `
     type Query {
@@ -48,6 +55,7 @@ const query = `
         allNotices: [Notice]
         allQuestions: [Question]
         allVersionRules: [AppVersionRule]
+        allCafeteriaComments: [CafeteriaComment]
         allCafeteriaKioskNumbers: [CafeteriaKioskNumbers]
         recentLogs: [Log]
     }
@@ -86,6 +94,10 @@ const mutation = `
         updateVersionRule(rule: AppVersionRuleInput): Int
         deleteVersionRule(ruleId: Int): Int
         
+        createCafeteriaComment(comment: CafeteriaCommentInput): Int
+        updateCafeteriaComment(comment: CafeteriaCommentInput): Int
+        deleteCafeteriaComment(cafeteriaId: Int): Int
+        
         createCafeteriaKioskNumbers(kioskNumbers: CafeteriaKioskNumbersInput): Int
         updateCafeteriaKioskNumbers(kioskNumbers: CafeteriaKioskNumbersInput): Int
         deleteCafeteriaKioskNumbers(cafeteriaId: Int): Int
@@ -122,6 +134,9 @@ const graphqlRoute = graphqlHTTP({
 
         AppVersionRule.type(),
         AppVersionRule.input(),
+
+        CafeteriaComment.type(),
+        CafeteriaComment.input(),
 
         CafeteriaKioskNumbers.type(),
         CafeteriaKioskNumbers.input(),
@@ -172,6 +187,11 @@ const graphqlRoute = graphqlHTTP({
         createVersionRule,
         updateVersionRule,
         deleteVersionRule,
+
+        allCafeteriaComments,
+        createCafeteriaComment,
+        updateCafeteriaComment,
+        deleteCafeteriaComment,
 
         allCafeteriaKioskNumbers,
         createCafeteriaKioskNumbers,
