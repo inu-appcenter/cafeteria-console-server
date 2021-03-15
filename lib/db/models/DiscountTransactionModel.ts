@@ -22,3 +22,5 @@ class DiscountTransactionModel extends Model<DiscountTransactionModel> {
     @Column
     timestamp: Date;
 }
+
+export default DiscountTransactionModel;
