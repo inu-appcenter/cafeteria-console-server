@@ -36,8 +36,6 @@ class DiscountTransactionRepository extends SequelizeCRUDRepository<DiscountTran
         assignIfValid(whereClause, 'cafeteria_id', options.cafeteriaId, (v) => v !== undefined && !isNaN(v));
         assignIfValid(whereClause, 'timestamp', this.getSameDayWhereClause(options.date), (v) => !!v);
 
-        console.log(whereClause);
-
         return whereClause;
     }
 
