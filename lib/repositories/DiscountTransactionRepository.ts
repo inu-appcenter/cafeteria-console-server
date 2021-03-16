@@ -4,7 +4,6 @@ import DiscountTransactionModel from "../db/models/DiscountTransactionModel";
 import {Op} from "sequelize";
 import {endOfTheDay, startOfTheDay} from "../utils/date";
 import {assignIfValid} from "../utils/object";
-import logger from "../utils/logger";
 
 type TransactionQueryOptions = {
     cafeteriaId?: number,

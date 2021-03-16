@@ -1,39 +1,39 @@
 import express from "express";
 import discountTransactionRepository from "../repositories/DiscountTransactionRepository";
-import {localDateString, parseDateString} from "../utils/date";
+import {localDateString, parseDateYYYYMMDD} from "../utils/date";
 import {createExcelWorkbookFromMatrix} from "../utils/fileExports";
 import DiscountTransaction from "../entities/DiscountTransaction";
 import {Workbook} from "exceljs";
 import logger from "../utils/logger";
 
 export default async (req: express.Request, res: express.Response) => {
-    const date = req.params.date as string;
-    const fileType = req.query.fileType as string;
     const cafeteriaId = req.query.cafeteriaId as string;
+    const dateString = req.params.date as string;
+    const fileType = req.query.fileType as string;
 
-    logger.info(`로그를 달라규!? 날짜는 ${date}, ${cafeteriaId}번 식당으루!? 결과는 ${fileType} 파일로 달라구?`);
+    logger.info(`로그를 달라규!? 날짜는 ${dateString}, ${cafeteriaId}번 식당으루!? 결과는 ${fileType} 파일로 달라구?`);
 
-    const discountRecords = await getRequestedRecords(date, cafeteriaId);
+    const discountRecords = await getRequestedRecords(dateString, cafeteriaId);
 
-    switch (fileType || 'txt') {
+    switch (fileType) {
         case 'txt':
-            const text = formatSimpleText(discountRecords, `결과 ${discountRecords.length}건.\n조회 시각: ${localDateString(new Date())}\n조회 파라미터: {date: ${date}, fileType: ${fileType}, cafeteriaId: ${cafeteriaId}}\n`);
+            const text = formatSimpleText(discountRecords, `결과 ${discountRecords.length}건.\n조회 시각: ${localDateString(new Date())}\n조회 파라미터: {date: ${dateString}, fileType: ${fileType}, cafeteriaId: ${cafeteriaId}}\n`);
             return sendText(res, text);
 
         case 'xls':
-            const workbook = await createExcelWorkbookFromMatrix(toMatrix(discountRecords), date);
-            return sendExcelWorkbook(res, workbook, `${date}.xlsx`);
+            const workbook = await createExcelWorkbookFromMatrix(toMatrix(discountRecords), dateString);
+            return sendExcelWorkbook(res, workbook, `${dateString}.xlsx`);
 
         default:
-            const message = "fileType은 txt와 xls 중 하나입니다.";
+            const message = "이건 있을 수가 없는 일이오...!";
             return sendWrongRequest(res, message);
     }
 }
 
-async function getRequestedRecords(dateParam?: string, cafeteriaIdQuery?: string) {
+async function getRequestedRecords(dateStringParam: string, cafeteriaIdQuery?: string) {
     return await discountTransactionRepository.getTransactions({
         cafeteriaId: cafeteriaIdQuery ? parseInt(cafeteriaIdQuery) : undefined,
-        date: dateParam ? parseDateString(dateParam) : undefined
+        date: parseDateYYYYMMDD(dateStringParam)
     });
 }
 
@@ -46,6 +46,10 @@ function formatSimpleText(records: DiscountTransaction[], title?: string) {
         date: localDateString(record.timestamp),
         student_id: record.userId.toString(),
     }));
+
+    if (rows.length < 1) {
+        return title;
+    }
 
     const dateColumnWidth = Math.max(...rows.map((r) => r.date.length));
     const studentIdColumnWidth = Math.max(...rows.map((r) => r.student_id.length));
@@ -63,7 +67,7 @@ function formatSimpleText(records: DiscountTransaction[], title?: string) {
     return lines.join('\n');
 }
 
-function sendText(res: express.Response, text: string) {
+function sendText(res: express.Response, text?: string) {
     // 브라우저에서 바로 열람이 아닌 파일 다운로드를 원한다면 아래 코드를 쓰자!
     // res.setHeader("Content-Disposition", `attachment; filename=haha.txt`);
 
@@ -84,6 +88,7 @@ function toMatrix(records: DiscountTransaction[]) {
         '식당 번호(4: 학생식당)',
         '식사 시간대(4: 아침, 2: 점심, 1: 저녁)'
     ];
+
     const rows = records.map((record) => [
         localDateString(record.timestamp),
         record.userId.toString(),
