@@ -7,12 +7,26 @@ import {Workbook} from "exceljs";
 
 export default async (req: express.Request, res: express.Response) => {
     const date = req.params.date as string;
+    const fileType = req.query.fileType as string;
     const cafeteriaId = req.query.cafeteriaId as string;
 
     const discountRecords = await getRequestedRecords(date, cafeteriaId);
-    const workbook = await createExcelWorkbookFromMatrix(toMatrix(discountRecords), date);
 
-    await sendExcelWorkbook(res, workbook, `${date}.xlsx`);
+    switch (fileType || 'txt') {
+        case 'txt':
+            const text = formatSimpleText(discountRecords);
+            sendText(res, text);
+            break;
+
+        case 'xls':
+            const workbook = await createExcelWorkbookFromMatrix(toMatrix(discountRecords), date);
+            sendExcelWorkbook(res, workbook, `${date}.xlsx`);
+            break;
+
+        default:
+            sendWrongRequest(res, "fileType은 txt와 xls 중 하나입니다.");
+            break;
+    }
 }
 
 async function getRequestedRecords(dateParam?: string, cafeteriaIdQuery?: string) {
@@ -20,6 +34,14 @@ async function getRequestedRecords(dateParam?: string, cafeteriaIdQuery?: string
         cafeteriaId: cafeteriaIdQuery ? parseInt(cafeteriaIdQuery) : undefined,
         date: dateParam ? parseDateString(dateParam) : undefined
     });
+}
+
+function formatSimpleText(records: DiscountTransaction[]) {
+    return "히히";
+}
+
+function sendText(res: express.Response, text: string) {
+    res.send(text);
 }
 
 function toMatrix(records: DiscountTransaction[]) {
@@ -39,11 +61,13 @@ function toMatrix(records: DiscountTransaction[]) {
     return [columns, ...rows];
 }
 
-async function sendExcelWorkbook(res: express.Response, workbook: Workbook, filename: string) {
+function sendExcelWorkbook(res: express.Response, workbook: Workbook, filename: string) {
     res.setHeader("Content-Type", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
     res.setHeader("Content-Disposition", `attachment; filename=${filename}`);
 
-    await workbook.xlsx.write(res);
+    workbook.xlsx.write(res).then(() => res.end());
+}
 
-    res.end();
+function sendWrongRequest(res: express.Response, message: string) {
+    res.status(400).send(`요청 형태가 올바르지 않습니다! ${message}`);
 }
