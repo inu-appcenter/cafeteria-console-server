@@ -12,6 +12,7 @@ import AnswerModel from "./models/AnswerModel";
 import AppVersionRuleModel from "./models/AppVersionRuleModel";
 import CafeteriaKioskNumbersModel from "./models/CafeteriaKioskNumbersModel";
 import CafeteriaCommentModel from "./models/CafeteriaCommentModel";
+import DiscountTransactionModel from "./models/DiscountTransactionModel";
 
 const sequelize = new Sequelize(
     config.sequelize.database,
@@ -33,7 +34,8 @@ sequelize.addModels([
     AnswerModel,
     AppVersionRuleModel,
     CafeteriaCommentModel,
-    CafeteriaKioskNumbersModel
+    CafeteriaKioskNumbersModel,
+    DiscountTransactionModel
 ]);
 
 export default sequelize;

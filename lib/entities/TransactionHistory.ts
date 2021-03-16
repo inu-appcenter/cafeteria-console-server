@@ -33,4 +33,4 @@ class TransactionHistory implements IEntity {
     }
 }
 
-export default TransactionHistory
+export default TransactionHistory;

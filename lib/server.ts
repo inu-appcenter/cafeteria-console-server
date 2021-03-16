@@ -8,6 +8,8 @@ import version from "./routes/version";
 import cookieParser from 'cookie-parser';
 import {isProduction} from "./utils/nodeEnv";
 import config from "../config";
+import discountRecords from "./routes/discountRecords";
+import validateRecordsRequest from "./routes/validateRecordsRequest";
 
 function createServer() {
     const app: express.Application = express();
@@ -19,6 +21,7 @@ function createServer() {
     }));
 
     app.use('/graphql', authenticate, graphqlRoute);
+    app.get('/logs/:date', authenticate, validateRecordsRequest, discountRecords);
 
     app.get('/', hello);
     app.get('/version', version);

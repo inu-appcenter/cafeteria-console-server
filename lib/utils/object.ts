@@ -74,3 +74,9 @@ function removeFields<T>(object: T, exclude: Array<string>) {
 
     return object;
 }
+
+export function assignIfValid(object: any, key: string, value: any | undefined, validator: (value?: any) => boolean) {
+    if (validator(value)) {
+        object[key] = value;
+    }
+}
