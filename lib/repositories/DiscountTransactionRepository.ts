@@ -24,7 +24,7 @@ class DiscountTransactionRepository extends SequelizeCRUDRepository<DiscountTran
      * 주어진 식당 코드와 날짜에 맞는 할인 기록을 모두 가져옵니다.
      * @param options
      */
-    async getTransactions(options: TransactionQueryOptions) {
+    async getTransactions(options: TransactionQueryOptions): Promise<DiscountTransaction[]>{
         return await this.readAll({
             where: this.getFindOptions(options)
         });
