@@ -1,5 +1,5 @@
 interface IIdentifiable {
-    id: number;
+  id: number;
 }
 
 export default IIdentifiable;

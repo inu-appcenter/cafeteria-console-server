@@ -18,32 +18,32 @@
  */
 
 import AWS from 'aws-sdk';
-import config from "../../config";
-import {GetLogEventsRequest, GetLogEventsResponse} from "aws-sdk/clients/cloudwatchlogs";
+import config from '../../config';
+import {GetLogEventsRequest, GetLogEventsResponse} from 'aws-sdk/clients/cloudwatchlogs';
 
 export function setupAWS() {
-    setupAWSGlobalConfig();
+  setupAWSGlobalConfig();
 }
 
 function setupAWSGlobalConfig() {
-    AWS.config.update({
-        region: config.aws.region,
-        credentials: new AWS.Credentials(config.aws.accessKeyId, config.aws.secretAccessKey),
-    });
+  AWS.config.update({
+    region: config.aws.region,
+    credentials: new AWS.Credentials(config.aws.accessKeyId, config.aws.secretAccessKey),
+  });
 }
 
 export function getCloudWatchLogs(params: GetLogEventsRequest): Promise<GetLogEventsResponse> {
-    // CloudWatchLogs MUST be instantiated after setupAWSGlobalConfig.
-    // For safety and simplicity, we ignore the burden of recreating the instance everytime.
-    const cwl = new AWS.CloudWatchLogs({apiVersion: '2014-03-28'});
+  // CloudWatchLogs MUST be instantiated after setupAWSGlobalConfig.
+  // For safety and simplicity, we ignore the burden of recreating the instance everytime.
+  const cwl = new AWS.CloudWatchLogs({apiVersion: '2014-03-28'});
 
-    return new Promise((resolve, reject) => {
-        cwl.getLogEvents(params, (err, data) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(data);
-            }
-        });
+  return new Promise((resolve, reject) => {
+    cwl.getLogEvents(params, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
     });
+  });
 }

@@ -1,27 +1,27 @@
-import {AutoIncrement, Column, DataType, Model, Table} from "sequelize-typescript";
+import {AutoIncrement, Column, DataType, Model, Table} from 'sequelize-typescript';
 
 @Table({
-    tableName: 'notices',
-    timestamps: true,
-    charset: 'utf8mb4',
-    collate: 'utf8mb4_unicode_ci',
+  tableName: 'notices',
+  timestamps: true,
+  charset: 'utf8mb4',
+  collate: 'utf8mb4_unicode_ci',
 })
 class NoticeModel extends Model<NoticeModel> {
-    @AutoIncrement
-    @Column({primaryKey: true})
-    id: number;
+  @AutoIncrement
+  @Column({primaryKey: true})
+  id: number;
 
-    @Column
-    title: string;
+  @Column
+  title: string;
 
-    @Column(DataType.TEXT)
-    body: string;
+  @Column(DataType.TEXT)
+  body: string;
 
-    @Column
-    target_os: string;
+  @Column
+  target_os: string;
 
-    @Column
-    target_version: string;
+  @Column
+  target_version: string;
 }
 
-export default NoticeModel
+export default NoticeModel;

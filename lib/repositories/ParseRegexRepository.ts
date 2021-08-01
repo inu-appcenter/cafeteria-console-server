@@ -1,34 +1,33 @@
-import SequelizeCRUDRepository from "./base/SequelizeCRUDRepository";
-import ParseRegex from "../entities/ParseRegex";
-import ParseRegexModel from "../db/models/ParseRegexModel";
+import SequelizeCRUDRepository from './base/SequelizeCRUDRepository';
+import ParseRegex from '../entities/ParseRegex';
+import ParseRegexModel from '../db/models/ParseRegexModel';
 
 class ParseRegexRepository extends SequelizeCRUDRepository<ParseRegex, ParseRegexModel> {
+  constructor() {
+    super(ParseRegex, ParseRegexModel);
+  }
 
-    constructor() {
-        super(ParseRegex, ParseRegexModel);
-    }
+  async addParseRegex(parseRegex: ParseRegex) {
+    return this.create(parseRegex);
+  }
 
-    async addParseRegex(parseRegex: ParseRegex) {
-        return this.create(parseRegex);
-    }
+  async getParseRegex(parseRegexId: number) {
+    return this.read(parseRegexId);
+  }
 
-    async getParseRegex(parseRegexId: number) {
-        return this.read(parseRegexId);
-    }
+  async getAllParseRegexes() {
+    return await this.readAll();
+  }
 
-    async getAllParseRegexes() {
-        return await this.readAll();
-    }
+  async updateParseRegex(parseRegex: ParseRegex) {
+    return this.update(parseRegex, ['id']);
+  }
 
-    async updateParseRegex(parseRegex: ParseRegex) {
-        return this.update(parseRegex, ['id']);
-    }
-
-    async deleteParseRegex(parseRegexId: number) {
-        return this.delete(parseRegexId);
-    }
+  async deleteParseRegex(parseRegexId: number) {
+    return this.delete(parseRegexId);
+  }
 }
 
 const parseRegexRepository = new ParseRegexRepository();
 
-export default parseRegexRepository
+export default parseRegexRepository;

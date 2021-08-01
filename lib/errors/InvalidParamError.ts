@@ -1,9 +1,9 @@
 class InvalidParamError extends Error {
-    constructor() {
-        super(InvalidParamError.message);
-    }
+  static message = 'INVALID_PARAM';
 
-    static message = 'INVALID_PARAM'
+  constructor() {
+    super(InvalidParamError.message);
+  }
 }
 
-export default InvalidParamError
+export default InvalidParamError;

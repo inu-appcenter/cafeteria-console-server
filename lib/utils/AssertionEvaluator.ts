@@ -73,7 +73,7 @@ class AssertionEvaluator {
 
       const singleComparisons = [];
       for (let i = 0; i < numberOfOperators; i++) {
-        singleComparisons.push(split.slice(i*2, i*2 + 3).join(' '));
+        singleComparisons.push(split.slice(i * 2, i * 2 + 3).join(' '));
       }
 
       this.assertion = singleComparisons.join(' && ');
@@ -94,7 +94,7 @@ class AssertionEvaluator {
     const regexToSplitAssertion = new RegExp(`(${this.supportedOperations.join('|')})`);
     const split = this.assertion.split(regexToSplitAssertion).map((el) => el.trim());
 
-    this.assertion = split.map((el) => (el === '') ? this.versionSymbleName : el).join(' ');
+    this.assertion = split.map((el) => (el === '' ? this.versionSymbleName : el)).join(' ');
   }
 
   /**
@@ -120,10 +120,11 @@ class AssertionEvaluator {
 
     const isOperator = (token) => this.supportedOperations.indexOf(token) > -1;
     const isSymbol = (token) => this.versionSymbleName === token;
-    const isEscaped = (token) => token.toString().startsWith('\'') && token.toString().endsWith('\'');
+    const isEscaped = (token) => token.toString().startsWith("'") && token.toString().endsWith("'");
 
     const constantEscapedTokens = tokens.map((token) =>
-      (isOperator(token) || isSymbol(token) || isEscaped(tokens)) ? token : `'${token}'`);
+      isOperator(token) || isSymbol(token) || isEscaped(tokens) ? token : `'${token}'`
+    );
 
     this.assertion = constantEscapedTokens.join(' ');
   }

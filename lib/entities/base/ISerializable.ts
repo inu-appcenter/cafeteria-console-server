@@ -1,5 +1,5 @@
 interface ISerializable {
-    serialize(): object;
+  serialize(): object;
 }
 
 export default ISerializable;

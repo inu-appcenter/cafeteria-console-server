@@ -1,33 +1,32 @@
-import {Table, Column, Model, PrimaryKey} from 'sequelize-typescript';
+import {Column, Model, Table} from 'sequelize-typescript';
 
 @Table({
-    tableName: 'cafeteria',
-    timestamps: false,
-    charset: 'utf8mb4',
-    collate: 'utf8mb4_unicode_ci',
+  tableName: 'cafeteria',
+  timestamps: false,
+  charset: 'utf8mb4',
+  collate: 'utf8mb4_unicode_ci',
 })
 class CafeteriaModel extends Model<CafeteriaModel> {
+  @Column({primaryKey: true})
+  id: number;
 
-    @Column({primaryKey: true})
-    id: number;
+  @Column
+  name: string;
 
-    @Column
-    name: string;
+  @Column
+  display_name: string;
 
-    @Column
-    display_name: string;
+  @Column
+  image_path: string;
 
-    @Column
-    image_path: string;
+  @Column
+  support_menu: boolean;
 
-    @Column
-    support_menu: boolean;
+  @Column
+  support_discount: boolean;
 
-    @Column
-    support_discount: boolean;
-
-    @Column
-    support_notification: boolean;
+  @Column
+  support_notification: boolean;
 }
 
 export default CafeteriaModel;

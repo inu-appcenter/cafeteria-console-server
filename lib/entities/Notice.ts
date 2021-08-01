@@ -1,20 +1,16 @@
-import IEntity from "./base/IEntity";
-import {serializeObject} from "../utils/object";
-import {camelToSnake} from "../utils/naming";
+import IEntity from './base/IEntity';
+import {serializeObject} from '../utils/object';
+import {camelToSnake} from '../utils/naming';
 
 class Notice implements IEntity {
-    id: number = 0;
-    title: string = '';
-    body: string = '';
-    targetOs: string = '';
-    targetVersion: string = '';
+  id: number = 0;
+  title: string = '';
+  body: string = '';
+  targetOs: string = '';
+  targetVersion: string = '';
 
-    serialize() {
-        return serializeObject(this, camelToSnake);
-    }
-
-    static type() {
-        return `
+  static type() {
+    return `
         type Notice {
             id: Int!
             title: String!
@@ -23,10 +19,10 @@ class Notice implements IEntity {
             target_version: String!
         }
         `;
-    }
+  }
 
-    static input() {
-        return `
+  static input() {
+    return `
         input NoticeInput {
             id: Int
             title: String!
@@ -35,7 +31,11 @@ class Notice implements IEntity {
             target_version: String!
         }
         `;
-    }
+  }
+
+  serialize() {
+    return serializeObject(this, camelToSnake);
+  }
 }
 
-export default Notice
+export default Notice;

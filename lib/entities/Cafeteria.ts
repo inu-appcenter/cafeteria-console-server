@@ -1,24 +1,20 @@
-import {serializeObject} from "../utils/object";
-import {camelToSnake} from "../utils/naming";
-import IEntity from "./base/IEntity";
+import {serializeObject} from '../utils/object';
+import {camelToSnake} from '../utils/naming';
+import IEntity from './base/IEntity';
 
 class Cafeteria implements IEntity {
-    id: number = 0;
+  id: number = 0;
 
-    name: string = '';
-    displayName: string = '';
-    imagePath: string = '';
+  name: string = '';
+  displayName: string = '';
+  imagePath: string = '';
 
-    supportMenu: boolean = false;
-    supportDiscount: boolean = false;
-    supportNotification: boolean = false;
+  supportMenu: boolean = false;
+  supportDiscount: boolean = false;
+  supportNotification: boolean = false;
 
-    serialize() {
-        return serializeObject(this, camelToSnake, ['imagePath']);
-    }
-
-    static type() {
-        return `
+  static type() {
+    return `
         type Cafeteria {
             id: Int!
             name: String!
@@ -28,10 +24,10 @@ class Cafeteria implements IEntity {
             support_notification: Boolean!
         }
      `;
-    }
+  }
 
-    static input() {
-        return `
+  static input() {
+    return `
         input CafeteriaInput {
             id: Int!
             name: String
@@ -41,7 +37,11 @@ class Cafeteria implements IEntity {
             support_notification: Boolean
         }
         `;
-    }
+  }
+
+  serialize() {
+    return serializeObject(this, camelToSnake, ['imagePath']);
+  }
 }
 
 export default Cafeteria;

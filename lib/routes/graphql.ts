@@ -1,48 +1,53 @@
 import {buildSchema} from 'graphql';
 import {graphqlHTTP} from 'express-graphql';
-import Cafeteria from "../entities/Cafeteria";
-import Corner from "../entities/Corner";
+import Cafeteria from '../entities/Cafeteria';
+import Corner from '../entities/Corner';
 
-import {allCafeteria, createCafeteria, deleteCafeteria, updateCafeteria} from "./cafeteria";
-import {allCorners, createCorner, deleteCorner, updateCorner} from "./corners";
-import {allRules, updateRule} from "./rules";
+import {allCafeteria, createCafeteria, deleteCafeteria, updateCafeteria} from './cafeteria';
+import {allCorners, createCorner, deleteCorner, updateCorner} from './corners';
+import {allRules, updateRule} from './rules';
 import {
-    allValidationParams,
-    createValidationParams,
-    deleteValidationParams,
-    updateValidationParams
-} from "./validationParams";
-import CafeteriaDiscountRule from "../entities/CafeteriaDiscountRule";
-import CafeteriaValidationParams from "../entities/CafeteriaValidationParams";
-import logger from "../utils/logger";
-import ParseRegex from "../entities/ParseRegex";
-import {allParseRegexes, createParseRegex, deleteParseRegex, updateParseRegex} from "./parseRegex";
-import TransactionHistory from "../entities/TransactionHistory";
-import {allTransactionHistories} from "./transactionHistory";
-import InvalidParamError from "../errors/InvalidParamError";
-import Notice from "../entities/Notice";
-import {allNotices, createNotice, deleteNotice, updateNotice} from "./notices";
-import Question from "../entities/Question";
-import Answer from "../entities/Answer";
-import {allQuestions, answerQuestion, deleteAnswer, updateAnswer} from "./interaction";
-import AppVersionRule from "../entities/AppVersionRule";
-import {allVersionRules, createVersionRule, deleteVersionRule, updateVersionRule} from "./versionRules";
+  allValidationParams,
+  createValidationParams,
+  deleteValidationParams,
+  updateValidationParams,
+} from './validationParams';
+import CafeteriaDiscountRule from '../entities/CafeteriaDiscountRule';
+import CafeteriaValidationParams from '../entities/CafeteriaValidationParams';
+import logger from '../utils/logger';
+import ParseRegex from '../entities/ParseRegex';
+import {allParseRegexes, createParseRegex, deleteParseRegex, updateParseRegex} from './parseRegex';
+import TransactionHistory from '../entities/TransactionHistory';
+import {allTransactionHistories} from './transactionHistory';
+import InvalidParamError from '../errors/InvalidParamError';
+import Notice from '../entities/Notice';
+import {allNotices, createNotice, deleteNotice, updateNotice} from './notices';
+import Question from '../entities/Question';
+import Answer from '../entities/Answer';
+import {allQuestions, answerQuestion, deleteAnswer, updateAnswer} from './interaction';
+import AppVersionRule from '../entities/AppVersionRule';
 import {
-    allCafeteriaKioskNumbers,
-    createCafeteriaKioskNumbers,
-    deleteCafeteriaKioskNumbers,
-    updateCafeteriaKioskNumbers
-} from "./kioskNumbers";
-import CafeteriaKioskNumbers from "../entities/CafeteriaKioskNumbers";
-import {recentLogs} from "./logs";
-import Log from "../entities/Log";
-import CafeteriaComment from "../entities/CafeteriaComment";
+  allVersionRules,
+  createVersionRule,
+  deleteVersionRule,
+  updateVersionRule,
+} from './versionRules';
 import {
-    allCafeteriaComments,
-    createCafeteriaComment,
-    deleteCafeteriaComment,
-    updateCafeteriaComment
-} from "./cafeteriaComments";
+  allCafeteriaKioskNumbers,
+  createCafeteriaKioskNumbers,
+  deleteCafeteriaKioskNumbers,
+  updateCafeteriaKioskNumbers,
+} from './kioskNumbers';
+import CafeteriaKioskNumbers from '../entities/CafeteriaKioskNumbers';
+import {recentLogs} from './logs';
+import Log from '../entities/Log';
+import CafeteriaComment from '../entities/CafeteriaComment';
+import {
+  allCafeteriaComments,
+  createCafeteriaComment,
+  deleteCafeteriaComment,
+  updateCafeteriaComment,
+} from './cafeteriaComments';
 
 const query = `
     type Query {
@@ -105,111 +110,112 @@ const mutation = `
 `;
 
 const graphqlRoute = graphqlHTTP({
+  schema: buildSchema(
+    [
+      Cafeteria.type(),
+      Cafeteria.input(),
 
-    schema: buildSchema([
-        Cafeteria.type(),
-        Cafeteria.input(),
+      Corner.type(),
+      Corner.input(),
 
-        Corner.type(),
-        Corner.input(),
+      CafeteriaDiscountRule.type(),
+      CafeteriaDiscountRule.input(),
 
-        CafeteriaDiscountRule.type(),
-        CafeteriaDiscountRule.input(),
+      CafeteriaValidationParams.type(),
+      CafeteriaValidationParams.input(),
 
-        CafeteriaValidationParams.type(),
-        CafeteriaValidationParams.input(),
+      ParseRegex.type(),
+      ParseRegex.input(),
 
-        ParseRegex.type(),
-        ParseRegex.input(),
+      TransactionHistory.type(),
 
-        TransactionHistory.type(),
+      Notice.type(),
+      Notice.input(),
 
-        Notice.type(),
-        Notice.input(),
+      Question.type(),
 
-        Question.type(),
+      Answer.type(),
+      Answer.input(),
 
-        Answer.type(),
-        Answer.input(),
+      AppVersionRule.type(),
+      AppVersionRule.input(),
 
-        AppVersionRule.type(),
-        AppVersionRule.input(),
+      CafeteriaComment.type(),
+      CafeteriaComment.input(),
 
-        CafeteriaComment.type(),
-        CafeteriaComment.input(),
+      CafeteriaKioskNumbers.type(),
+      CafeteriaKioskNumbers.input(),
 
-        CafeteriaKioskNumbers.type(),
-        CafeteriaKioskNumbers.input(),
+      Log.type(),
 
-        Log.type(),
+      query,
+      mutation,
+    ].join('\n')
+  ),
 
-        query,
-        mutation
-    ].join('\n')),
+  rootValue: {
+    allCafeteria,
+    createCafeteria,
+    updateCafeteria,
+    deleteCafeteria,
 
-    rootValue: {
-        allCafeteria,
-        createCafeteria,
-        updateCafeteria,
-        deleteCafeteria,
+    allCorners,
+    createCorner,
+    updateCorner,
+    deleteCorner,
 
-        allCorners,
-        createCorner,
-        updateCorner,
-        deleteCorner,
+    allRules,
+    updateRule,
 
-        allRules,
-        updateRule,
+    allValidationParams,
+    createValidationParams,
+    updateValidationParams,
+    deleteValidationParams,
 
-        allValidationParams,
-        createValidationParams,
-        updateValidationParams,
-        deleteValidationParams,
+    allParseRegexes,
+    createParseRegex,
+    updateParseRegex,
+    deleteParseRegex,
 
-        allParseRegexes,
-        createParseRegex,
-        updateParseRegex,
-        deleteParseRegex,
+    allTransactionHistories,
 
-        allTransactionHistories,
+    allNotices,
+    createNotice,
+    updateNotice,
+    deleteNotice,
 
-        allNotices,
-        createNotice,
-        updateNotice,
-        deleteNotice,
+    allQuestions,
+    answerQuestion,
+    updateAnswer,
+    deleteAnswer,
 
-        allQuestions,
-        answerQuestion,
-        updateAnswer,
-        deleteAnswer,
+    allVersionRules,
+    createVersionRule,
+    updateVersionRule,
+    deleteVersionRule,
 
-        allVersionRules,
-        createVersionRule,
-        updateVersionRule,
-        deleteVersionRule,
+    allCafeteriaComments,
+    createCafeteriaComment,
+    updateCafeteriaComment,
+    deleteCafeteriaComment,
 
-        allCafeteriaComments,
-        createCafeteriaComment,
-        updateCafeteriaComment,
-        deleteCafeteriaComment,
+    allCafeteriaKioskNumbers,
+    createCafeteriaKioskNumbers,
+    updateCafeteriaKioskNumbers,
+    deleteCafeteriaKioskNumbers,
 
-        allCafeteriaKioskNumbers,
-        createCafeteriaKioskNumbers,
-        updateCafeteriaKioskNumbers,
-        deleteCafeteriaKioskNumbers,
+    recentLogs,
+  },
 
-        recentLogs
-    },
-
-    customFormatErrorFn: (error) => {
-        if (error.message === InvalidParamError.message) {
-            logger.warn('오이!! 그런 잘못된 요청은 나를 화나게 한다구...?');
-        } else {
-            logger.error(error);
-        }
-
-        return error;
+  customFormatErrorFn: (error) => {
+    if (error.message === InvalidParamError.message) {
+      logger.warn('오이!! 그런 잘못된 요청은 나를 화나게 한다구...?');
+    } else {
+      logger.error(error);
     }
+
+    return error;
+  },
 });
 
 export default graphqlRoute;

@@ -1,20 +1,16 @@
-import IEntity from "./base/IEntity";
-import {serializeObject} from "../utils/object";
-import {camelToSnake} from "../utils/naming";
+import IEntity from './base/IEntity';
+import {serializeObject} from '../utils/object';
+import {camelToSnake} from '../utils/naming';
 
 class Answer implements IEntity {
-    id: number = 0;
-    title: string = '';
-    body: string = '';
-    read: boolean = false;
-    date: Date = new Date();
+  id: number = 0;
+  title: string = '';
+  body: string = '';
+  read: boolean = false;
+  date: Date = new Date();
 
-    serialize() {
-        return serializeObject(this, camelToSnake);
-    }
-
-    static type() {
-        return `
+  static type() {
+    return `
         type Answer {
             id: Int!
             title: String!
@@ -23,16 +19,20 @@ class Answer implements IEntity {
             date: String!
         }
         `;
-    }
+  }
 
-    static input() {
-        return `
+  static input() {
+    return `
         input AnswerInput {
             title: String!
             body: String!
         }
         `;
-    }
+  }
+
+  serialize() {
+    return serializeObject(this, camelToSnake);
+  }
 }
 
-export default Answer
+export default Answer;

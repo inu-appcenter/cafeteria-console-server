@@ -1,24 +1,20 @@
-import IEntity from "./base/IEntity";
-import {serializeObject} from "../utils/object";
-import {camelToSnake} from "../utils/naming";
+import IEntity from './base/IEntity';
+import {serializeObject} from '../utils/object';
+import {camelToSnake} from '../utils/naming';
 
 class TransactionHistory implements IEntity {
-    id: number = 0;
+  id: number = 0;
 
-    type: string = '';
-    userId: number = 0;
-    cafeteriaId: number = 0;
-    mealType: number = -1;
-    failedAt: number = 0;
-    message: string = '';
-    timestamp: Date = new Date();
+  type: string = '';
+  userId: number = 0;
+  cafeteriaId: number = 0;
+  mealType: number = -1;
+  failedAt: number = 0;
+  message: string = '';
+  timestamp: Date = new Date();
 
-    serialize() {
-        return serializeObject(this, camelToSnake);
-    }
-
-    static type() {
-        return `
+  static type() {
+    return `
         type TransactionHistory {
             id: Int!
             type: String!
@@ -30,7 +26,11 @@ class TransactionHistory implements IEntity {
             timestamp: String!
         }
         `;
-    }
+  }
+
+  serialize() {
+    return serializeObject(this, camelToSnake);
+  }
 }
 
 export default TransactionHistory;

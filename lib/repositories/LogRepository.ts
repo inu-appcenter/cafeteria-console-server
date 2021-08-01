@@ -1,48 +1,45 @@
-import {getCloudWatchLogs, setupAWS} from "../cloud/aws";
-import config from "../../config";
-import logger from "../utils/logger";
-import {OutputLogEvent} from "aws-sdk/clients/cloudwatchlogs";
-import Log from "../entities/Log";
+import {getCloudWatchLogs, setupAWS} from '../cloud/aws';
+import config from '../../config';
+import logger from '../utils/logger';
+import {OutputLogEvent} from 'aws-sdk/clients/cloudwatchlogs';
+import Log from '../entities/Log';
 
 class LogRepository {
+  constructor() {
+    setupAWS();
+  }
 
-    constructor() {
-        setupAWS();
+  private static rawEventToLog(event: OutputLogEvent) {
+    if (!event.timestamp || !event.message) {
+      return null;
     }
 
-    async getAllLogsInPast24Hours() {
-        const past24h = new Date();
-        past24h.setDate(past24h.getDate() - 1);
+    const log = new Log();
 
-        const raw = await getCloudWatchLogs({
-            logGroupName: config.aws.cloudwatch.serviceLogFetchParams.logGroupName,
-            logStreamName: config.aws.cloudwatch.serviceLogFetchParams.logStreamName,
-            startTime: past24h.getTime()
-        });
+    log.timestamp = event.timestamp;
+    log.message = event.message;
 
-        if (!raw || !raw.events) {
-            return [];
-        }
+    return log;
+  }
 
-        logger.info(`우효wwwwwwwww 서비스 로그 ${raw.events.length}개 겟☆또다제~~!~!~!`);
+  async getAllLogsInPast24Hours() {
+    const past24h = new Date();
+    past24h.setDate(past24h.getDate() - 1);
 
-        return raw.events
-            .map((event) => LogRepository.rawEventToLog(event))
-            .filter((log) => !!log);
+    const raw = await getCloudWatchLogs({
+      logGroupName: config.aws.cloudwatch.serviceLogFetchParams.logGroupName,
+      logStreamName: config.aws.cloudwatch.serviceLogFetchParams.logStreamName,
+      startTime: past24h.getTime(),
+    });
+
+    if (!raw || !raw.events) {
+      return [];
     }
 
-    private static rawEventToLog(event: OutputLogEvent) {
-        if (!event.timestamp || !event.message) {
-            return null;
-        }
+    logger.info(`우효wwwwwwwww 서비스 로그 ${raw.events.length}개 겟☆또다제~~!~!~!`);
 
-        const log = new Log();
-
-        log.timestamp = event.timestamp;
-        log.message = event.message;
-
-        return log;
-    }
+    return raw.events.map((event) => LogRepository.rawEventToLog(event)).filter((log) => !!log);
+  }
 }
 
 const logRepository = new LogRepository();

@@ -1,32 +1,34 @@
-import SequelizeCRUDRepository from "./base/SequelizeCRUDRepository";
-import CafeteriaValidationParams from "../entities/CafeteriaValidationParams";
-import CafeteriaValidationParamsModel from "../db/models/CafeteriaValidationParamsModel";
+import SequelizeCRUDRepository from './base/SequelizeCRUDRepository';
+import CafeteriaValidationParams from '../entities/CafeteriaValidationParams';
+import CafeteriaValidationParamsModel from '../db/models/CafeteriaValidationParamsModel';
 
-class CafeteriaValidationParamsRepository extends SequelizeCRUDRepository<CafeteriaValidationParams, CafeteriaValidationParamsModel> {
+class CafeteriaValidationParamsRepository extends SequelizeCRUDRepository<
+  CafeteriaValidationParams,
+  CafeteriaValidationParamsModel
+> {
+  constructor() {
+    super(CafeteriaValidationParams, CafeteriaValidationParamsModel, 'cafeteria_id');
+  }
 
-    constructor() {
-        super(CafeteriaValidationParams, CafeteriaValidationParamsModel, 'cafeteria_id');
-    }
+  async addParams(params: CafeteriaValidationParams) {
+    return this.create(params);
+  }
 
-    async addParams(params: CafeteriaValidationParams) {
-        return this.create(params);
-    }
+  async getParams(cafeteriaId: number) {
+    return this.read(cafeteriaId);
+  }
 
-    async getParams(cafeteriaId: number) {
-        return this.read(cafeteriaId);
-    }
+  async getAllParams() {
+    return this.readAll();
+  }
 
-    async getAllParams() {
-        return this.readAll();
-    }
+  async updateParams(params: CafeteriaValidationParams) {
+    return this.update(params, ['cafeteriaId']);
+  }
 
-    async updateParams(params: CafeteriaValidationParams) {
-        return this.update(params, ['cafeteriaId']);
-    }
-
-    async deleteParams(cafeteriaId: number) {
-        return this.delete(cafeteriaId);
-    }
+  async deleteParams(cafeteriaId: number) {
+    return this.delete(cafeteriaId);
+  }
 }
 
 const cafeteriaValidationParamsRepository = new CafeteriaValidationParamsRepository();

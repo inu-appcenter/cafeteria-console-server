@@ -1,27 +1,22 @@
-import IEntity from "./base/IEntity";
-import {serializeObject} from "../utils/object";
-import {camelToSnake} from "../utils/naming";
+import IEntity from './base/IEntity';
+import {serializeObject} from '../utils/object';
+import {camelToSnake} from '../utils/naming';
 
 class CafeteriaValidationParams implements IEntity {
-    get id(): number { // Primary key
-        return this.cafeteriaId;
-    }
+  cafeteriaId: number = 0; // Foreign key
+  token: string = '';
+  availableMealTypes: number = 0;
+  timeRangeBreakfast: string = '';
+  timeRangeLunch: string = '';
+  timeRangeDinner: string = '';
 
-    cafeteriaId: number = 0; // Foreign key
+  get id(): number {
+    // Primary key
+    return this.cafeteriaId;
+  }
 
-    token: string = '';
-    availableMealTypes: number = 0;
-
-    timeRangeBreakfast: string = '';
-    timeRangeLunch: string = '';
-    timeRangeDinner: string = '';
-
-    serialize() {
-        return serializeObject(this, camelToSnake);
-    }
-
-    static type() {
-        return `
+  static type() {
+    return `
         type CafeteriaValidationParams {
             cafeteria_id: Int!
             token: String!
@@ -31,10 +26,10 @@ class CafeteriaValidationParams implements IEntity {
             time_range_dinner: String!
         }
         `;
-    }
+  }
 
-    static input() {
-        return `
+  static input() {
+    return `
         input CafeteriaValidationParamsInput {
             cafeteria_id: Int!
             token: String
@@ -44,7 +39,11 @@ class CafeteriaValidationParams implements IEntity {
             time_range_dinner: String
         }
         `;
-    }
+  }
+
+  serialize() {
+    return serializeObject(this, camelToSnake);
+  }
 }
 
 export default CafeteriaValidationParams;
