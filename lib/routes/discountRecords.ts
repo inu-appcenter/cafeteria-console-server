@@ -1,6 +1,6 @@
 import express from 'express';
 import {localDateString, parseDateYYYYMMDD} from '../utils/date';
-import {createExcelWorkbookFromMatrix} from '../utils/fileExports';
+import {createExcelWorkbookFromMatrix} from '../excel/fileExports';
 import {Workbook} from 'exceljs';
 import logger from '../utils/logger';
 import {DiscountTransaction} from '@inu-cafeteria/backend-core';
