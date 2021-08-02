@@ -1,5 +1,4 @@
 import express from 'express';
-import graphqlRoute from './routes/graphql';
 import cors from 'cors';
 import signIn from './routes/signIn';
 import authenticate from './routes/authenticate';
@@ -10,8 +9,9 @@ import {isProduction} from './utils/nodeEnv';
 import config from '../config';
 import discountRecords from './routes/discountRecords';
 import validateRecordsRequest from './routes/validateRecordsRequest';
+import graphql from './routes/graphql';
 
-function createServer() {
+function startServer() {
   const app: express.Application = express();
 
   app.use(cookieParser());
@@ -22,7 +22,7 @@ function createServer() {
     })
   );
 
-  app.use('/graphql', authenticate, graphqlRoute);
+  app.use('/graphql', authenticate, graphql());
   app.get('/logs/:date', authenticate, validateRecordsRequest, discountRecords);
 
   app.get('/', hello);
@@ -30,7 +30,7 @@ function createServer() {
 
   app.post('/sign-in', express.urlencoded({extended: true}), signIn);
 
-  return app;
+  app.listen(config.server.port);
 }
 
-export default createServer;
+export default startServer;

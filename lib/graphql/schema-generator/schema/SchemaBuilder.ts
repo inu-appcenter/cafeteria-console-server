@@ -25,6 +25,11 @@ export type SchemaBuilderParams = {
    * 얘는 처음에 주어질 수도 있고, builder의 메소드를 통해서도 집어넣을 수 있어요.
    */
   functions?: SchemaBuilderFunction[];
+
+  /**
+   * 자유형식으로 몇 줄 넣고 싶을 때(TypeORM 안 쓰는 엔티티 추가하고 싶을 때 등) 씁니다.
+   */
+  extras?: string[];
 };
 
 /**
@@ -42,6 +47,7 @@ export default class SchemaBuilder {
   private name = this.params.name;
   private fields = this.params.fields || [];
   private functions = this.params.functions || [];
+  private extras = this.params.extras || [];
 
   /**
    * 필드를 추가합니다.
@@ -58,20 +64,29 @@ export default class SchemaBuilder {
   }
 
   /**
+   * Extra를 추가합니다.
+   */
+  extra(line: string) {
+    this.extras.push(line);
+  }
+
+  /**
    * 스케마 스트링을 뽑아냅니다.
    */
   build(): string {
-    const {type, name, fields, functions} = this;
+    const {type, name, fields, functions, extras} = this;
 
-    const lineOfFields = fields.map((f) => `${f.name}: ${f.type}`);
+    const linesOfFields = fields.map((f) => `${f.name}: ${f.type}`);
 
-    const lineOfFunctions = functions.map((f) => {
+    const linesOfFunctions = functions.map((f) => {
       const parameters = f.params.map((p) => `${p.name}: ${p.type}`).join(', ');
 
       return `${f.name}(${parameters}): ${f.type}`;
     });
 
-    const lines = [...lineOfFields, ...lineOfFunctions].map((l) => `\n\t${l}`).join('');
+    const lines = [...linesOfFields, ...linesOfFunctions, ...extras]
+      .map((l) => `\n\t${l}`)
+      .join('');
 
     return `${type} ${name} {${lines}\n}`;
   }

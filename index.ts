@@ -1,15 +1,14 @@
-import createServer from "./lib/server";
-import config from "./config";
-import logger from "./lib/utils/logger";
+import startServer from './lib/server';
+import config from './config';
+import {startTypeORM} from '@inu-cafeteria/backend-core';
+import logger from './lib/utils/logger';
 
-function startServer() {
-    const server = createServer();
+async function start() {
+  await startTypeORM();
 
-    const onStartListening = () => {
-        logger.info(`우효 wwwwwwwww ${config.server.port}포트♥, 서버 겟또다제~☆`);
-    }
-
-    server.listen(config.server.port, onStartListening);
+  await startServer();
 }
 
-startServer();
+start().then(() => {
+  logger.info(`우효 wwwwwwwww ${config.server.port}포트♥, 서버 겟또다제~☆`);
+});

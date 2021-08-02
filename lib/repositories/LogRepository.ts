@@ -9,20 +9,7 @@ class LogRepository {
     setupAWS();
   }
 
-  private static rawEventToLog(event: OutputLogEvent) {
-    if (!event.timestamp || !event.message) {
-      return null;
-    }
-
-    const log = new Log();
-
-    log.timestamp = event.timestamp;
-    log.message = event.message;
-
-    return log;
-  }
-
-  async getAllLogsInPast24Hours() {
+  async getAllLogsInPast24Hours(): Promise<Log[]> {
     const past24h = new Date();
     past24h.setDate(past24h.getDate() - 1);
 
@@ -38,7 +25,18 @@ class LogRepository {
 
     logger.info(`우효wwwwwwwww 서비스 로그 ${raw.events.length}개 겟☆또다제~~!~!~!`);
 
-    return raw.events.map((event) => LogRepository.rawEventToLog(event)).filter((log) => !!log);
+    return raw.events.map((event) => this.rawEventToLog(event)).filter((l): l is Log => l != null);
+  }
+
+  private rawEventToLog({message, timestamp}: OutputLogEvent) {
+    if (timestamp == null || message == null) {
+      return undefined;
+    }
+
+    return Log.create({
+      message,
+      timestamp: new Date(timestamp),
+    });
   }
 }
 

@@ -1,10 +1,9 @@
 import express from 'express';
-import discountTransactionRepository from '../repositories/DiscountTransactionRepository';
 import {localDateString, parseDateYYYYMMDD} from '../utils/date';
 import {createExcelWorkbookFromMatrix} from '../utils/fileExports';
-import DiscountTransaction from '../entities/DiscountTransaction';
 import {Workbook} from 'exceljs';
 import logger from '../utils/logger';
+import {DiscountTransaction} from '@inu-cafeteria/backend-core';
 
 export default async (req: express.Request, res: express.Response) => {
   const cafeteriaId = req.query.cafeteriaId as string;
@@ -38,10 +37,11 @@ export default async (req: express.Request, res: express.Response) => {
 };
 
 async function getRequestedRecords(dateStringParam: string, cafeteriaIdQuery?: string) {
-  return await discountTransactionRepository.getTransactions({
-    cafeteriaId: cafeteriaIdQuery ? parseInt(cafeteriaIdQuery) : undefined,
-    date: parseDateYYYYMMDD(dateStringParam),
-  });
+  return await DiscountTransaction.findTransactions(
+    undefined,
+    cafeteriaIdQuery ? parseInt(cafeteriaIdQuery) : undefined,
+    parseDateYYYYMMDD(dateStringParam)
+  );
 }
 
 /************************************************
@@ -51,7 +51,7 @@ async function getRequestedRecords(dateStringParam: string, cafeteriaIdQuery?: s
 function formatSimpleText(records: DiscountTransaction[], title?: string) {
   const rows = records.map((record) => ({
     date: localDateString(record.timestamp),
-    student_id: record.userId.toString(),
+    student_id: record.studentId,
   }));
 
   if (rows.length < 1) {
@@ -101,7 +101,7 @@ function toMatrix(records: DiscountTransaction[]) {
 
   const rows = records.map((record) => [
     localDateString(record.timestamp),
-    record.userId.toString(),
+    record.studentId.toString(),
     record.cafeteriaId.toString(),
     record.mealType.toString(),
   ]);
