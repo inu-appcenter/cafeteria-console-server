@@ -1,20 +1,21 @@
-import express from 'express';
 import cors from 'cors';
-import signIn from './routes/signIn';
-import authenticate from './routes/authenticate';
-import hello from './routes/hello';
-import version from './routes/version';
-import cookieParser from 'cookie-parser';
-import {isProduction} from './utils/nodeEnv';
+import hello from './interfaces/routes/hello';
+import login from './interfaces/routes/login';
 import config from '../config';
-import discountRecords from './routes/discountRecords';
-import validateRecordsRequest from './routes/validateRecordsRequest';
-import graphql from './routes/graphql';
+import version from './interfaces/routes/version';
+import express from 'express';
+import graphql from './interfaces/routes/graphql';
+import cookieParser from 'cookie-parser';
+import authenticate from './interfaces/routes/authenticate';
+import {isProduction} from './utils/nodeEnv';
+import discountRecords from './interfaces/routes/discountRecords';
+import validateRecordsRequest from './interfaces/routes/validateRecordsRequest';
 
 function startServer() {
   const app: express.Application = express();
 
   app.use(cookieParser());
+  app.use(express.urlencoded({extended: true}));
   app.use(
     cors({
       origin: isProduction() ? config.cors.allowedHostsInProduction : true,
@@ -28,7 +29,7 @@ function startServer() {
   app.get('/', hello);
   app.get('/version', version);
 
-  app.post('/sign-in', express.urlencoded({extended: true}), signIn);
+  app.post('/login', login);
 
   app.listen(config.server.port);
 }

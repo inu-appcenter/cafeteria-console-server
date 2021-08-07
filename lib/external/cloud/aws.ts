@@ -18,7 +18,7 @@
  */
 
 import AWS from 'aws-sdk';
-import config from '../../config';
+import config from '../../../config';
 import {GetLogEventsRequest, GetLogEventsResponse} from 'aws-sdk/clients/cloudwatchlogs';
 
 export function setupAWS() {

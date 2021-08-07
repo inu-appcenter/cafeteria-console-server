@@ -1,5 +1,5 @@
 import express from 'express';
-import {formatDateYYYYMMDD, parseDateYYYYMMDD} from '../utils/date';
+import {formatDateYYYYMMDD, parseDateYYYYMMDD} from '../../utils/date';
 
 /**
  * date와 fileType은 undefined 아니면 옳은 형식을 가지고 있음을 보장합니다.

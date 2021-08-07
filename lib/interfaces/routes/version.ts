@@ -1,5 +1,5 @@
 import express from 'express';
-import logger from '../utils/logger';
+import logger from '../../utils/logger';
 
 // 이 서버의 버전! 앱 버전 아님!
 export default (req: express.Request, res: express.Response) => {

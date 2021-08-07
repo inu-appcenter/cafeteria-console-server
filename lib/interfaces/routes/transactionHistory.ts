@@ -1,4 +1,4 @@
-import transactionHistoryRepository from '../repositories/TransactionHistoryRepository';
+import transactionHistoryRepository from '../core/repositories/TransactionHistoryRepository';
 
 export async function allTransactionHistories() {
   const all = await transactionHistoryRepository.getAllRecentHistories();

@@ -1,7 +1,7 @@
-import config from '../../config';
+import config from '../../../config';
 import express from 'express';
-import tokenManager from '../manager/TokenManager';
-import logger from '../utils/logger';
+import tokenManager from '../../core/manager/TokenManager';
+import logger from '../../utils/logger';
 
 function validateToken(token: string) {
   const decoded = tokenManager.decodeJwt(token);
@@ -24,6 +24,7 @@ function validateToken(token: string) {
 }
 
 export default (req: express.Request, res: express.Response, next: express.NextFunction) => {
+  // TODO
   const token = req.cookies[config.cookie.tokenName];
 
   if (true) {

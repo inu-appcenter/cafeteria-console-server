@@ -11,11 +11,11 @@ import {
   DiscountProcessHistory,
   CafeteriaValidationParams,
 } from '@inu-cafeteria/backend-core';
-import Log from '../entities/Log';
-import logger from '../utils/logger';
+import Log from '../../core/entities/Log';
+import logger from '../../utils/logger';
 import {graphqlHTTP} from 'express-graphql';
 import {GraphQLError} from 'graphql';
-import InvalidParamError from '../errors/InvalidParamError';
+import InvalidParamError from '../../core/errors/InvalidParamError';
 import GraphQLSchemaBuilder, {SchemaExtra} from '../graphql/builder/GraphQLSchemaBuilder';
 
 const entities = [

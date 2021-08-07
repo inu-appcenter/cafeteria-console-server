@@ -1,15 +1,14 @@
-import express from 'express';
-import config from '../../config';
-import tokenManager from '../manager/TokenManager';
-import logger from '../utils/logger';
-import {isProduction} from '../utils/nodeEnv';
+import config from '../../../config';
+import logger from '../../utils/logger';
+import tokenManager from '../../core/manager/TokenManager';
+import {isProduction} from '../../utils/nodeEnv';
+import {Request, Response} from 'express';
 
-// TODO
 function authenticate(id: string, pw: string) {
   return id === config.auth.adminId && pw === config.auth.adminPassword;
 }
 
-export default (req: express.Request, res: express.Response) => {
+export default function login(req: Request, res: Response) {
   const {id, password} = req.body;
 
   logger.verbose(`${id}님이 로그인을 하러 오셨군요...?`);
@@ -31,4 +30,4 @@ export default (req: express.Request, res: express.Response) => {
 
     res.status(401).send();
   }
-};
+}

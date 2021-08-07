@@ -1,6 +1,6 @@
-import config from '../../config';
+import config from '../../../config';
 import JWT from 'jsonwebtoken';
-import logger from '../utils/logger';
+import logger from '../../utils/logger';
 
 class TokenManager {
   createJwt(payload: any) {

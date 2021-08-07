@@ -2,7 +2,7 @@ import config from '../../config';
 
 import WinstonCloudwatch from 'winston-cloudwatch';
 import stackTrace from 'stack-trace';
-import {setupAWS} from '../cloud/aws';
+import {setupAWS} from '../external/cloud/aws';
 import winston from 'winston';
 import path from 'path';
 

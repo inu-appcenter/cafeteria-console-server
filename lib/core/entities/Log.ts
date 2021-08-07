@@ -1,4 +1,4 @@
-import GraphQLDate from '../graphql/builder/GraphQLDate';
+import GraphQLDate from '../../interfaces/graphql/builder/GraphQLDate';
 import logRepository from '../repositories/LogRepository';
 import {GraphQLFieldConfigMap, GraphQLNamedType} from 'graphql/type/definition';
 import {GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString} from 'graphql';
