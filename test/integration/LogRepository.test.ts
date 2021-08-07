@@ -1,4 +1,4 @@
-import logRepository from '../../lib/core/repositories/LogRepository';
+import logRepository from '../../lib/core/logs/LogRepository';
 
 describe('# getAllLogsInPast24Hours', () => {
   it('should work', async () => {

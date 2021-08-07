@@ -1,17 +1,17 @@
-import express from 'express';
-import {localDateString, parseDateYYYYMMDD} from '../../utils/date';
-import {createExcelWorkbookFromMatrix} from '../../external/excel/fileExports';
+import {Request, Response} from 'express';
+import {localDateString, parseDateYYYYMMDD} from '../utils/date';
 import {Workbook} from 'exceljs';
-import logger from '../../utils/logger';
+import logger from '../utils/logger';
 import {DiscountTransaction} from '@inu-cafeteria/backend-core';
+import ExcelWorkbookBuilder from '../core/excel/ExcelWorkbookBuilder';
 
-export default async (req: express.Request, res: express.Response) => {
+export default async function discountRecords(req: Request, res: Response) {
   const cafeteriaId = req.query.cafeteriaId as string;
   const dateString = req.params.date as string;
   const fileType = req.query.fileType as string;
 
   logger.info(
-    `로그를 달라규!? 날짜는 ${dateString}, ${cafeteriaId}번 식당으루!? 결과는 ${fileType} 파일로 달라구?`
+    `기록을 달라규!? 날짜는 ${dateString}, ${cafeteriaId}번 식당으루!? 결과는 ${fileType} 파일로 달라구?`
   );
 
   const discountRecords = await getRequestedRecords(dateString, cafeteriaId);
@@ -27,14 +27,17 @@ export default async (req: express.Request, res: express.Response) => {
       return sendText(res, text);
 
     case 'xls':
-      const workbook = await createExcelWorkbookFromMatrix(toMatrix(discountRecords), dateString);
+      const workbook = await new ExcelWorkbookBuilder({
+        matrix: toMatrix(discountRecords),
+        title: dateString,
+      }).build();
       return sendExcelWorkbook(res, workbook, `${dateString}.xlsx`);
 
     default:
       const message = '이건 있을 수가 없는 일이오...!';
       return sendWrongRequest(res, message);
   }
-};
+}
 
 async function getRequestedRecords(dateStringParam: string, cafeteriaIdQuery?: string) {
   return await DiscountTransaction.findTransactions(
@@ -77,7 +80,7 @@ function formatSimpleText(records: DiscountTransaction[], title?: string) {
   return lines.join('\n');
 }
 
-function sendText(res: express.Response, text?: string) {
+function sendText(res: Response, text?: string) {
   // 브라우저에서 바로 열람이 아닌 파일 다운로드를 원한다면 아래 코드를 쓰자!
   // res.setHeader("Content-Disposition", `attachment; filename=haha.txt`);
 
@@ -109,7 +112,7 @@ function toMatrix(records: DiscountTransaction[]) {
   return [columns, ...rows];
 }
 
-function sendExcelWorkbook(res: express.Response, workbook: Workbook, filename: string) {
+function sendExcelWorkbook(res: Response, workbook: Workbook, filename: string) {
   logger.info(`받아라 엑셀 응답!`);
 
   res.setHeader(
@@ -125,7 +128,7 @@ function sendExcelWorkbook(res: express.Response, workbook: Workbook, filename: 
  * 이상한 요청에 대응하는 함수
  ***********************************************/
 
-function sendWrongRequest(res: express.Response, message: string) {
+function sendWrongRequest(res: Response, message: string) {
   logger.info(`이보시오! 당신 요청 문제있소!`);
 
   res.status(400).send(`요청 형태가 올바르지 않습니다! ${message}`);

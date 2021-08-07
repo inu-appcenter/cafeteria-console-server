@@ -11,12 +11,12 @@ import {
   DiscountProcessHistory,
   CafeteriaValidationParams,
 } from '@inu-cafeteria/backend-core';
-import Log from '../../core/entities/Log';
-import logger from '../../utils/logger';
+import Log from '../core/logs/Log';
+import logger from '../utils/logger';
 import {graphqlHTTP} from 'express-graphql';
 import {GraphQLError} from 'graphql';
-import InvalidParamError from '../../core/errors/InvalidParamError';
-import GraphQLSchemaBuilder, {SchemaExtra} from '../graphql/builder/GraphQLSchemaBuilder';
+import InvalidParamError from '../core/graphql/errors/InvalidParamError';
+import GraphQLSchemaBuilder, {SchemaExtra} from '../core/graphql/builder/GraphQLSchemaBuilder';
 
 const entities = [
   User,
@@ -53,7 +53,7 @@ function customFormatErrorFn(error: GraphQLError) {
   return error;
 }
 
-export default () => {
+export default function graphQL() {
   const schema = new GraphQLSchemaBuilder(entities, extras).build();
 
   return graphqlHTTP({
@@ -61,4 +61,4 @@ export default () => {
     customFormatErrorFn,
     graphiql: true,
   });
-};
+}

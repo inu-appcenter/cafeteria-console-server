@@ -2,7 +2,7 @@ import {getCloudWatchLogs, setupAWS} from '../../external/cloud/aws';
 import config from '../../../config';
 import logger from '../../utils/logger';
 import {OutputLogEvent} from 'aws-sdk/clients/cloudwatchlogs';
-import Log from '../entities/Log';
+import Log from './Log';
 
 class LogRepository {
   constructor() {

@@ -1,15 +1,15 @@
 import cors from 'cors';
-import hello from './interfaces/routes/hello';
-import login from './interfaces/routes/login';
+import hello from './routes/hello';
+import login from './routes/login';
 import config from '../config';
-import version from './interfaces/routes/version';
+import version from './routes/version';
 import express from 'express';
-import graphql from './interfaces/routes/graphql';
+import graphQL from './routes/graphQL';
 import cookieParser from 'cookie-parser';
-import authenticate from './interfaces/routes/authenticate';
+import authenticate from './routes/middlewares/authenticate';
 import {isProduction} from './utils/nodeEnv';
-import discountRecords from './interfaces/routes/discountRecords';
-import validateRecordsRequest from './interfaces/routes/validateRecordsRequest';
+import discountRecords from './routes/discountRecords';
+import validateRecordsRequest from './routes/middlewares/validateRecordsRequest';
 
 function startServer() {
   const app: express.Application = express();
@@ -23,8 +23,8 @@ function startServer() {
     })
   );
 
-  app.use('/graphql', authenticate, graphql());
-  app.get('/logs/:date', authenticate, validateRecordsRequest, discountRecords);
+  app.use('/graphql', authenticate, graphQL());
+  app.get('/records/:date', authenticate, validateRecordsRequest, discountRecords);
 
   app.get('/', hello);
   app.get('/version', version);

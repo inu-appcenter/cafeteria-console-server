@@ -1,21 +1,25 @@
-import express from 'express';
+import {Request, Response, NextFunction} from 'express';
 import {formatDateYYYYMMDD, parseDateYYYYMMDD} from '../../utils/date';
 
 /**
  * date와 fileType은 undefined 아니면 옳은 형식을 가지고 있음을 보장합니다.
  */
-export default async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+export default async function validateRecordsRequest(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
   const cafeteriaId = req.query.cafeteriaId as string;
   const dateString = req.params.date as string;
   const fileType = req.query.fileType as string;
 
-  if (cafeteriaId === undefined) {
+  if (cafeteriaId == null) {
     // 놓아 둔다!
   } else if (isNaN(parseInt(cafeteriaId))) {
     return res.status(400).send(`cafeteriaId는 숫자입니다!`);
   }
 
-  if (dateString === undefined) {
+  if (dateString == null) {
     req.params.date = formatDateYYYYMMDD(new Date());
   } else if (!parseDateYYYYMMDD(dateString)) {
     return res
@@ -25,7 +29,7 @@ export default async (req: express.Request, res: express.Response, next: express
 
   const availableFileTypes = ['txt', 'xls'];
 
-  if (fileType === undefined) {
+  if (fileType == null) {
     req.query.fileType = 'txt';
   } else if (!availableFileTypes.includes(fileType)) {
     return res
@@ -36,4 +40,4 @@ export default async (req: express.Request, res: express.Response, next: express
   }
 
   next();
-};
+}

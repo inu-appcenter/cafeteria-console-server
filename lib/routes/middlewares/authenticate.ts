@@ -1,10 +1,10 @@
 import config from '../../../config';
 import express from 'express';
-import tokenManager from '../../core/manager/TokenManager';
 import logger from '../../utils/logger';
+import {decodeJwt} from '../../utils/jwt';
 
 function validateToken(token: string) {
-  const decoded = tokenManager.decodeJwt(token);
+  const decoded = decodeJwt(token);
 
   if (!decoded) {
     return false;

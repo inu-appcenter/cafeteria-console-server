@@ -1,5 +1,5 @@
 import {Cafeteria, Corner, Question, startTypeORM} from '@inu-cafeteria/backend-core';
-import GraphQLSchemaGenerator from '../../../lib/interfaces/graphql/schema-generator/GraphQLSchemaGenerator';
+import GraphQLSchemaGenerator from '../../../lib/core/graphql/schema-generator/GraphQLSchemaGenerator';
 
 beforeAll(async () => {
   // 이걸 해줘야 커넥션이 생기고 메타데이터도 생긴다...

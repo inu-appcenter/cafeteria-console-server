@@ -1,8 +1,8 @@
-import config from '../../../config';
-import logger from '../../utils/logger';
-import tokenManager from '../../core/manager/TokenManager';
-import {isProduction} from '../../utils/nodeEnv';
+import config from '../../config';
+import logger from '../utils/logger';
+import {isProduction} from '../utils/nodeEnv';
 import {Request, Response} from 'express';
+import {createJwt} from '../utils/jwt';
 
 function authenticate(id: string, pw: string) {
   return id === config.auth.adminId && pw === config.auth.adminPassword;
@@ -16,7 +16,7 @@ export default function login(req: Request, res: Response) {
   if (authenticate(id, password)) {
     logger.verbose(`좋아, ${id}에게 로그인을 허가하여 주겠다....`);
 
-    const jwt = tokenManager.createJwt({userName: config.auth.adminId});
+    const jwt = createJwt({userName: config.auth.adminId});
 
     res
       .cookie(config.cookie.tokenName, jwt, {
