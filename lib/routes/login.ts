@@ -16,14 +16,16 @@ export default function login(req: Request, res: Response) {
   if (authenticate(id, password)) {
     logger.verbose(`좋아, ${id}에게 로그인을 허가하여 주겠다....`);
 
-    const jwt = createJwt({userName: config.auth.adminId});
+    const jwt = createJwt({username: config.auth.adminId});
 
     res
+      .status(201)
       .cookie(config.cookie.tokenName, jwt, {
+        path: '/',
         secure: isProduction(),
         domain: config.cookie.domain,
+        // sameSite: 'none',
       })
-      .status(201)
       .send();
   } else {
     logger.verbose(`어림도 없지!!! ${id}, 당신은 아웃이야!`);

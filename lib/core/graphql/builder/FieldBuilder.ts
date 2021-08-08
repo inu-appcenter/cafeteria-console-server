@@ -39,7 +39,7 @@ export default class FieldBuilder {
   }
 
   buildMutationFields(): GraphQLFieldConfigMap<any, any> {
-    const createField = this.buildField(`create${this.meta.name}`, {
+    const saveField = this.buildField(`save${this.meta.name}`, {
       type: GraphQLInt,
       args: this.modifyArgs,
       resolve: async (_, args) => {
@@ -51,19 +51,7 @@ export default class FieldBuilder {
       },
     });
 
-    const updateField = this.buildField(`update${this.meta.name}`, {
-      type: GraphQLInt,
-      args: this.modifyArgs,
-      resolve: async (_, args) => {
-        const entityInit = args[this.modifyArgName];
-
-        const {length} = await this.entity.save(entityInit);
-
-        return length;
-      },
-    });
-
-    const deleteField = this.buildField(`delete${this.meta.name}`, {
+    const removeField = this.buildField(`remove${this.meta.name}`, {
       type: GraphQLInt,
       args: this.deleteArgs,
       resolve: async (_, args) => {
@@ -75,7 +63,7 @@ export default class FieldBuilder {
       },
     });
 
-    return {...createField, ...updateField, ...deleteField};
+    return {...saveField, ...removeField};
   }
 
   private buildField(
