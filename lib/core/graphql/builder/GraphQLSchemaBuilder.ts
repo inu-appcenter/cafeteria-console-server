@@ -37,10 +37,7 @@ export default class GraphQLSchemaBuilder {
   }
 
   private makeAndSaveTypes(): GraphQLNamedType[] {
-    const types = [
-      ...this.metas.map((m) => new TypeBuilder(m).buildTypes()).flat(),
-      ...(this.extras?.types || []),
-    ];
+    const types = [...new TypeBuilder(this.metas).buildTypes(), ...(this.extras?.types || [])];
 
     this.types = Array.from(types);
 

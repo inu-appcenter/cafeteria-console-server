@@ -29,10 +29,14 @@ export default class FieldBuilder {
   };
 
   buildQueryFields(): GraphQLFieldConfigMap<any, any> {
+    const relations = getEntityMetadata(this.entity)
+      .fields.filter((f) => f.relational)
+      .map((f) => f.name);
+
     return this.buildField(`all${this.meta.name}`, {
       type: new GraphQLList(this.type),
       resolve: async () => {
-        return await this.entity.find();
+        return await this.entity.find({relations});
       },
       description: `${this.meta.name}을(를) 모두 가져옵니다.`,
     });
