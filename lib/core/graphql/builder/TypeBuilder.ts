@@ -2,6 +2,7 @@ import {EntityMetadata} from '@inu-cafeteria/backend-core';
 import {
   GraphQLBoolean,
   GraphQLInt,
+  GraphQLList,
   GraphQLNonNull,
   GraphQLObjectType,
   GraphQLScalarType,
@@ -60,9 +61,10 @@ export default class TypeBuilder {
 
     for (const f of metadata.fields) {
       const t = this.resolveType(f.type);
+      const listOrNot = f.isMany ? new GraphQLList(t) : t;
 
       const fieldConfig = {
-        type: f.nullable ? t : new GraphQLNonNull(t),
+        type: f.nullable ? listOrNot : new GraphQLNonNull(listOrNot),
         description: f.comment,
       };
 
