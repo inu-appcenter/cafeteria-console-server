@@ -17,7 +17,9 @@ import GraphQLDate from './GraphQLDate';
 import assert from 'assert';
 
 /**
- * 전방 선언은 지원하지만 순환 참조는 지원 안 함!
+ * 전방 선언도 순환 참조도 지원하는 킹왕짱 GraphQL 타입 빌더!
+ *
+ * 주의사항: 타입 이름이 식별자라 String이나 Date같은거 클래스 이름으로 쓰면 혼나요!
  */
 export default class TypeBuilder {
   constructor(private readonly allMetadata: EntityMetadata[]) {}
