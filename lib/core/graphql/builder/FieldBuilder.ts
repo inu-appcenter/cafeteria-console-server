@@ -36,7 +36,7 @@ export default class FieldBuilder {
     return this.buildField(`all${this.meta.name}`, {
       type: new GraphQLList(this.type),
       resolve: async () => {
-        return await this.entity.find({relations});
+        return await this.entity.find({relations, order: {id: 'DESC'}});
       },
       description: `${this.meta.name}을(를) 모두 가져옵니다.`,
     });

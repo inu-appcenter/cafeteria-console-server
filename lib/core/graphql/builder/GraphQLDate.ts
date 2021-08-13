@@ -2,17 +2,17 @@ import {GraphQLScalarType, Kind} from 'graphql';
 
 export default new GraphQLScalarType({
   name: 'Date',
-  description: '날짜를 밀리초 타임스탬프로 표현합니다.',
+  description: '날짜를 ISO 스트링으로 표현합니다.',
   serialize(value) {
-    return value.getTime();
+    return value.toISOString();
   },
   parseValue(value) {
     return new Date(value);
   },
   parseLiteral(ast) {
-    if (ast.kind === Kind.INT) {
-      return new Date(parseInt(ast.value, 10));
+    if (ast.kind === Kind.STRING) {
+      return new Date(ast.value);
     }
-    return null; // 정수가 아님!
+    return null; // 스트링이 아님!
   },
 });
