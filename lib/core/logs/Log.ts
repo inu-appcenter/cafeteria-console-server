@@ -26,7 +26,8 @@ export default class Log {
   });
 
   static query: GraphQLFieldConfigMap<any, any> = {
-    recentLog: {
+    // 이름은 allXX로 맞췄지만 실은 최근 것만 가져옴..!
+    allLog: {
       type: new GraphQLList(Log.type),
       resolve: async () => {
         return await Log.recentLog();

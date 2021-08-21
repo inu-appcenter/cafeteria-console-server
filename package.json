@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "nodemon --exec ts-node index.ts",
     "test": "jest",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "preview": "tsc && node dist/index.js",
     "deploy": "git push heroku main",
-    "postinstall": "tsc",
-    "start": "node dist/index.js"
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -25,19 +26,22 @@
   },
   "homepage": "https://github.com/inu-appcenter/cafeteria-console-server#readme",
   "devDependencies": {
-    "@types/bluebird": "^3.5.33",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.8",
     "@types/express": "^4.17.9",
     "@types/jest": "^26.0.15",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^14.14.7",
-    "@types/stack-trace": "0.0.29",
+    "@types/stack-trace": "^0.0.29",
     "@types/validator": "^13.1.0",
-    "jest": "^26.6.3"
+    "prettier": "^2.3.2",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
   },
   "dependencies": {
-    "@inu-cafeteria/backend-core": "^0.1.43",
+    "@inu-cafeteria/backend-core": "^0.1.44",
     "aws-sdk": "^2.820.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
@@ -48,14 +52,8 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.6",
-    "prettier": "^2.3.2",
     "reflect-metadata": "^0.1.13",
-    "sequelize": "^5.22.3",
-    "sequelize-typescript": "^1.1.0",
     "stack-trace": "0.0.10",
-    "ts-jest": "^26.4.4",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.5",
     "winston": "^3.3.3",
     "winston-cloudwatch": "^2.3.2",
     "winston-daily-rotate-file": "^4.5.0"
