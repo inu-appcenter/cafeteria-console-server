@@ -4,7 +4,7 @@
   "description": "Cafeteria 콘솔 API 서버입니다.",
   "scripts": {
     "dev": "nodemon --exec ts-node index.ts",
-    "test": "jest",
+    "test": "jest test/unit",
     "build": "tsc",
     "start": "node dist/index.js",
     "preview": "tsc && node dist/index.js",
