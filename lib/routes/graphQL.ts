@@ -9,6 +9,7 @@ import {
   MenuParseRegex,
   DiscountTransaction,
   DiscountProcessHistory,
+  CafeteriaBookingParams,
   CafeteriaValidationParams,
 } from '@inu-cafeteria/backend-core';
 import Log from '../core/logs/Log';
@@ -29,6 +30,7 @@ const entities = [
   MenuParseRegex,
   DiscountTransaction,
   DiscountProcessHistory,
+  CafeteriaBookingParams,
   CafeteriaValidationParams,
 ];
 
