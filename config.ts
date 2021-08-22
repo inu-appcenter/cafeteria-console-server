@@ -32,7 +32,7 @@ export default {
     key: getEnv('JWT_SECRET_KEY') || 'whatever',
     expiresIn: '24h',
 
-    adminId: getEnv('ADMIN_ID') || 'potados',
+    adminUsername: getEnv('ADMIN_ID') || 'potados',
     adminPassword: getEnv('ADMIN_PW') || '1234',
   },
 };

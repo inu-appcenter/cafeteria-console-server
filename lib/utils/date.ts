@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export function parseDateYYYYMMDD(dateString: string) {
   if (!/^(\d){8}$/.test(dateString)) {
     return undefined;
@@ -33,4 +35,8 @@ export function formatDateYYYYMMDD(date: Date) {
   };
 
   return `${format.Y}${format.M}${format.D}`;
+}
+
+export function checkDateStringFormat(dateString: string) {
+  return moment(dateString, 'YYYYMMDD').isValid();
 }

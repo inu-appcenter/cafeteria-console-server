@@ -58,7 +58,8 @@
     "stack-trace": "0.0.10",
     "winston": "^3.3.3",
     "winston-cloudwatch": "^2.5.2",
-    "winston-daily-rotate-file": "^4.5.5"
+    "winston-daily-rotate-file": "^4.5.5",
+    "zod": "^3.7.3"
   },
   "jest": {
     "transform": {

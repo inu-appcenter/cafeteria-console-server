@@ -6,10 +6,12 @@ import version from './routes/version';
 import express from 'express';
 import graphQL from './routes/graphQL';
 import cookieParser from 'cookie-parser';
-import authenticate from './routes/middlewares/authenticate';
 import {isProduction} from './utils/nodeEnv';
-import discountRecords from './routes/discountRecords';
-import validateRecordsRequest from './routes/middlewares/validateRecordsRequest';
+import records from './routes/records';
+import {authorizer} from './routes/middlewares/authorizer';
+import checkin from './routes/checkin';
+import getContext from './routes/getContext';
+import {errorHandler} from './routes/middlewares/errorHandler';
 
 function startServer() {
   const app: express.Application = express();
@@ -24,13 +26,17 @@ function startServer() {
     })
   );
 
-  app.use('/graphql', authenticate, graphQL());
-  app.get('/records/:date', authenticate, validateRecordsRequest, discountRecords);
+  app.use(hello);
+  app.use(login);
+  app.use(version);
+  app.use(records);
 
-  app.get('/', hello);
-  app.get('/version', version);
+  app.use(checkin);
+  app.use(getContext);
 
-  app.post('/login', login);
+  app.use('/graphql', authorizer, graphQL());
+
+  app.use(errorHandler);
 
   app.listen(config.server.port);
 }
