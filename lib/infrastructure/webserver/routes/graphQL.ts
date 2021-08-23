@@ -11,13 +11,16 @@ import {
   DiscountProcessHistory,
   CafeteriaBookingParams,
   CafeteriaValidationParams,
+  CafeteriaDayOff,
 } from '@inu-cafeteria/backend-core';
 import Log from '../../../core/logs/Log';
 import logger from '../../../common/utils/logger';
 import {graphqlHTTP} from 'express-graphql';
 import {GraphQLError} from 'graphql';
 import InvalidParamError from '../../../core/graphql/errors/InvalidParamError';
-import GraphQLSchemaBuilder, {SchemaExtra} from '../../../core/graphql/builder/GraphQLSchemaBuilder';
+import GraphQLSchemaBuilder, {
+  SchemaExtra,
+} from '../../../core/graphql/builder/GraphQLSchemaBuilder';
 
 const entities = [
   User,
@@ -28,6 +31,7 @@ const entities = [
   Cafeteria,
   DiscountRule,
   MenuParseRegex,
+  CafeteriaDayOff,
   DiscountTransaction,
   DiscountProcessHistory,
   CafeteriaBookingParams,
