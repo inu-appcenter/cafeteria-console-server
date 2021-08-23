@@ -3,7 +3,7 @@ import {isProduction} from './lib/common/utils/nodeEnv';
 
 export default {
   server: {
-    port: Number(getEnv('PORT')) || 8081,
+    port: Number(getEnv('PORT')) || 8090,
   },
 
   cors: {

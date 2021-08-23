@@ -2,6 +2,8 @@ import {Booking, CafeteriaBookingParams, VisitRecord} from '@inu-cafeteria/backe
 import assert from 'assert';
 import {addMinutes, isAfter, isBefore} from 'date-fns';
 import {MoreThan} from 'typeorm';
+import {NoBookingParams, NoTimeSlot} from './errors';
+import logger from '../../common/utils/logger';
 
 export default class Context {
   /**
@@ -30,27 +32,37 @@ export default class Context {
 
   static async forNow(cafeteriaId: number, now: Date = new Date()): Promise<Context> {
     const params = await CafeteriaBookingParams.findOne({cafeteriaId});
-    assert(params, `해당 식당(${cafeteriaId})의 예약 옵션이 존재하지 않습니다.`);
+    assert(params, NoBookingParams());
 
-    const allTimeSlots = params.allTimeSlots(now).sort();
-    const currentTimeSlot = allTimeSlots.reduce(
-      (acc, cur) => (isAfter(now, acc) && isBefore(now, cur) ? acc : cur) // TODO 테스트 필요
+    // 이 식당이 지원하는 시간대별 수용 한계
+    const capacity = params.capacity;
+
+    const activeVisitors = await VisitRecord.findRecentRecords(
+      cafeteriaId,
+      params.durationMinutes,
+      now
     );
 
-    const capacity = params.capacity;
+    // 이 식당에 최근 durationMinutes분 내에 입장한 사람의 수
+    const total = activeVisitors.length;
+
+    const currentTimeSlot = params.currentTimeSlot(now);
+
+    if (currentTimeSlot == null) {
+      logger.info('현재 시간은 예약 시간대가 아님!');
+      return Context.of({capacity, total});
+    }
 
     const bookings = await Booking.find({
       where: {cafeteriaId, timeSlot: currentTimeSlot},
       relations: ['checkIn'],
     });
 
+    // 이 식당에 현재 시간대에 예약한 사람의 수
     const expected = bookings.length;
+
+    // 이 식당에 현재 시간대에 예약하고 입장까지 한 사람의 수
     const actual = bookings.filter((b) => b.checkIn).length;
-
-    const mostOldVisitTime = addMinutes(now, -params.durationMinutes);
-    const validRecords = await VisitRecord.find({visitedAt: MoreThan(mostOldVisitTime)});
-
-    const total = validRecords.length;
 
     return Context.of({
       capacity,
