@@ -1,9 +1,9 @@
-import getEnv from './lib/utils/env';
-import {isProduction} from './lib/utils/nodeEnv';
+import getEnv from './lib/common/utils/env';
+import {isProduction} from './lib/common/utils/nodeEnv';
 
 export default {
   server: {
-    port: Number(getEnv('PORT')) || 8081,
+    port: Number(getEnv('PORT')) || 8090,
   },
 
   cors: {
@@ -32,7 +32,7 @@ export default {
     key: getEnv('JWT_SECRET_KEY') || 'whatever',
     expiresIn: '24h',
 
-    adminId: getEnv('ADMIN_ID') || 'potados',
+    adminUsername: getEnv('ADMIN_ID') || 'potados',
     adminPassword: getEnv('ADMIN_PW') || '1234',
   },
 };

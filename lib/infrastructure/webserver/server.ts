@@ -1,15 +1,17 @@
 import cors from 'cors';
 import hello from './routes/hello';
 import login from './routes/login';
-import config from '../config';
+import config from '../../../config';
 import version from './routes/version';
 import express from 'express';
 import graphQL from './routes/graphQL';
 import cookieParser from 'cookie-parser';
-import authenticate from './routes/middlewares/authenticate';
-import {isProduction} from './utils/nodeEnv';
-import discountRecords from './routes/discountRecords';
-import validateRecordsRequest from './routes/middlewares/validateRecordsRequest';
+import {isProduction} from '../../common/utils/nodeEnv';
+import records from './routes/records';
+import {authorizer} from './libs/middlewares/authorizer';
+import checkin from './routes/checkin';
+import getContext from './routes/getContext';
+import {errorHandler} from './libs/middlewares/errorHandler';
 
 function startServer() {
   const app: express.Application = express();
@@ -24,13 +26,16 @@ function startServer() {
     })
   );
 
-  app.use('/graphql', authenticate, graphQL());
-  app.get('/records/:date', authenticate, validateRecordsRequest, discountRecords);
+  app.use(hello);
+  app.use(login);
+  app.use(version);
+  app.use(records);
+  app.use(checkin);
+  app.use(getContext);
 
-  app.get('/', hello);
-  app.get('/version', version);
+  app.use('/graphql', authorizer, graphQL());
 
-  app.post('/login', login);
+  app.use(errorHandler);
 
   app.listen(config.server.port);
 }

@@ -60,6 +60,11 @@ export default class TypeBuilder {
     const inputFields: GraphQLInputFieldConfigMap = {};
 
     for (const f of metadata.fields) {
+      if (f.name === 'id') {
+        // Mutation에서 새로 만드는 경우 id가 없을 수 있습니다.
+        f.nullable = true;
+      }
+
       const t = this.resolveType(f.type);
       const listOrNot = f.isMany ? new GraphQLList(t) : t;
 

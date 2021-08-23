@@ -1,7 +1,7 @@
-import startServer from './lib/server';
+import startServer from './lib/infrastructure/webserver/server';
 import config from './config';
 import {startTypeORM} from '@inu-cafeteria/backend-core';
-import logger from './lib/utils/logger';
+import logger from './lib/common/utils/logger';
 
 async function start() {
   await startTypeORM();
