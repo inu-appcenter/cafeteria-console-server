@@ -1,4 +1,4 @@
-import logger from '../../utils/logger';
+import logger from '../../common/utils/logger';
 
 export default abstract class UseCase<ParamT = void, ResultT = void> {
   async run(params: ParamT): Promise<ResultT> {

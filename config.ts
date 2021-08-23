@@ -1,5 +1,5 @@
-import getEnv from './lib/utils/env';
-import {isProduction} from './lib/utils/nodeEnv';
+import getEnv from './lib/common/utils/env';
+import {isProduction} from './lib/common/utils/nodeEnv';
 
 export default {
   server: {

@@ -1,5 +1,5 @@
 import UseCase from '../../core/base/UseCase';
-import {localDateString, parseDateYYYYMMDD} from '../../utils/date';
+import {localDateString, parseDateYYYYMMDD} from '../../common/utils/date';
 import {DiscountTransaction} from '@inu-cafeteria/backend-core';
 
 export type GetRecordsAsTextParams = {

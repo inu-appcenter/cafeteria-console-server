@@ -1,6 +1,6 @@
 import {asyncHandler} from './handler';
 import express, {RequestHandler} from 'express';
-import {processRequest, RequestValidation} from '../middlewares/zod';
+import {processRequest, RequestValidation} from './middlewares/zod';
 
 export function defineRoute<TParams = any, TQuery = any, TBody = any>(
   method: 'all' | 'get' | 'post' | 'put' | 'delete' | 'patch' | 'options' | 'head',

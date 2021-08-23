@@ -1,5 +1,5 @@
-import {defineRoute} from './libs/route';
-import {defineSchema} from './libs/schema';
+import {defineRoute} from '../libs/route';
+import {defineSchema} from '../libs/schema';
 
 const schema = defineSchema({});
 

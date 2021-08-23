@@ -1,7 +1,7 @@
 import UseCase from '../../core/base/UseCase';
 import {Booking, CheckIn, VisitRecord} from '@inu-cafeteria/backend-core';
 import assert from 'assert';
-import logger from '../../utils/logger';
+import logger from '../../common/utils/logger';
 
 export type CheckInParams = {
   ticket: string;

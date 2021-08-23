@@ -2,7 +2,7 @@ import UseCase from '../../core/base/UseCase';
 import {Workbook} from 'exceljs';
 import ExcelWorkbookBuilder from '../../core/excel/ExcelWorkbookBuilder';
 import {DiscountTransaction} from '@inu-cafeteria/backend-core';
-import {localDateString, parseDateYYYYMMDD} from '../../utils/date';
+import {localDateString, parseDateYYYYMMDD} from '../../common/utils/date';
 
 export type GetRecordsAsWorkbookParams = {
   cafeteriaId: number;

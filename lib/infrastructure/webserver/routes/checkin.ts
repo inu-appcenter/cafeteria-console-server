@@ -1,8 +1,8 @@
-import {defineSchema} from './libs/schema';
+import {defineSchema} from '../libs/schema';
 import {z} from 'zod';
-import {defineRoute} from './libs/route';
-import PerformCheckIn from '../application/checkin/PerformCheckIn';
-import {authorizer} from './middlewares/authorizer';
+import {defineRoute} from '../libs/route';
+import PerformCheckIn from '../../../application/checkin/PerformCheckIn';
+import {authorizer} from '../libs/middlewares/authorizer';
 
 const schema = defineSchema({
   body: {

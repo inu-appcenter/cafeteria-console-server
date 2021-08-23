@@ -1,13 +1,13 @@
 import {Response} from 'express';
 import {Workbook} from 'exceljs';
-import logger from '../utils/logger';
-import {defineSchema} from './libs/schema';
-import {stringAsInt, stringInYYYYMMDD} from '../utils/zodTypes';
-import {defineRoute} from './libs/route';
+import logger from '../../../common/utils/logger';
+import {defineSchema} from '../libs/schema';
+import {stringAsInt, stringInYYYYMMDD} from '../../../common/utils/zodTypes';
+import {defineRoute} from '../libs/route';
 import {z} from 'zod';
-import GetRecordsAsText from '../application/records/GetRecordsAsText';
-import GetRecordsAsWorkbook from '../application/records/GetRecordsAsWorkbook';
-import {authorizer} from './middlewares/authorizer';
+import GetRecordsAsText from '../../../application/records/GetRecordsAsText';
+import GetRecordsAsWorkbook from '../../../application/records/GetRecordsAsWorkbook';
+import {authorizer} from '../libs/middlewares/authorizer';
 
 const schema = defineSchema({
   params: {
@@ -29,16 +29,12 @@ export default defineRoute('get', '/records/:dateString', schema, authorizer, as
 
   const params = {cafeteriaId, dateString};
 
-  switch (fileType) {
-    case 'txt':
-      const text = await GetRecordsAsText.run(params);
-      return sendText(res, text);
-    case 'xls':
-      const workbook = await GetRecordsAsWorkbook.run(params);
-      return sendExcelWorkbook(res, workbook, `${dateString}.xlsx`);
-    default:
-      const message = '이건 있을 수가 없는 일이오...!';
-      return sendWrongRequest(res, message);
+  if (fileType === 'txt') {
+    const text = await GetRecordsAsText.run(params);
+    return sendText(res, text);
+  } else {
+    const workbook = await GetRecordsAsWorkbook.run(params);
+    return sendExcelWorkbook(res, workbook, `${dateString}.xlsx`);
   }
 });
 

@@ -55,6 +55,7 @@
     "mysql2": "^2.3.0",
     "nodemon": "^2.0.12",
     "reflect-metadata": "^0.1.13",
+    "serialize-error": "^8.1.0",
     "stack-trace": "0.0.10",
     "winston": "^3.3.3",
     "winston-cloudwatch": "^2.5.2",

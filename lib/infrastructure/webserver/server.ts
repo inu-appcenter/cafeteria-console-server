@@ -1,17 +1,17 @@
 import cors from 'cors';
 import hello from './routes/hello';
 import login from './routes/login';
-import config from '../config';
+import config from '../../../config';
 import version from './routes/version';
 import express from 'express';
 import graphQL from './routes/graphQL';
 import cookieParser from 'cookie-parser';
-import {isProduction} from './utils/nodeEnv';
+import {isProduction} from '../../common/utils/nodeEnv';
 import records from './routes/records';
-import {authorizer} from './routes/middlewares/authorizer';
+import {authorizer} from './libs/middlewares/authorizer';
 import checkin from './routes/checkin';
 import getContext from './routes/getContext';
-import {errorHandler} from './routes/middlewares/errorHandler';
+import {errorHandler} from './libs/middlewares/errorHandler';
 
 function startServer() {
   const app: express.Application = express();
@@ -30,7 +30,6 @@ function startServer() {
   app.use(login);
   app.use(version);
   app.use(records);
-
   app.use(checkin);
   app.use(getContext);
 

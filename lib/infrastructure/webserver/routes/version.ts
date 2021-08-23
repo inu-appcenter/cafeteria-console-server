@@ -1,6 +1,6 @@
-import logger from '../utils/logger';
-import {defineRoute} from './libs/route';
-import {defineSchema} from './libs/schema';
+import logger from '../../../common/utils/logger';
+import {defineRoute} from '../libs/route';
+import {defineSchema} from '../libs/schema';
 
 // 이 서버의 버전! 앱 버전 아님!
 
