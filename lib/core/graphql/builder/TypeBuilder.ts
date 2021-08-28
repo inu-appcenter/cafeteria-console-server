@@ -80,9 +80,9 @@ export default class TypeBuilder {
       }
 
       inputFields[field.name] = {
-        // 처음 생성 당시 id(primary)는 null일 수 있기 때문에,
-        // nullable 또는 primary이면 nullable 타입으로 선언.
-        type: field.nullable || field.primary ? listOrNot : new GraphQLNonNull(listOrNot),
+        // Nullable이 아니어도 생성 당시에는 클라이언트가 보내줄 필요가 없는 엔티티 기본값 필드가 있습니다.
+        // 그래서 잠정적으로 input 필드는 모두 nullable로 간주합니다.
+        type: listOrNot,
         description: field.comment,
       } as any;
     }
