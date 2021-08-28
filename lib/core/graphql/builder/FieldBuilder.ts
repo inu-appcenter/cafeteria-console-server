@@ -20,7 +20,9 @@ export default class FieldBuilder {
   private inputType = assertInputType(this.findType(this.name + 'Input'));
 
   private queryArgs: GraphQLFieldConfigArgumentMap = {
-    order: {type: GraphQLString, description: '정렬 순서'},
+    order: {type: GraphQLString, description: '정렬 순서(order). ASC 또는 DESC.'},
+    offset: {type: GraphQLInt, description: '가져올 데이터의 오프셋(skip).'},
+    limit: {type: GraphQLInt, description: '가져올 데이터의 갯수(take)'},
   };
 
   private modifyArgs: GraphQLFieldConfigArgumentMap = {
@@ -39,12 +41,14 @@ export default class FieldBuilder {
     return this.buildField(`all${this.name}`, {
       type: new GraphQLList(this.type),
       args: this.queryArgs,
-      resolve: async (_, {order}) => {
-        if (['ASC', 'DESC'].includes(order)) {
-          return await this.entity.find({relations, order: {id: order}});
-        } else {
-          return await this.entity.find({relations});
-        }
+      resolve: async (_, {order, offset, limit}) => {
+        const options = {
+          order: ['ASC', 'DESC'].includes(order) ? {id: order} : undefined,
+          skip: offset,
+          take: limit,
+        };
+
+        return await this.entity.find({relations, ...options});
       },
       description: `${this.meta.name}을(를) 모두 가져옵니다.`,
     });
