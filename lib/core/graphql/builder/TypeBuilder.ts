@@ -37,15 +37,22 @@ export default class TypeBuilder {
   }
 
   private buildAndSaveType(metadata: EntityMetadata): GraphQLNamedType {
+    const {name} = metadata;
+
+    /**
+     * 타입 간의 원형 의존성이 발생하는 경우가 있습니다.
+     * 그래서 필드를 직접 명시하지 않고, 필드를 정의하는 함수(thunk)를 명시합니다.
+     */
     const fieldsThunk = () => this.buildFields(metadata).fields;
     const inputFieldsThunk = () => this.buildFields(metadata).inputFields;
 
     const type = new GraphQLObjectType({
-      name: metadata.name,
+      name: name,
       fields: fieldsThunk,
     });
+
     const inputType = new GraphQLInputObjectType({
-      name: metadata.name + 'Input',
+      name: name + 'Input',
       fields: inputFieldsThunk,
     });
 
@@ -59,24 +66,25 @@ export default class TypeBuilder {
     const fields: GraphQLFieldConfigMap<any, any> = {};
     const inputFields: GraphQLInputFieldConfigMap = {};
 
-    for (const f of metadata.fields) {
-      if (f.name === 'id') {
-        // Mutation에서 새로 만드는 경우 id가 없을 수 있습니다.
-        f.nullable = true;
+    for (const field of metadata.fields) {
+      const resolved = this.resolveType(field.type);
+      const listOrNot = field.isMany ? new GraphQLList(resolved) : resolved;
+
+      fields[field.name] = {
+        type: field.nullable ? listOrNot : new GraphQLNonNull(listOrNot),
+        description: field.comment,
+      } as any;
+
+      if (field.relational) {
+        continue;
       }
 
-      const t = this.resolveType(f.type);
-      const listOrNot = f.isMany ? new GraphQLList(t) : t;
-
-      const fieldConfig = {
-        type: f.nullable ? listOrNot : new GraphQLNonNull(listOrNot),
-        description: f.comment,
-      };
-
-      fields[f.name] = fieldConfig as any;
-      if (!f.relational) {
-        inputFields[f.name] = fieldConfig as any;
-      }
+      inputFields[field.name] = {
+        // 처음 생성 당시 id(primary)는 null일 수 있기 때문에,
+        // nullable 또는 primary이면 nullable 타입으로 선언.
+        type: field.nullable || field.primary ? listOrNot : new GraphQLNonNull(listOrNot),
+        description: field.comment,
+      } as any;
     }
 
     return {fields, inputFields};
