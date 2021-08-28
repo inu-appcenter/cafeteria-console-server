@@ -2,14 +2,14 @@ import {EntityClass, getEntityMetadata} from '@inu-cafeteria/backend-core';
 import {
   assertInputType,
   GraphQLFieldConfig,
-  GraphQLFieldConfigArgumentMap,
   GraphQLFieldConfigMap,
   GraphQLNamedType,
   GraphQLType,
 } from 'graphql/type/definition';
-import {GraphQLInt, GraphQLList, GraphQLString} from 'graphql';
+import {GraphQLInt, GraphQLList} from 'graphql';
 import assert from 'assert';
 import logger from '../../../common/utils/logger';
+import GraphQLFieldArguments from './GraphQLFieldArguments';
 
 export default class FieldBuilder {
   constructor(private readonly entity: EntityClass, private readonly types: GraphQLNamedType[]) {}
@@ -20,20 +20,6 @@ export default class FieldBuilder {
   private type = this.findType(this.name);
   private inputType = assertInputType(this.findType(this.name + 'Input'));
 
-  private queryArgs: GraphQLFieldConfigArgumentMap = {
-    order: {type: GraphQLString, description: '정렬 순서(order). ASC 또는 DESC.'},
-    offset: {type: GraphQLInt, description: '가져올 데이터의 오프셋(skip).'},
-    limit: {type: GraphQLInt, description: '가져올 데이터의 갯수(take)'},
-  };
-
-  private modifyArgs: GraphQLFieldConfigArgumentMap = {
-    values: {type: this.inputType, description: `${this.name} 값 객체`},
-  };
-
-  private deleteArgs: GraphQLFieldConfigArgumentMap = {
-    id: {type: GraphQLInt, description: `${this.name}의 식별자`},
-  };
-
   buildQueryFields(): GraphQLFieldConfigMap<any, any> {
     const relations = getEntityMetadata(this.entity)
       .fields.filter((f) => f.relational)
@@ -41,7 +27,7 @@ export default class FieldBuilder {
 
     return this.buildField(`all${this.name}`, {
       type: new GraphQLList(this.type),
-      args: this.queryArgs,
+      args: GraphQLFieldArguments.queryArgs(),
       resolve: async (_, {order, offset, limit}) => {
         const options = {
           order: ['ASC', 'DESC'].includes(order) ? {id: order} : undefined,
@@ -64,7 +50,7 @@ export default class FieldBuilder {
   buildMutationFields(): GraphQLFieldConfigMap<any, any> {
     const saveField = this.buildField(`save${this.name}`, {
       type: GraphQLInt,
-      args: this.modifyArgs,
+      args: GraphQLFieldArguments.modifyArgs(this.inputType),
       resolve: async (_, {values}) => {
         logger.info(`${this.name}을(를) 저장!`);
 
@@ -78,7 +64,7 @@ export default class FieldBuilder {
 
     const removeField = this.buildField(`remove${this.name}`, {
       type: GraphQLInt,
-      args: this.deleteArgs,
+      args: GraphQLFieldArguments.deleteArgs(),
       resolve: async (_, {id}) => {
         logger.info(`${this.name}을(를) 삭제!`);
 

@@ -25,7 +25,10 @@ class LogRepository {
 
     logger.info(`우효wwwwwwwww 서비스 로그 ${raw.events.length}개 겟☆또다제~~!~!~!`);
 
-    return raw.events.map((event) => this.rawEventToLog(event)).filter((l): l is Log => l != null);
+    return raw.events
+      .map((event) => this.rawEventToLog(event))
+      .filter((l): l is Log => l != null)
+      .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
   }
 
   private rawEventToLog({message, timestamp}: OutputLogEvent) {

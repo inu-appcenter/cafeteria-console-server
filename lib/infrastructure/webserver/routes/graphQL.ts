@@ -13,7 +13,7 @@ import {
   CafeteriaValidationParams,
   CafeteriaDayOff,
 } from '@inu-cafeteria/backend-core';
-import Log from '../../../core/logs/Log';
+import Log from '../../../application/logs/Log';
 import logger from '../../../common/utils/logger';
 import {graphqlHTTP} from 'express-graphql';
 import {GraphQLError} from 'graphql';
