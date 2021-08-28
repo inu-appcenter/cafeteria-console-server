@@ -9,6 +9,7 @@ import {
 } from 'graphql/type/definition';
 import {GraphQLInt, GraphQLList, GraphQLString} from 'graphql';
 import assert from 'assert';
+import logger from '../../../common/utils/logger';
 
 export default class FieldBuilder {
   constructor(private readonly entity: EntityClass, private readonly types: GraphQLNamedType[]) {}
@@ -48,7 +49,13 @@ export default class FieldBuilder {
           take: limit,
         };
 
-        return await this.entity.find({relations, ...options});
+        logger.info(`${this.name}을(를) 모두 겟! 옵션은: ${JSON.stringify(options)}`);
+
+        const resolved = await this.entity.find({relations, ...options});
+
+        logger.info(`가져온 ${this.name}은(는) ${resolved.length}개!`);
+
+        return resolved;
       },
       description: `${this.meta.name}을(를) 모두 가져옵니다.`,
     });
@@ -59,7 +66,11 @@ export default class FieldBuilder {
       type: GraphQLInt,
       args: this.modifyArgs,
       resolve: async (_, {values}) => {
+        logger.info(`${this.name}을(를) 저장!`);
+
         const {length} = await this.entity.save(values);
+
+        logger.info(`집어넣은 ${this.name}은(는) ${length}개!`);
 
         return length;
       },
@@ -69,7 +80,11 @@ export default class FieldBuilder {
       type: GraphQLInt,
       args: this.deleteArgs,
       resolve: async (_, {id}) => {
+        logger.info(`${this.name}을(를) 삭제!`);
+
         const {affected} = await this.entity.delete(id);
+
+        logger.info(`삭제된 ${this.name}은(는) ${affected}개!`);
 
         return affected;
       },
