@@ -1,9 +1,14 @@
-import startServer from './lib/infrastructure/webserver/server';
 import config from './config';
-import {startTypeORM} from '@inu-cafeteria/backend-core';
-import logger from './lib/common/utils/logger';
+import startServer from './lib/infrastructure/webserver/server';
+import {logger, setupLogger, startTypeORM} from '@inu-cafeteria/backend-core';
 
 async function start() {
+  setupLogger({
+    consoleTransportOptions: {
+      prefix: undefined,
+    },
+  });
+
   await startTypeORM();
 
   await startServer();

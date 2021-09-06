@@ -1,4 +1,4 @@
-import logger from '../../../common/utils/logger';
+import {logger} from '@inu-cafeteria/backend-core';
 import {defineRoute} from '../libs/route';
 import {defineSchema} from '../libs/schema';
 

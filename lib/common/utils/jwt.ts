@@ -1,6 +1,6 @@
 import JWT from 'jsonwebtoken';
 import config from '../../../config';
-import logger from './logger';
+import {logger} from '@inu-cafeteria/backend-core';
 
 export function createJwt(payload: any) {
   return JWT.sign(payload, config.auth.key, {

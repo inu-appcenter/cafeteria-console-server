@@ -1,5 +1,5 @@
 import express from 'express';
-import logger from '../../../../common/utils/logger';
+import {logger} from '@inu-cafeteria/backend-core';
 import {AssertionError} from 'assert';
 import HttpError from '../../../../common/errors/http/base/HttpError';
 import {stringifyError} from '../../../../common/utils/error';

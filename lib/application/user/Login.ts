@@ -3,7 +3,7 @@ import config from '../../../config';
 import {createJwt} from '../../common/utils/jwt';
 import assert from 'assert';
 import {InvalidAuth} from './errors';
-import logger from '../../common/utils/logger';
+import {logger} from '@inu-cafeteria/backend-core';
 
 export type LoginParams = {
   username: string;

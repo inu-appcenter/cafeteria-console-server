@@ -1,9 +1,7 @@
 import {Booking, CafeteriaBookingParams, VisitRecord} from '@inu-cafeteria/backend-core';
 import assert from 'assert';
-import {addMinutes, isAfter, isBefore} from 'date-fns';
-import {MoreThan} from 'typeorm';
-import {NoBookingParams, NoTimeSlot} from './errors';
-import logger from '../../common/utils/logger';
+import {NoBookingParams} from './errors';
+import {logger} from '@inu-cafeteria/backend-core';
 
 export default class Context {
   /**

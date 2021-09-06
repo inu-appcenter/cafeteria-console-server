@@ -1,6 +1,5 @@
 import config from '../../../../../config';
 import express from 'express';
-import logger from '../../../../common/utils/logger';
 import {decodeJwt} from '../../../../common/utils/jwt';
 import assert from 'assert';
 import {InvalidJwt, NotLoggedIn} from '../../../../application/user/errors';

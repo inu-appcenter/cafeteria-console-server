@@ -1,6 +1,6 @@
 import {getCloudWatchLogs, setupAWS} from '../../external/cloud/aws';
 import config from '../../../config';
-import logger from '../../common/utils/logger';
+import {logger} from '@inu-cafeteria/backend-core';
 import {OutputLogEvent} from 'aws-sdk/clients/cloudwatchlogs';
 import Log from './Log';
 

@@ -8,7 +8,7 @@ import {
 } from 'graphql/type/definition';
 import {GraphQLInt, GraphQLList} from 'graphql';
 import assert from 'assert';
-import logger from '../../../common/utils/logger';
+import {logger} from '@inu-cafeteria/backend-core';
 import GraphQLFieldArguments from './GraphQLFieldArguments';
 
 export default class FieldBuilder {

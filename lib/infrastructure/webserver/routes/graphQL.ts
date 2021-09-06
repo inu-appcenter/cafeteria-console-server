@@ -14,7 +14,7 @@ import {
   CafeteriaDayOff,
 } from '@inu-cafeteria/backend-core';
 import Log from '../../../application/logs/Log';
-import logger from '../../../common/utils/logger';
+import {logger} from '@inu-cafeteria/backend-core';
 import {graphqlHTTP} from 'express-graphql';
 import {GraphQLError} from 'graphql';
 import InvalidParamError from '../../../core/graphql/errors/InvalidParamError';

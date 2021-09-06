@@ -1,6 +1,6 @@
 import {Response} from 'express';
 import {Workbook} from 'exceljs';
-import logger from '../../../common/utils/logger';
+import {logger} from '@inu-cafeteria/backend-core';
 import {defineSchema} from '../libs/schema';
 import {stringAsInt, stringInYYYYMMDD} from '../../../common/utils/zodTypes';
 import {defineRoute} from '../libs/route';
