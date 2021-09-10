@@ -17,7 +17,7 @@ export default class CheckInValidator extends RuleValidator {
     const tests: Test[] = [
       {
         ruleId: 1,
-        validate: () => Checker.bookingShouldBeUsable(this.booking),
+        validate: () => Checker.checkInShouldNotExist(this.booking),
         failure: CheckInAlreadyMade(),
       },
       {

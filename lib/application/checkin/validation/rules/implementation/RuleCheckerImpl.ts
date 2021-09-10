@@ -3,7 +3,7 @@ import {Booking, CafeteriaBookingParams} from '@inu-cafeteria/backend-core';
 import {isWithinInterval, addMinutes} from 'date-fns';
 
 class RuleCheckerImpl implements RuleChecker {
-  async bookingShouldBeUsable(booking: Booking): Promise<boolean> {
+  async checkInShouldNotExist(booking: Booking): Promise<boolean> {
     return booking.checkIn == null;
   }
 
