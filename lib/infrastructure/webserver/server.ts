@@ -12,6 +12,7 @@ import {authorizer} from './libs/middlewares/authorizer';
 import checkin from './routes/checkin';
 import getContext from './routes/getContext';
 import {errorHandler} from './libs/middlewares/errorHandler';
+import visit from './routes/visit';
 
 function startServer() {
   const app: express.Application = express();
@@ -30,6 +31,7 @@ function startServer() {
   app.use(login);
   app.use(version);
   app.use(records);
+  app.use(visit);
   app.use(checkin);
   app.use(getContext);
 
