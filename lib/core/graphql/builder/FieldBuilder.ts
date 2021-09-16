@@ -52,13 +52,16 @@ export default class FieldBuilder {
       type: GraphQLInt,
       args: GraphQLFieldArguments.modifyArgs(this.inputType),
       resolve: async (_, {values}) => {
-        logger.info(`${this.name}을(를) 저장!`);
+        logger.info(`${this.name}을(를) 저장! 값은 다음과 같음: ${JSON.stringify(values)}`);
 
-        const {length} = await this.entity.save(values);
+        // 이렇게 엔티티 인스턴스를 만들어야 엔티티에 정의된 기본값이 들어감.
+        const entity = this.entity.create(values);
 
-        logger.info(`집어넣은 ${this.name}은(는) ${length}개!`);
+        await this.entity.save(entity);
 
-        return length;
+        logger.info(`변경된 ${this.name}은(는) 1개!`);
+
+        return 1; // 사실 별 의미 없음. mutation 망하면 errors 필드에 에러 나갈거임.
       },
     });
 
