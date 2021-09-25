@@ -1,6 +1,6 @@
+import {Booking} from '@inu-cafeteria/backend-core';
 import RuleChecker from '../RuleChecker';
-import {Booking, CafeteriaBookingParams} from '@inu-cafeteria/backend-core';
-import {isWithinInterval, addMinutes} from 'date-fns';
+import {isWithinInterval} from 'date-fns';
 
 class RuleCheckerImpl implements RuleChecker {
   async checkInShouldNotExist(booking: Booking): Promise<boolean> {
@@ -9,14 +9,10 @@ class RuleCheckerImpl implements RuleChecker {
 
   async checkInShouldBeInTime(booking: Booking): Promise<boolean> {
     const now = new Date();
-    const reservedTime = booking.timeSlot;
-
-    const bookingParams = await CafeteriaBookingParams.findOne({cafeteriaId: booking.cafeteriaId});
-    const toleranceMinutes = bookingParams?.toleranceMinutes ?? 0;
 
     return isWithinInterval(now, {
-      start: addMinutes(reservedTime, -toleranceMinutes),
-      end: addMinutes(reservedTime, +toleranceMinutes),
+      start: booking.timeSlot,
+      end: booking.nextTimeSlot,
     });
   }
 }
