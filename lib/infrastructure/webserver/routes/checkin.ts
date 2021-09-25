@@ -7,7 +7,7 @@ import PerformCheckIn from '../../../application/checkin/PerformCheckIn';
 const schema = defineSchema({
   body: {
     ticket: z.string(),
-    gracefulInTime: z.boolean(),
+    gracefulInTime: z.boolean().optional().default(false),
   },
 });
 

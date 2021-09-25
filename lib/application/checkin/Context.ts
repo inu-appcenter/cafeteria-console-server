@@ -2,6 +2,7 @@ import {Booking, CafeteriaBookingParams, VisitRecord} from '@inu-cafeteria/backe
 import assert from 'assert';
 import {NoBookingParams} from './errors';
 import {logger} from '@inu-cafeteria/backend-core';
+import {addMinutes} from 'date-fns';
 
 export default class Context {
   /**
@@ -24,6 +25,16 @@ export default class Context {
    */
   total?: number;
 
+  /**
+   * 현재 타임슬롯
+   */
+  timeSlot?: Date;
+
+  /**
+   * 현재 타임슬롯의 바로 다음 타임슬롯
+   */
+  nextTimeSlot?: Date;
+
   private static of(properties: Partial<Context>) {
     return Object.assign(new Context(), properties);
   }
@@ -44,15 +55,19 @@ export default class Context {
     // 이 식당에 최근 durationMinutes분 내에 입장한 사람의 수
     const total = activeVisitors.length;
 
-    const currentTimeSlot = params.currentTimeSlot(now);
+    // 현재 타임슬롯
+    const timeSlot = params.currentTimeSlot(now);
 
-    if (currentTimeSlot == null) {
-      logger.info('현재 시간은 예약 시간대가 아님!');
+    if (timeSlot == null) {
+      logger.info('현재 시간은 예약을 운영하는 시간대가 아님!');
       return Context.of({capacity, total});
     }
 
+    // 다음 타임슬롯
+    const nextTimeSlot = addMinutes(timeSlot, params.intervalMinutes);
+
     const bookings = await Booking.find({
-      where: {cafeteriaId, timeSlot: currentTimeSlot},
+      where: {cafeteriaId, timeSlot},
       relations: ['checkIn'],
     });
 
@@ -67,6 +82,8 @@ export default class Context {
       expected,
       actual,
       total,
+      timeSlot,
+      nextTimeSlot,
     });
   }
 }
