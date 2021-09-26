@@ -9,7 +9,7 @@ export type GetRecordsAsWorkbookParams = {
   dateString: string;
 };
 
-class GetRecordsAsWorkbook extends UseCase<GetRecordsAsWorkbookParams, Workbook> {
+class GetDiscountRecordsAsWorkbook extends UseCase<GetRecordsAsWorkbookParams, Workbook> {
   async onExecute({cafeteriaId, dateString}: GetRecordsAsWorkbookParams): Promise<Workbook> {
     const discountRecords = await DiscountTransaction.findTransactions(
       undefined,
@@ -24,7 +24,7 @@ class GetRecordsAsWorkbook extends UseCase<GetRecordsAsWorkbookParams, Workbook>
   }
 }
 
-export default new GetRecordsAsWorkbook();
+export default new GetDiscountRecordsAsWorkbook();
 
 function toMatrix(records: DiscountTransaction[]) {
   const columns = [

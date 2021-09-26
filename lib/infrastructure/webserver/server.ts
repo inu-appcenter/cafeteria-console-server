@@ -7,7 +7,7 @@ import express from 'express';
 import graphQL from './routes/graphQL';
 import cookieParser from 'cookie-parser';
 import {isProduction} from '../../common/utils/nodeEnv';
-import records from './routes/records';
+import discountRecords from './routes/discountRecords';
 import {authorizer} from './libs/middlewares/authorizer';
 import checkin from './routes/checkin';
 import getContext from './routes/getContext';
@@ -30,10 +30,11 @@ function startServer() {
   app.use(hello);
   app.use(login);
   app.use(version);
-  app.use(records);
   app.use(visit);
   app.use(checkin);
   app.use(getContext);
+
+  app.use(discountRecords);
 
   app.use('/graphql', authorizer, graphQL());
 

@@ -7,7 +7,7 @@ export type GetRecordsAsTextParams = {
   dateString: string;
 };
 
-class GetRecordsAsText extends UseCase<GetRecordsAsTextParams, string> {
+class GetDiscountRecordsAsText extends UseCase<GetRecordsAsTextParams, string> {
   async onExecute({cafeteriaId, dateString}: GetRecordsAsTextParams): Promise<string> {
     const discountRecords = await DiscountTransaction.findTransactions(
       undefined,
@@ -24,7 +24,7 @@ class GetRecordsAsText extends UseCase<GetRecordsAsTextParams, string> {
   }
 }
 
-export default new GetRecordsAsText();
+export default new GetDiscountRecordsAsText();
 
 function formatSimpleText(records: DiscountTransaction[], title: string = '제목 없음') {
   const rows = records.map((record) => ({
