@@ -1,7 +1,7 @@
 import UseCase from '../../core/base/UseCase';
 import {Workbook} from 'exceljs';
 import {VisitRecord} from '@inu-cafeteria/backend-core';
-import {localDateString} from '../../common/utils/date';
+import {localDateString, parseDateYYYYMMDD} from '../../common/utils/date';
 import ExcelWorkbookBuilder from '../../core/excel/ExcelWorkbookBuilder';
 
 export type GetVisitRecordsAsWorkbookParams = {
@@ -10,8 +10,11 @@ export type GetVisitRecordsAsWorkbookParams = {
 };
 
 class GetVisitRecordsAsWorkbook extends UseCase<GetVisitRecordsAsWorkbookParams, Workbook> {
-  async onExecute(params: GetVisitRecordsAsWorkbookParams): Promise<Workbook> {
-    const visitRecords = await VisitRecord.find({relations: ['cafeteria']});
+  async onExecute({from, until}: GetVisitRecordsAsWorkbookParams): Promise<Workbook> {
+    const visitRecords = await VisitRecord.findUserAgreedRecordsInRange(
+      parseDateYYYYMMDD(from),
+      parseDateYYYYMMDD(until)
+    );
 
     return new ExcelWorkbookBuilder({
       matrix: toMatrix(visitRecords),

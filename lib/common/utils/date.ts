@@ -1,15 +1,16 @@
 import moment from 'moment';
+import assert from 'assert';
+
+export function checkDateStringFormat(dateString: string) {
+  return moment(dateString, 'YYYYMMDD', true).isValid();
+}
 
 export function parseDateYYYYMMDD(dateString: string) {
-  if (!/^(\d){8}$/.test(dateString)) {
-    return undefined;
-  }
+  const m = moment(dateString, 'YYYYMMDD', true);
 
-  const y = parseInt(dateString.substr(0, 4));
-  const m = parseInt(dateString.substr(4, 2)) - 1;
-  const d = parseInt(dateString.substr(6, 2));
+  assert(m.isValid(), `올바르지 않은 날짜 포맷입니다. YYYYMMDD 형식을 지켜 주세요: ${dateString}`);
 
-  return new Date(y, m, d);
+  return m.toDate();
 }
 
 export function localDateString(date: Date) {
@@ -25,18 +26,4 @@ export function localDateString(date: Date) {
   };
 
   return `${format.Y}-${format.M}-${format.D} ${format.h}:${format.m}:${format.s}`;
-}
-
-export function formatDateYYYYMMDD(date: Date) {
-  const format = {
-    M: (date.getMonth() + 1).toString().padStart(2, '0'),
-    D: date.getDate().toString().padStart(2, '0'),
-    Y: date.getFullYear().toString().padStart(4, '0'),
-  };
-
-  return `${format.Y}${format.M}${format.D}`;
-}
-
-export function checkDateStringFormat(dateString: string) {
-  return moment(dateString, 'YYYYMMDD', true).isValid();
 }
