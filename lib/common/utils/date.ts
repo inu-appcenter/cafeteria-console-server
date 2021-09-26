@@ -38,5 +38,5 @@ export function formatDateYYYYMMDD(date: Date) {
 }
 
 export function checkDateStringFormat(dateString: string) {
-  return moment(dateString, 'YYYYMMDD').isValid();
+  return moment(dateString, 'YYYYMMDD', true).isValid();
 }
