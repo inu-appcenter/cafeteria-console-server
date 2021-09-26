@@ -18,7 +18,7 @@ class GetVisitRecordsAsWorkbook extends UseCase<GetVisitRecordsAsWorkbookParams,
 
     return new ExcelWorkbookBuilder({
       matrix: toMatrix(visitRecords),
-      title: '방문 기록',
+      title: `방문 기록 (${from} ~ ${until})`,
     }).build();
   }
 }

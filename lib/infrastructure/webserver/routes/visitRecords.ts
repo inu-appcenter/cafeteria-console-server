@@ -21,7 +21,7 @@ export default defineRoute('get', '/records/visit', schema, authorizer, async (r
 
   const workbook = await GetVisitRecordsAsWorkbook.run({from, until});
 
-  sendExcelWorkbook(res, workbook, 'records.xlsx');
+  sendExcelWorkbook(res, workbook, `visit_records_from_${from}_until_${until}.xlsx`);
 });
 
 function sendExcelWorkbook(res: Response, workbook: Workbook, filename: string) {
