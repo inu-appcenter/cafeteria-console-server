@@ -1,18 +1,19 @@
 import cors from 'cors';
+import visit from './routes/visit';
 import hello from './routes/hello';
 import login from './routes/login';
 import config from '../../../config';
-import version from './routes/version';
-import express from 'express';
 import graphQL from './routes/graphQL';
-import cookieParser from 'cookie-parser';
-import {isProduction} from '../../common/utils/nodeEnv';
-import discountRecords from './routes/discountRecords';
-import {authorizer} from './libs/middlewares/authorizer';
+import version from './routes/version';
 import checkin from './routes/checkin';
+import express from 'express';
 import getContext from './routes/getContext';
+import {authorizer} from './libs/middlewares/authorizer';
+import cookieParser from 'cookie-parser';
+import visitRecords from './routes/visitRecords';
+import {isProduction} from '../../common/utils/nodeEnv';
 import {errorHandler} from './libs/middlewares/errorHandler';
-import visit from './routes/visit';
+import discountRecords from './routes/discountRecords';
 
 function startServer() {
   const app: express.Application = express();
@@ -29,11 +30,12 @@ function startServer() {
 
   app.use(hello);
   app.use(login);
-  app.use(version);
   app.use(visit);
   app.use(checkin);
+  app.use(version);
   app.use(getContext);
 
+  app.use(visitRecords);
   app.use(discountRecords);
 
   app.use('/graphql', authorizer, graphQL());

@@ -5,8 +5,8 @@ import {Workbook} from 'exceljs';
 import {authorizer} from '../libs/middlewares/authorizer';
 import {defineRoute} from '../libs/route';
 import {defineSchema} from '../libs/schema';
-import GetDiscountRecordsAsText from '../../../application/records/GetDiscountRecordsAsText';
-import GetDiscountRecordsAsWorkbook from '../../../application/records/GetDiscountRecordsAsWorkbook';
+import GetDiscountRecordsAsText from '../../../application/discountRecords/GetDiscountRecordsAsText';
+import GetDiscountRecordsAsWorkbook from '../../../application/discountRecords/GetDiscountRecordsAsWorkbook';
 import {stringAsInt, stringInYYYYMMDD} from '../../../common/utils/zodTypes';
 
 const schema = defineSchema({
