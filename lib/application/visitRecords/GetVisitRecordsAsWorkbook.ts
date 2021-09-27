@@ -3,6 +3,7 @@ import {Workbook} from 'exceljs';
 import {VisitRecord} from '@inu-cafeteria/backend-core';
 import {localDateString, parseDateYYYYMMDD} from '../../common/utils/date';
 import ExcelWorkbookBuilder from '../../core/excel/ExcelWorkbookBuilder';
+import {startOfDay, endOfDay} from 'date-fns';
 
 export type GetVisitRecordsAsWorkbookParams = {
   from: string;
@@ -12,8 +13,8 @@ export type GetVisitRecordsAsWorkbookParams = {
 class GetVisitRecordsAsWorkbook extends UseCase<GetVisitRecordsAsWorkbookParams, Workbook> {
   async onExecute({from, until}: GetVisitRecordsAsWorkbookParams): Promise<Workbook> {
     const visitRecords = await VisitRecord.findUserAgreedRecordsInRange(
-      parseDateYYYYMMDD(from),
-      parseDateYYYYMMDD(until)
+      startOfDay(parseDateYYYYMMDD(from)),
+      endOfDay(parseDateYYYYMMDD(until))
     );
 
     return new ExcelWorkbookBuilder({
