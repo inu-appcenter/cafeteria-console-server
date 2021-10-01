@@ -19,7 +19,8 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ghcr.io/inu-appcenter/cafeteria-console-server
-          tags: type=semver,pattern={{version}}
+          tags: |
+            type=semver,pattern={{version}}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
