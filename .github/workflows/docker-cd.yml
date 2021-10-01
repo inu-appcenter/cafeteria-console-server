@@ -2,10 +2,10 @@ name: Docker CD
 
 on:
   push:
-    branches:
-      - 'main'
     tags:
       - '**'
+    # branches:
+    #   - 'main'
 
 jobs:
   Build-Upload-Image:
@@ -19,6 +19,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ghcr.io/inu-appcenter/cafeteria-console-server
+          # type=ref는 메인 브랜치 푸시용, type=semver는 태그 푸시용. 전자는 안 쓸 것이지만 써놓긴 함.
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
