@@ -20,6 +20,8 @@ jobs:
         with:
           images: ghcr.io/inu-appcenter/cafeteria-console-server
           tags: |
+            type=ref,event=branch
+            type=ref,event=tag
             type=semver,pattern={{version}}
 
       - name: Set up Docker Buildx
