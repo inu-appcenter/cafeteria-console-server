@@ -1,5 +1,5 @@
-import getEnv from './lib/common/utils/env';
 import {isProduction} from './lib/common/utils/nodeEnv';
+import {getEnv, getSecret} from '@inu-cafeteria/backend-core';
 
 export default {
   server: {
@@ -24,15 +24,15 @@ export default {
       },
     },
     region: 'ap-northeast-2',
-    accessKeyId: getEnv('AWS_ACCESS_KEY_ID') || 'an_aws_id',
-    secretAccessKey: getEnv('AWS_SECRET_ACCESS_KEY') || 'blahblah',
+    accessKeyId: getSecret('AWS_ACCESS_KEY_ID') || 'an_aws_id',
+    secretAccessKey: getSecret('AWS_SECRET_ACCESS_KEY') || 'blahblah',
   },
 
   auth: {
-    key: getEnv('JWT_SECRET_KEY') || 'whatever',
+    key: getSecret('JWT_SECRET_KEY') || 'whatever',
     expiresIn: '24h',
 
-    adminUsername: getEnv('ADMIN_ID') || 'potados',
-    adminPassword: getEnv('ADMIN_PW') || '1234',
+    adminUsername: getSecret('ADMIN_ID') || 'potados',
+    adminPassword: getSecret('ADMIN_PW') || '1234',
   },
 };

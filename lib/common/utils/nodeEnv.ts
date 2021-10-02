@@ -1,4 +1,4 @@
-import getEnv from './env';
+import {getEnv} from '@inu-cafeteria/backend-core';
 
 const envName = 'NODE_ENV';
 
