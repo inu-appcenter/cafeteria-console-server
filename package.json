@@ -8,9 +8,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "preview": "tsc && node dist/index.js",
-    "deploy": "git push heroku main",
     "preversion": "npm run test",
-    "postversion": "git push && git push --tags && npm run deploy",
+    "postversion": "git push && git push --tags",
     "postinstall": "npm run build"
   },
   "repository": {
