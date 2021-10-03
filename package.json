@@ -43,7 +43,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@inu-cafeteria/backend-core": "^0.7.5",
+    "@inu-cafeteria/backend-core": "^0.7.6",
     "aws-sdk": "^2.973.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
