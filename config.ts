@@ -2,6 +2,8 @@ import {isProduction} from './lib/common/utils/nodeEnv';
 import {getEnv, getSecret} from '@inu-cafeteria/backend-core';
 
 export default {
+  isProduction: isProduction(),
+
   server: {
     port: Number(getEnv('PORT')) || 8090,
   },
