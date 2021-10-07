@@ -39,18 +39,8 @@ export default class Context {
   }
 
   static async forNow(cafeteriaId: number, now: Date = new Date()): Promise<Context> {
-    const params = await CafeteriaBookingParams.findOne({cafeteriaId});
+    const params = await CafeteriaBookingParams.findForBookingByCafeteriaId(cafeteriaId);
     assert(params, NoBookingParams());
-
-    const timeSlot = params.getCurrentTimeSlot(now);
-    if (timeSlot == null) {
-      logger.info('현재 시간은 예약을 운영하는 시간대가 아님!');
-
-      return Context.of({});
-    }
-
-    // 이 식당이 지원하는 시간대별 수용 한계
-    const capacity = timeSlot.capacity;
 
     const activeVisitors = await VisitRecord.findRecentRecords(
       cafeteriaId,
@@ -60,6 +50,16 @@ export default class Context {
 
     // 이 식당에 최근 userStaysForMinutes분 내에 입장한 사람의 수
     const total = activeVisitors.length;
+
+    const timeSlot = params.getCurrentTimeSlot(now);
+    if (timeSlot == null) {
+      logger.info('현재 시간은 예약을 운영하는 시간대가 아님!');
+
+      return Context.of({total});
+    }
+
+    // 이 식당이 지원하는 시간대별 수용 한계
+    const capacity = timeSlot.capacity;
 
     // 현재 시간대 예약들
     const bookings = await Booking.findAllByCafeteriaIdAndTimeSlotStart(
