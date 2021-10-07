@@ -13,6 +13,7 @@ import {
   CafeteriaBookingParams,
   CafeteriaValidationParams,
   CafeteriaDayOff,
+  BookingTimeRange,
 } from '@inu-cafeteria/backend-core';
 import Log from '../../../application/logs/Log';
 import {logger} from '@inu-cafeteria/backend-core';
@@ -34,6 +35,7 @@ const entities = [
   DiscountRule,
   MenuParseRegex,
   CafeteriaDayOff,
+  BookingTimeRange,
   DiscountTransaction,
   DiscountProcessHistory,
   CafeteriaBookingParams,
