@@ -1,7 +1,7 @@
 import Checker from './rules/implementation/RuleCheckerImpl';
+import {differenceInMinutes} from 'date-fns';
 import {CheckInAlreadyMade, CheckInNotInTime} from '../errors';
 import {Booking, CheckInRule, RuleValidator, Test, TestRunner} from '@inu-cafeteria/backend-core';
-import {isBefore, isAfter, differenceInMinutes} from 'date-fns';
 
 export default class CheckInValidator extends RuleValidator {
   constructor(private readonly booking: Booking) {
@@ -63,12 +63,12 @@ export default class CheckInValidator extends RuleValidator {
 function generateTimeDiffString(booking: Booking): string {
   const now = new Date();
 
-  if (isBefore(now, booking.timeSlot)) {
+  if (booking.isEarlyToCheckIn()) {
     // 이른 경우
-    return `${differenceInMinutes(booking.timeSlot, now)}분 이릅니다.`;
-  } else if (isAfter(now, booking.nextTimeSlot)) {
+    return `${differenceInMinutes(booking.timeSlotStart, now)}분 이릅니다.`;
+  } else if (booking.isLateToCheckIn()) {
     // 늦은 경우
-    return `${differenceInMinutes(now, booking.nextTimeSlot)}분 늦었습니다.`;
+    return `${differenceInMinutes(now, booking.timeSlotEnd)}분 늦었습니다.`;
   } else {
     // 제시간인 경우. 이 경우 이 메시지는 사용자에게 도달하지는 않을 것임.
     return '응? 체크인 가능 시간입니다.';

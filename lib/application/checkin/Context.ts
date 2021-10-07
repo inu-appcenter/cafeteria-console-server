@@ -1,8 +1,7 @@
-import {Booking, CafeteriaBookingParams, VisitRecord} from '@inu-cafeteria/backend-core';
 import assert from 'assert';
-import {NoBookingParams} from './errors';
 import {logger} from '@inu-cafeteria/backend-core';
-import {addMinutes} from 'date-fns';
+import {NoBookingParams} from './errors';
+import {Booking, CafeteriaBookingParams, VisitRecord} from '@inu-cafeteria/backend-core';
 
 export default class Context {
   /**
@@ -26,14 +25,14 @@ export default class Context {
   total?: number;
 
   /**
-   * 현재 타임슬롯
+   * 현재 타임 슬롯 시작
    */
-  timeSlot?: Date;
+  timeSlotStart?: Date;
 
   /**
-   * 현재 타임슬롯의 바로 다음 타임슬롯
+   * 현재 타임 슬롯의 끝
    */
-  nextTimeSlot?: Date;
+  timeSlotEnd?: Date;
 
   private static of(properties: Partial<Context>) {
     return Object.assign(new Context(), properties);
@@ -43,33 +42,30 @@ export default class Context {
     const params = await CafeteriaBookingParams.findOne({cafeteriaId});
     assert(params, NoBookingParams());
 
+    const timeSlot = params.getCurrentTimeSlot(now);
+    if (timeSlot == null) {
+      logger.info('현재 시간은 예약을 운영하는 시간대가 아님!');
+
+      return Context.of({});
+    }
+
     // 이 식당이 지원하는 시간대별 수용 한계
-    const capacity = params.capacity;
+    const capacity = timeSlot.capacity;
 
     const activeVisitors = await VisitRecord.findRecentRecords(
       cafeteriaId,
-      params.durationMinutes,
+      params.userStaysForMinutes,
       now
     );
 
-    // 이 식당에 최근 durationMinutes분 내에 입장한 사람의 수
+    // 이 식당에 최근 userStaysForMinutes분 내에 입장한 사람의 수
     const total = activeVisitors.length;
 
-    // 현재 타임슬롯
-    const timeSlot = params.currentTimeSlot(now);
-
-    if (timeSlot == null) {
-      logger.info('현재 시간은 예약을 운영하는 시간대가 아님!');
-      return Context.of({capacity, total});
-    }
-
-    // 다음 타임슬롯
-    const nextTimeSlot = addMinutes(timeSlot, params.intervalMinutes);
-
-    const bookings = await Booking.find({
-      where: {cafeteriaId, timeSlot},
-      relations: ['checkIn'],
-    });
+    // 현재 시간대 예약들
+    const bookings = await Booking.findAllByCafeteriaIdAndTimeSlotStart(
+      cafeteriaId,
+      timeSlot.start
+    );
 
     // 이 식당에 현재 시간대에 예약한 사람의 수
     const expected = bookings.length;
@@ -82,8 +78,8 @@ export default class Context {
       expected,
       actual,
       total,
-      timeSlot,
-      nextTimeSlot,
+      timeSlotStart: timeSlot.start,
+      timeSlotEnd: timeSlot.end,
     });
   }
 }
