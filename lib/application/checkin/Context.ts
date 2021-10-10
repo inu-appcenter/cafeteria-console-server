@@ -1,7 +1,8 @@
 import assert from 'assert';
 import {logger} from '@inu-cafeteria/backend-core';
+import BookingFinder from '../booking/finder/BookingFinder';
 import {NoBookingParams} from './errors';
-import {Booking, CafeteriaBookingParams, VisitRecord} from '@inu-cafeteria/backend-core';
+import {CafeteriaBookingParams, VisitRecord} from '@inu-cafeteria/backend-core';
 
 export default class Context {
   /**
@@ -39,7 +40,7 @@ export default class Context {
   }
 
   static async forNow(cafeteriaId: number, now: Date = new Date()): Promise<Context> {
-    const params = await CafeteriaBookingParams.findForBookingByCafeteriaId(cafeteriaId);
+    const params = await CafeteriaBookingParams.findByCafeteriaId(cafeteriaId);
     assert(params, NoBookingParams());
 
     const activeVisitors = await VisitRecord.findRecentRecords(
@@ -62,7 +63,7 @@ export default class Context {
     const capacity = timeSlot.capacity;
 
     // 현재 시간대 예약들
-    const bookings = await Booking.findAllByCafeteriaIdAndTimeSlotStart(
+    const bookings = await new BookingFinder().findAllByCafeteriaIdAndTimeSlotStart(
       cafeteriaId,
       timeSlot.start
     );
