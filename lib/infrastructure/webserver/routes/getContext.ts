@@ -21,18 +21,26 @@ import {defineSchema} from '../libs/schema';
 import {defineRoute} from '../libs/route';
 import {authorizer} from '../libs/middlewares/authorizer';
 import GetCheckInContext from '../../../application/checkin/GetCheckInContext';
-import {stringAsInt} from '../../../common/utils/zodTypes';
+import {stringAsBoolean, stringAsInt} from '../../../common/utils/zodTypes';
+import RealTimeCheckInService from '../../../application/checkin/RealTimeCheckInService';
 
 const schema = defineSchema({
   query: {
-    cafeteriaId: stringAsInt.optional(),
+    cafeteriaId: stringAsInt,
+    sse: stringAsBoolean,
   },
 });
 
 export default defineRoute('get', '/checkin/context', schema, authorizer, async (req, res) => {
-  const {cafeteriaId} = req.query;
+  const {cafeteriaId, sse} = req.query;
 
-  const context = await GetCheckInContext.run({cafeteriaId});
+  if (sse) {
+    RealTimeCheckInService.listenContextFor(cafeteriaId, res);
 
-  return res.json(context);
+    return await RealTimeCheckInService.propagateContext(cafeteriaId);
+  } else {
+    const context = await GetCheckInContext.run({cafeteriaId});
+
+    return res.json(context);
+  }
 });

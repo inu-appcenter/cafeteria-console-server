@@ -20,11 +20,13 @@
 import packageInfo from '../../../../package.json';
 import {defineRoute} from '../libs/route';
 import {defineSchema} from '../libs/schema';
+import ConnectionPool from '../libs/ConnectionPool';
+import RealTimeCheckInService from '../../../application/checkin/RealTimeCheckInService';
 
 const schema = defineSchema({});
 
 export default defineRoute('get', '/', schema, async (req, res) => {
-  res.send(
+  return res.send(
     `카페테리아 콘솔 API 서버 v${packageInfo.version} 
     / 서버시각 ${new Date().toLocaleString()} 
     / 비상연락 010-2922-2661(앱센터 송병준) 
