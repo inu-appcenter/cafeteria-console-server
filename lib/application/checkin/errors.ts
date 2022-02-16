@@ -31,6 +31,11 @@ export const NoTimeSlot = BadRequest.of(
 
 export const NoBooking = BadRequest.of('no_booking', '예약 내역이 없습니다.');
 
+export const CheckInNotInPlace = BadRequest.of(
+  'check_in_not_in_place',
+  '다른 식당의 예약은 사용하실 수 없습니다.'
+);
+
 export const CheckInAlreadyMade = BadRequest.of(
   'check_in_already_made',
   '이미 체크인이 완료되었습니다.'

@@ -19,11 +19,11 @@
 
 import Checker from './rules/implementation/RuleCheckerImpl';
 import {differenceInMinutes} from 'date-fns';
-import {CheckInAlreadyMade, CheckInNotInTime} from '../errors';
+import {CheckInNotInPlace, CheckInAlreadyMade, CheckInNotInTime} from '../errors';
 import {Booking, CheckInRule, RuleValidator, Test, TestRunner} from '@inu-cafeteria/backend-core';
 
 export default class CheckInValidator extends RuleValidator {
-  constructor(private readonly booking: Booking) {
+  constructor(private readonly booking: Booking, private readonly cafeteriaId: number) {
     super();
   }
 
@@ -50,6 +50,11 @@ export default class CheckInValidator extends RuleValidator {
     const tests: Test[] = [
       {
         ruleId: 1,
+        validate: () => Checker.checkInShouldBeInPlace(this.booking, this.cafeteriaId),
+        failure: CheckInNotInPlace(),
+      },
+      {
+        ruleId: 2,
         validate: () => Checker.checkInShouldNotExist(this.booking),
         failure: CheckInAlreadyMade(),
       },
@@ -65,7 +70,7 @@ export default class CheckInValidator extends RuleValidator {
   private async testOptionalRules() {
     const tests: Test[] = [
       {
-        ruleId: 2,
+        ruleId: 3,
         validate: () => Checker.checkInShouldBeInTime(this.booking),
         failure: CheckInNotInTime(generateTimeDiffString(this.booking)),
       },

@@ -21,6 +21,10 @@ import {Booking} from '@inu-cafeteria/backend-core';
 import RuleChecker from '../RuleChecker';
 
 class RuleCheckerImpl implements RuleChecker {
+  async checkInShouldBeInPlace(booking: Booking, cafeteriaId: number): Promise<boolean> {
+    return booking.cafeteriaId === cafeteriaId;
+  }
+
   async checkInShouldNotExist(booking: Booking): Promise<boolean> {
     return booking.checkIn == null;
   }

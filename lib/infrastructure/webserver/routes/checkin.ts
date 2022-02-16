@@ -22,18 +22,20 @@ import {authorizer} from '../libs/middlewares/authorizer';
 import {defineRoute} from '../libs/route';
 import {defineSchema} from '../libs/schema';
 import PerformCheckIn from '../../../application/checkin/PerformCheckIn';
+import {stringAsInt} from '../../../common/utils/zodTypes';
 
 const schema = defineSchema({
   body: {
     ticket: z.string(),
+    cafeteriaId: z.number(),
     gracefulInTime: z.boolean().optional().default(false),
   },
 });
 
 export default defineRoute('post', '/checkin', schema, authorizer, async (req, res) => {
-  const {ticket, gracefulInTime} = req.body;
+  const {ticket, cafeteriaId, gracefulInTime} = req.body;
 
-  await PerformCheckIn.run({ticket, gracefulInTime});
+  await PerformCheckIn.run({ticket, cafeteriaId, gracefulInTime});
 
   return res.send();
 });

@@ -24,7 +24,7 @@ import {subMinutes} from 'date-fns';
 import {MoreThan} from 'typeorm';
 
 export default class CheckInHandler {
-  constructor(private readonly booking: Booking) {}
+  constructor(private readonly booking: Booking, private readonly cafeteriaId: number) {}
 
   /**
    * 체크인 요청을 처리합니다. 입장 시간을 무시하고 처리할 수 있습니다.
@@ -32,15 +32,15 @@ export default class CheckInHandler {
    * @param gracefulInTime true이면 입장 시간을 무시하고 처리합니다.
    */
   async performCheckIn(gracefulInTime: boolean = false) {
-    const {booking} = this;
+    const {booking, cafeteriaId} = this;
 
-    const validator = new CheckInValidator(booking);
+    const validator = new CheckInValidator(booking, cafeteriaId);
 
     const {error} = gracefulInTime
       ? await validator.validateGracefully()
       : await validator.validateStrictly();
 
-    await this.leaveVisitRecordIfNotDuplicated(booking);
+    await this.leaveVisitRecordIfNotDuplicated(booking, cafeteriaId);
 
     if (error) {
       throw error;
@@ -49,7 +49,16 @@ export default class CheckInHandler {
     await this.checkIn(booking);
   }
 
-  private async leaveVisitRecordIfNotDuplicated(booking: Booking) {
+  /**
+   * 입장 실패 또한 입장 기록으로 간주되므로,
+   * 실패 직후(1분 미만) 재 요청으로 입장 성공시 중복 기록이 남을 수 있습니다.
+   * 따라서 이를 막아주어야 합니다.
+   *
+   * @param booking
+   * @param cafeteriaId 실제 요청이 들어온 식당의 식별자.
+   * @private
+   */
+  private async leaveVisitRecordIfNotDuplicated(booking: Booking, cafeteriaId: number) {
     const existingInLastMinute = await VisitRecord.findOne({
       bookingId: booking.id,
       visitedAt: MoreThan(subMinutes(new Date(), 1)),
@@ -62,7 +71,7 @@ export default class CheckInHandler {
         bookingId: booking.id,
         studentId: booking.user.studentId,
         phoneNumber: booking.user.phoneNumber,
-        cafeteriaId: booking.cafeteriaId,
+        cafeteriaId: cafeteriaId,
         visitedAt: new Date(),
       }).save();
     } else {

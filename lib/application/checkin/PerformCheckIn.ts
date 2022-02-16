@@ -23,14 +23,15 @@ import CheckInRequestParser from './parser/CheckInRequestParser';
 
 export type CheckInParams = {
   ticket: string;
+  cafeteriaId: number;
   gracefulInTime: boolean;
 };
 
 class PerformCheckIn extends UseCase<CheckInParams, void> {
-  async onExecute({ticket, gracefulInTime}: CheckInParams): Promise<void> {
+  async onExecute({ticket, cafeteriaId, gracefulInTime}: CheckInParams): Promise<void> {
     const booking = await new CheckInRequestParser(ticket).bringBooking();
 
-    await new CheckInHandler(booking).performCheckIn(gracefulInTime);
+    await new CheckInHandler(booking, cafeteriaId).performCheckIn(gracefulInTime);
   }
 }
 
