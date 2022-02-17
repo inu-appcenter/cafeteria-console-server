@@ -17,12 +17,12 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {defineSchema} from '../libs/schema';
-import {defineRoute} from '../libs/route';
 import {authorizer} from '../libs/middlewares/authorizer';
+import {defineRoute} from '../libs/route';
+import {defineSchema} from '../libs/schema';
 import GetCheckInContext from '../../../application/checkin/GetCheckInContext';
+import RealTimeContextService from '../../../application/checkin/RealTimeContextService';
 import {stringAsBoolean, stringAsInt} from '../../../common/utils/zodTypes';
-import RealTimeCheckInService from '../../../application/checkin/RealTimeCheckInService';
 
 const schema = defineSchema({
   query: {
@@ -35,9 +35,9 @@ export default defineRoute('get', '/checkin/context', schema, authorizer, async 
   const {cafeteriaId, sse} = req.query;
 
   if (sse === true) {
-    RealTimeCheckInService.addContextListener(cafeteriaId, res);
+    RealTimeContextService.addContextListener(cafeteriaId, res);
 
-    return await RealTimeCheckInService.emitContext(cafeteriaId);
+    return await RealTimeContextService.emitContext(cafeteriaId);
   } else {
     const context = await GetCheckInContext.run({cafeteriaId});
 

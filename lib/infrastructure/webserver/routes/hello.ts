@@ -20,8 +20,6 @@
 import packageInfo from '../../../../package.json';
 import {defineRoute} from '../libs/route';
 import {defineSchema} from '../libs/schema';
-import ConnectionPool from '../libs/ConnectionPool';
-import RealTimeCheckInService from '../../../application/checkin/RealTimeCheckInService';
 
 const schema = defineSchema({});
 

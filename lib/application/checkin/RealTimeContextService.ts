@@ -22,7 +22,7 @@ import {logger} from '@inu-cafeteria/backend-core';
 import ConnectionPool from '../../infrastructure/webserver/libs/ConnectionPool';
 import GetCheckInContext from './GetCheckInContext';
 
-class RealTimeCheckInService {
+class RealTimeContextService {
   private pool = new ConnectionPool();
 
   constructor() {
@@ -72,4 +72,4 @@ class RealTimeCheckInService {
   }
 }
 
-export default new RealTimeCheckInService();
+export default new RealTimeContextService();
