@@ -27,14 +27,14 @@ import RealTimeCheckInService from '../../../application/checkin/RealTimeCheckIn
 const schema = defineSchema({
   query: {
     cafeteriaId: stringAsInt,
-    sse: stringAsBoolean,
+    sse: stringAsBoolean.optional(),
   },
 });
 
 export default defineRoute('get', '/checkin/context', schema, authorizer, async (req, res) => {
   const {cafeteriaId, sse} = req.query;
 
-  if (sse) {
+  if (sse === true) {
     RealTimeCheckInService.addContextListener(cafeteriaId, res);
 
     return await RealTimeCheckInService.emitContext(cafeteriaId);
