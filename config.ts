@@ -56,4 +56,17 @@ export default {
     adminUsername: getSecret('ADMIN_ID') || 'potados',
     adminPassword: getSecret('ADMIN_PW') || '1234',
   },
+
+  microservices: {
+    endpoints: {
+      api: {
+        baseUrl: isProduction() ? 'https://api.inu-cafeteria.app' : 'http://localhost:9999',
+        bookingsUpdated: `${apiServerBaseUrl()}/internal/updates/bookings`,
+      },
+    },
+  },
 };
+
+function apiServerBaseUrl() {
+  return isProduction() ? 'https://api.inu-cafeteria.app' : 'http://localhost:9999';
+}

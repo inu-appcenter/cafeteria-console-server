@@ -17,11 +17,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+import fetch from 'isomorphic-fetch';
+import config from '../../../../config';
+import {MoreThan} from 'typeorm';
+import {subMinutes} from 'date-fns';
 import {stringifyError} from '../../../common/utils/error';
 import CheckInValidator from '../validation/CheckInValidator';
 import {Booking, CheckIn, logger, VisitRecord} from '@inu-cafeteria/backend-core';
-import {subMinutes} from 'date-fns';
-import {MoreThan} from 'typeorm';
 
 export default class CheckInHandler {
   constructor(private readonly booking: Booking, private readonly cafeteriaId: number) {}
@@ -65,7 +67,7 @@ export default class CheckInHandler {
     });
 
     if (existingInLastMinute == null) {
-      logger.info(`입장 기록을 남깁니다.`);
+      logger.info(`사용자(${booking.user.identifier()})의 입장 기록을 남깁니다.`);
 
       await VisitRecord.create({
         bookingId: booking.id,
@@ -76,7 +78,7 @@ export default class CheckInHandler {
       }).save();
     } else {
       logger.warn(
-        `이 사용자는 1분 안에 해당 바코드로 체크인을 시도한 기록이 있습니다. 중복으로 기록을 남기지 않습니다.`
+        `이 사용자(${booking.user.identifier()})는 1분 안에 해당 바코드로 체크인을 시도한 기록이 있습니다. 중복으로 기록을 남기지 않습니다.`
       );
     }
   }
@@ -87,10 +89,28 @@ export default class CheckInHandler {
         bookingId: booking.id,
         checkedInAt: new Date(),
       }).save();
+
+      // 이 라인은 최대한 빠르게 지나가야 합니다. 따라서 await으로 기다리지 않습니다.
+      this.notifyToApiServer(booking.userId).then();
     } catch (e) {
       // 검증을 거치지 않고 이곳에 도달할 수 있습니다. 예를 들어, 중복 방지 룰이 꺼져있을 수 있습니다.
       // 해당 경우는 성공이라고 보아야 하기에, 에러를 올려보내지 않고 조용히 처리합니다.
       logger.info(`체크인 저장에 실패하는 일이 발생했습니다: ${stringifyError(e)}`);
+    }
+  }
+
+  private async notifyToApiServer(userId: number) {
+    // 모바일 클라이언트를 바라보는 API 서버에게 훅을 날려 예약 상태 변동(사용됨)을 알립니다.
+    try {
+      await fetch(config.microservices.endpoints.api.bookingsUpdated, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({userId}),
+      });
+    } catch (e) {
+      logger.error(
+        `API 서버에게 사용자 ${userId}의 예약 상태 변동을 알리는 데에 실패하였습니다: ${e}`
+      );
     }
   }
 }
