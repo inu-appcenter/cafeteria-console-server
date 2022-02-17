@@ -18,7 +18,7 @@
  */
 
 import express from 'express';
-import {printError} from 'graphql';
+import {logger} from '@inu-cafeteria/backend-core';
 import ConnectionPool from '../../infrastructure/webserver/libs/ConnectionPool';
 import GetCheckInContext from './GetCheckInContext';
 
@@ -51,7 +51,7 @@ class RealTimeCheckInService {
 
       await this.pool.broadcast(`cafeteria_${cafeteriaId}`, 'context', context);
     } catch (e) {
-      printError(e);
+      logger.error(`Context emit 실패: ${e}`);
     }
   }
 
