@@ -35,9 +35,9 @@ export default defineRoute('get', '/checkin/context', schema, authorizer, async 
   const {cafeteriaId, sse} = req.query;
 
   if (sse) {
-    RealTimeCheckInService.listenContextFor(cafeteriaId, res);
+    RealTimeCheckInService.addContextListener(cafeteriaId, res);
 
-    return await RealTimeCheckInService.propagateContext(cafeteriaId);
+    return await RealTimeCheckInService.emitContext(cafeteriaId);
   } else {
     const context = await GetCheckInContext.run({cafeteriaId});
 

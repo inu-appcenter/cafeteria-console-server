@@ -18,24 +18,34 @@
  */
 
 import express from 'express';
+import {printError} from 'graphql';
 import ConnectionPool from '../../infrastructure/webserver/libs/ConnectionPool';
 import GetCheckInContext from './GetCheckInContext';
-import {printError} from 'graphql';
 
 class RealTimeCheckInService {
   private pool = new ConnectionPool();
 
   constructor() {
     setInterval(async () => {
-      await this.propagateContextForActiveSubjects();
+      await this.emitContextsOfActiveSubjects();
     }, 1000);
   }
 
-  listenContextFor(cafeteriaId: number, res: express.Response) {
+  /**
+   * Context의 변화를 구독할 listener를 등록합니다.
+   *
+   * @param cafeteriaId 변화를 구독할 식당의 식별자.
+   * @param res 리스너. Express의 response 인스턴스.
+   */
+  addContextListener(cafeteriaId: number, res: express.Response) {
     this.pool.add(`cafeteria_${cafeteriaId}`, res);
   }
 
-  async propagateContext(cafeteriaId: number) {
+  /**
+   * 지정된 식당의 현재 Context를 모든 listener에게 방출합니다.
+   * @param cafeteriaId Context를 방출할 학식당의 식별자.
+   */
+  async emitContext(cafeteriaId: number) {
     try {
       const context = await GetCheckInContext.run({cafeteriaId});
 
@@ -45,14 +55,18 @@ class RealTimeCheckInService {
     }
   }
 
-  async propagateContextForActiveSubjects() {
+  /**
+   * 현재 최소 한 명 이상이라도 listener가 있는 식당(active subject)에 대해
+   * 해당 식당의 현재 Context를 모든 listener에게 방출합니다.
+   */
+  async emitContextsOfActiveSubjects() {
     const activeSubjects = this.pool.getActiveSubjects();
 
     await Promise.all(
       activeSubjects.map((subject) => {
         const cafeteriaId = Number.parseInt(subject.replace('cafeteria_', ''));
 
-        return this.propagateContext(cafeteriaId);
+        return this.emitContext(cafeteriaId);
       })
     );
   }

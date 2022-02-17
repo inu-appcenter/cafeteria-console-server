@@ -18,21 +18,32 @@
  */
 
 import express from 'express';
+import {logger} from '@inu-cafeteria/backend-core';
 
+/**
+ * Server-Side Event 구현을 위해 Express의 응답 객체를 잠시 묶어두는 커넥션 풀입니다.
+ */
 export default class ConnectionPool {
   private connections: Map<string, express.Response[]> = new Map();
 
+  /**
+   * 커넥션 추가.
+   * 특정 주제에 관한 커넥션을 추가합니다.
+   *
+   * @param subject 주제.
+   * @param res 응답 객체.
+   */
   add(subject: string, res: express.Response) {
     const subjectPool = this.connections.get(subject) ?? [];
     this.connections.set(subject, subjectPool);
 
     if (subjectPool.includes(res)) {
-      console.log('OK!');
+      logger.warn('이미 풀에 들어 있는 커넥션입니다.');
       return;
     }
 
     if (res.headersSent) {
-      console.log('DAMN!');
+      logger.warn('이미 헤더가 전송된 커넥션입니다.');
       return;
     }
 
@@ -41,16 +52,24 @@ export default class ConnectionPool {
     res.setHeader('Connection', 'keep-alive');
     res.flushHeaders(); // flush the headers to establish SSE with client
 
-    console.log(`${subject} 풀에서 새 클라이언트와의 SSE 연결!! >_<`);
+    logger.info(`${subject} 풀에서 새 클라이언트와의 SSE 연결!! >_<`);
 
     res.on('close', () => {
-      console.log(`${subject} 풀에서 클라이언트와의 SSE 연결 종료 ㅠㅡㅠ`);
+      logger.info(`${subject} 풀에서 클라이언트와의 SSE 연결 종료 ㅠㅡㅠ`);
+
       this.removeFromPool(subjectPool, res);
     });
 
     subjectPool.push(res);
   }
 
+  /**
+   * 특정 주제에 관한 커넥션들에 대해 지정된 타입으로 데이터를 브로드캐스트합니다.
+   *
+   * @param subject 주제.
+   * @param type 이벤트 타입.
+   * @param data 페이로드.
+   */
   async broadcast(subject: string, type: string, data: Record<string, any>) {
     const subjectPool = this.connections.get(subject) ?? [];
 
@@ -66,7 +85,7 @@ export default class ConnectionPool {
           });
         });
       } catch (e) {
-        console.log('OH SHIT');
+        logger.warn(`write 실패! ${subject} 풀에서 커넥션을 제거합니다.`);
         this.removeFromPool(subjectPool, connection);
       }
     }
@@ -76,6 +95,9 @@ export default class ConnectionPool {
     pool.splice(pool.indexOf(res), 1);
   }
 
+  /**
+   * 현재 살아있는 커넥션이 최소 하나 이상 존재하는 주제를 모두 가져옵니다.
+   */
   getActiveSubjects(): string[] {
     return Array.from(this.connections.entries())
       .filter(([k, v]) => v.length > 0)
