@@ -51,7 +51,7 @@ class RealTimeCheckInService {
 
       await this.pool.broadcast(`cafeteria_${cafeteriaId}`, 'context', context);
     } catch (e) {
-      logger.error(`Context emit 실패: ${e}`);
+      logger.error(`식당 ${cafeteriaId}의 Context 방출 실패: ${e}`);
     }
   }
 
