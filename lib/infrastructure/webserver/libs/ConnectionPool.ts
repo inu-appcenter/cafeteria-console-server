@@ -21,7 +21,7 @@ import express from 'express';
 import {logger} from '@inu-cafeteria/backend-core';
 
 /**
- * Server-Side Event 구현을 위해 Express의 응답 객체를 잠시 묶어두는 커넥션 풀입니다.
+ * Server-Sent Event 구현을 위해 Express의 응답 객체를 잠시 묶어두는 커넥션 풀입니다.
  */
 export default class ConnectionPool {
   private connections: Map<string, express.Response[]> = new Map();

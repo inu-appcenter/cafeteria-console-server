@@ -27,12 +27,14 @@ import {
   CheckInRule,
   DiscountRule,
   MenuParseRegex,
+  CafeteriaDayOff,
+  BookingTimeRange,
   DiscountTransaction,
   DiscountProcessHistory,
   CafeteriaBookingParams,
   CafeteriaValidationParams,
-  CafeteriaDayOff,
-  BookingTimeRange,
+  defineRoute,
+  defineSchema,
 } from '@inu-cafeteria/backend-core';
 import Log from '../../../application/logs/Log';
 import {logger} from '@inu-cafeteria/backend-core';
@@ -82,12 +84,15 @@ function customFormatErrorFn(error: GraphQLError) {
   return error;
 }
 
-export default function graphQL() {
-  const schema = new GraphQLSchemaBuilder(entities, extras).build();
+const schema = defineSchema({});
 
-  return graphqlHTTP({
-    schema,
+export default defineRoute(
+  'post',
+  '/graphql',
+  schema,
+  graphqlHTTP({
+    schema: new GraphQLSchemaBuilder(entities, extras).build(),
     customFormatErrorFn,
     graphiql: true,
-  });
-}
+  })
+);

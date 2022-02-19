@@ -18,11 +18,8 @@
  */
 
 import {z} from 'zod';
-import {authorizer} from '../libs/middlewares/authorizer';
-import {defineRoute} from '../libs/route';
-import {defineSchema} from '../libs/schema';
 import PerformCheckIn from '../../../application/checkin/PerformCheckIn';
-import {stringAsInt} from '../../../common/utils/zodTypes';
+import {defineRoute, defineSchema} from '@inu-cafeteria/backend-core';
 
 const schema = defineSchema({
   body: {
@@ -32,7 +29,7 @@ const schema = defineSchema({
   },
 });
 
-export default defineRoute('post', '/checkin', schema, authorizer, async (req, res) => {
+export default defineRoute('post', '/checkin', schema, async (req, res) => {
   const {ticket, cafeteriaId, gracefulInTime} = req.body;
 
   await PerformCheckIn.run({ticket, cafeteriaId, gracefulInTime});

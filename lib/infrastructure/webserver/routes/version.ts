@@ -18,8 +18,7 @@
  */
 
 import {logger} from '@inu-cafeteria/backend-core';
-import {defineRoute} from '../libs/route';
-import {defineSchema} from '../libs/schema';
+import {defineRoute, defineSchema} from '@inu-cafeteria/backend-core';
 
 // 이 서버의 버전! 앱 버전 아님!
 

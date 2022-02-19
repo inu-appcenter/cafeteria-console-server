@@ -18,9 +18,8 @@
  */
 
 import express from 'express';
-import {logger} from '@inu-cafeteria/backend-core';
-import ConnectionPool from '../../infrastructure/webserver/libs/ConnectionPool';
 import GetCheckInContext from './GetCheckInContext';
+import {logger, ConnectionPool} from '@inu-cafeteria/backend-core';
 
 class RealTimeContextService {
   private pool = new ConnectionPool();

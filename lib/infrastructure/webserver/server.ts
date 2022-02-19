@@ -18,46 +18,50 @@
  */
 
 import cors from 'cors';
-import visit from './routes/visit';
-import hello from './routes/hello';
-import login from './routes/login';
 import config from '../../../config';
-import graphQL from './routes/graphQL';
-import version from './routes/version';
-import checkin from './routes/checkin';
 import express from 'express';
-import getContext from './routes/getContext';
-import {authorizer} from './libs/middlewares/authorizer';
 import cookieParser from 'cookie-parser';
-import visitRecords from './routes/visitRecords';
 import {isProduction} from '../../common/utils/nodeEnv';
-import {errorHandler} from './libs/middlewares/errorHandler';
-import discountRecords from './routes/discountRecords';
+import {
+  recorder,
+  authorizer,
+  errorHandler,
+  registerRoutes,
+  userIdGetterAssigner,
+} from '@inu-cafeteria/backend-core';
 
-function startServer() {
-  const app: express.Application = express();
+const allowList = ['/', '/login', '/version'];
+
+const myCors = cors({
+  origin: isProduction() ? config.cors.allowedHostsInProduction : true,
+  credentials: true,
+});
+
+const myAuthorizer = authorizer({
+  jwtKey: config.auth.key,
+  jwtFieldName: config.cookie.tokenName,
+  allowList,
+});
+
+const myUserIdGetterAssigner = userIdGetterAssigner({
+  jwtFieldName: config.cookie.tokenName,
+});
+
+async function startServer() {
+  const app = express();
+
+  app.use(myCors);
 
   app.use(cookieParser());
+  app.use(myAuthorizer);
+  app.use(myUserIdGetterAssigner);
+
   app.use(express.json());
   app.use(express.urlencoded({extended: true}));
-  app.use(
-    cors({
-      origin: isProduction() ? config.cors.allowedHostsInProduction : true,
-      credentials: true,
-    })
-  );
 
-  app.use(hello);
-  app.use(login);
-  app.use(visit);
-  app.use(checkin);
-  app.use(version);
-  app.use(getContext);
+  app.use(recorder());
 
-  app.use(visitRecords);
-  app.use(discountRecords);
-
-  app.use('/graphql', authorizer, graphQL());
+  await registerRoutes(app, __dirname + '/routes');
 
   app.use(errorHandler);
 

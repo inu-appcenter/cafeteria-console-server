@@ -17,12 +17,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {authorizer} from '../libs/middlewares/authorizer';
-import {defineRoute} from '../libs/route';
-import {defineSchema} from '../libs/schema';
 import GetCheckInContext from '../../../application/checkin/GetCheckInContext';
 import RealTimeContextService from '../../../application/checkin/RealTimeContextService';
-import {stringAsBoolean, stringAsInt} from '../../../common/utils/zodTypes';
+import {defineRoute, defineSchema, stringAsBoolean, stringAsInt} from '@inu-cafeteria/backend-core';
 
 const schema = defineSchema({
   query: {
@@ -31,7 +28,7 @@ const schema = defineSchema({
   },
 });
 
-export default defineRoute('get', '/checkin/context', schema, authorizer, async (req, res) => {
+export default defineRoute('get', '/checkin/context', schema, async (req, res) => {
   const {cafeteriaId, sse} = req.query;
 
   if (sse === true) {
