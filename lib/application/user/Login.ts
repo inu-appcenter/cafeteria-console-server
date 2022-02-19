@@ -17,12 +17,11 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import UseCase from '../../core/base/UseCase';
-import config from '../../../config';
-import {createJwt} from '../../common/utils/jwt';
 import assert from 'assert';
+import config from '../../../config';
+import UseCase from '../../core/base/UseCase';
 import {InvalidAuth} from './errors';
-import {logger} from '@inu-cafeteria/backend-core';
+import {logger, createJwt} from '@inu-cafeteria/backend-core';
 
 export type LoginParams = {
   username: string;
@@ -43,7 +42,9 @@ class Login extends UseCase<LoginParams, LoginResult> {
 
     logger.verbose(`좋아, ${username}에게 로그인을 허가하여 주겠다....`);
 
-    const jwt = createJwt({username});
+    const jwt = createJwt({username}, config.auth.key, {
+      expiresIn: config.auth.expiresIn,
+    });
 
     return {jwt};
   }

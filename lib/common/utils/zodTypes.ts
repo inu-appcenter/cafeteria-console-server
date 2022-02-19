@@ -26,11 +26,6 @@ import {z} from 'zod';
  * refine()을 통해 숫자 스트링만 걸러낸 뒤에 transform()으로 숫자로 변환해야 합니다.
  */
 
-export const stringAsInt = z.string().refine(isInt).transform(toInt);
-export const stringAsBoolean = z.string().refine(isBoolean).transform(toBoolean);
-export const stringInYYYYMMDD = z.string().refine(isYYYYMMDD);
-export const stringAsDate = z.string().refine(isISOString).transform(toDate);
-
 import moment from 'moment';
 import {checkDateStringFormat} from './date';
 import {isNumeric} from './number';

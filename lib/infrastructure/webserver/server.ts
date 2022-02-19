@@ -43,10 +43,6 @@ const myAuthorizer = authorizer({
   allowList,
 });
 
-const myUserIdGetterAssigner = userIdGetterAssigner({
-  jwtFieldName: config.cookie.tokenName,
-});
-
 async function startServer() {
   const app = express();
 
@@ -54,7 +50,6 @@ async function startServer() {
 
   app.use(cookieParser());
   app.use(myAuthorizer);
-  app.use(myUserIdGetterAssigner);
 
   app.use(express.json());
   app.use(express.urlencoded({extended: true}));
