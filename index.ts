@@ -22,6 +22,8 @@ import startServer from './lib/infrastructure/webserver/server';
 import {logger, setupLogger, startTypeORM} from '@inu-cafeteria/backend-core';
 
 async function start() {
+  console.log('로거를 설정합니다.');
+
   await setupLogger({
     consoleTransportOptions: {
       prefix: undefined,
@@ -41,11 +43,18 @@ async function start() {
       : undefined,
   });
 
+  logger.info('DB 시작하는중!!');
   await startTypeORM();
 
+  logger.info('서버 시작하는중!!');
   await startServer();
 }
 
-start().then(() => {
-  logger.info(`우효 wwwwwwwww ${config.server.port}포트♥, 서버 겟또다제~☆`);
-});
+start()
+  .then(() => {
+    logger.info(`우효 wwwwwwwww ${config.server.port}포트♥, 서버 겟또다제~☆`);
+  })
+  .catch((e) => {
+    console.error(e);
+    console.log(';; 서버 시작에 실패했습니다');
+  });
