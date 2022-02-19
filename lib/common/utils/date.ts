@@ -20,10 +20,6 @@
 import moment from 'moment';
 import assert from 'assert';
 
-export function checkDateStringFormat(dateString: string) {
-  return moment(dateString, 'YYYYMMDD', true).isValid();
-}
-
 export function parseDateYYYYMMDD(dateString: string) {
   const m = moment(dateString, 'YYYYMMDD', true);
 

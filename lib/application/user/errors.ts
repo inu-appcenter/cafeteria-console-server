@@ -17,7 +17,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Unauthorized from '../../common/errors/http/Unauthorized';
+import {Unauthorized} from '@inu-cafeteria/backend-core';
 
 export const InvalidAuth = Unauthorized.of(
   'invalid_auth',

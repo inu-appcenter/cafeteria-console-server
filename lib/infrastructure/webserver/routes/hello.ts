@@ -18,8 +18,7 @@
  */
 
 import packageInfo from '../../../../package.json';
-import {defineRoute} from '../libs/route';
-import {defineSchema} from '../libs/schema';
+import {defineRoute, defineSchema} from '@inu-cafeteria/backend-core';
 
 const schema = defineSchema({});
 

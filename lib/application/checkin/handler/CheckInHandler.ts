@@ -21,9 +21,8 @@ import fetch from 'isomorphic-fetch';
 import config from '../../../../config';
 import {MoreThan} from 'typeorm';
 import {subMinutes} from 'date-fns';
-import {stringifyError} from '../../../common/utils/error';
 import CheckInValidator from '../validation/CheckInValidator';
-import {Booking, CheckIn, logger, VisitRecord} from '@inu-cafeteria/backend-core';
+import {logger, Booking, CheckIn, VisitRecord, stringifyError} from '@inu-cafeteria/backend-core';
 
 export default class CheckInHandler {
   constructor(private readonly booking: Booking, private readonly cafeteriaId: number) {}
