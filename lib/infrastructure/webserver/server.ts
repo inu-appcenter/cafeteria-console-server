@@ -17,18 +17,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+import path from 'path';
 import cors from 'cors';
 import config from '../../../config';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import {isProduction} from '../../common/utils/nodeEnv';
-import {
-  recorder,
-  authorizer,
-  errorHandler,
-  registerRoutes,
-  userIdGetterAssigner,
-} from '@inu-cafeteria/backend-core';
+import {authorizer, errorHandler, recorder, registerRoutes} from '@inu-cafeteria/backend-core';
 
 const allowList = ['/', '/login', '/version'];
 
@@ -56,9 +51,9 @@ async function startServer() {
 
   app.use(recorder());
 
-  await registerRoutes(app, __dirname + '/routes');
+  await registerRoutes(app, path.join(__dirname, 'routes'));
 
-  app.use(errorHandler);
+  app.use(errorHandler());
 
   app.listen(config.server.port);
 }
