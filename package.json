@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/inu-appcenter/cafeteria-console-server#readme",
   "dependencies": {
-    "@inu-cafeteria/backend-core": "^0.10.16",
+    "@inu-cafeteria/backend-core": "^0.10.17",
     "aws-sdk": "^2.973.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
